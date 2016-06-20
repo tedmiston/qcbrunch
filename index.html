@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Queen City Brunch - Making the world a better place through brunch discovery.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <style>
+    #wrapper {
+        margin: 1.5em auto;
+        max-width: 40em;
+    }
+
+    #header {
+        margin-bottom: 1.5em;
+        padding: 0 1.5em;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: .5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: .5em;
+        text-align: center;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    #crown {
+        margin-right: .25em;
+    }
+
+    #fork {
+        margin-left: .0625em;
+    }
+
+    #headline {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-bottom: .75em;
+    }
+
+    table {
+        border: 1px solid black;
+        margin-bottom: 1.5em;
+    }
+
+    #col-place-name {
+        width: 25%;
+    }
+
+    #col-saturday-hours {
+        width: 15%;
+    }
+
+    #col-sunday-hours {
+        width: 15%;
+    }
+
+    #col-brunch-menu {
+        width: 15%;
+    }
+
+    #col-notes {
+        width: 30%;
+    }
+
+    th {
+        background-color: #ddd;
+        border: 1px solid #ccc;
+        font-weight: bold;
+        line-height: 110%;
+        padding: 3px 4px 2px;
+        vertical-align: middle;
+    }
+
+    td {
+        border: 1px solid #ddd;
+        line-height: 110%;
+        padding: 4px 4px 2px;
+    }
+
+    td:nth-child(1) {
+        font-weight: bold;
+    }
+
+    td:nth-child(2),
+    td:nth-child(3),
+    td:nth-child(4) {
+        text-align: center;
+    }
+
+    #misc-notes {
+        margin: 0 auto 1.25em;
+        padding: 0 2em;
+    }
+
+    #closed-places {
+        margin-bottom: 1em;
+    }
+
+    #misc-notes hr {
+        margin-bottom: 1em;
+        width: 5em;
+    }
+
+    #footer {
+        text-align: center;
+    }
+
+    #footer hr {
+        margin-bottom: 1em;
+        width: 5em;
+    }
+
+    #footer p {
+        margin-bottom: .5em;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1><span id="crown">👑</span>Queen City Brunch<span id="fork">🍴</span></h1>
+            <p id="headline">Making the world a better place through brunch discovery.</p>
+            <p>Rome wasn't built in a day, but this site was!<br>Question or suggestion? Tweet us <a href="https://twitter.com/qcbrunch" target="_blank">@qcbrunch</a>.</p>
+        </div>
+        <table>
+            <colgroup>
+                <col id="col-place-name">
+                <col id="col-saturday-hours">
+                <col id="col-sunday-hours">
+                <col id="col-brunch-menu">
+                <col id="col-notes">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Saturday Brunch Hours</th>
+                    <th>Sunday Brunch Hours</th>
+                    <th>Brunch Menu</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Blue Oven Bakery @ Findlay Market</td>
+                <td>8am&ndash;?</td>
+                <td>10am&ndash;?</td>
+                <td><a href="http://blueovenbakery.com/thefood/">menu</a></td>
+                <td>Toast bar.</td>
+            </tr>
+            <tr>
+                <td>BrewRiver GastroPub</td>
+                <td>n/a</td>
+                <td>11am&ndash;3pm</td>
+                <td><a href="https://www.brewrivergastropub.com/menu">menu</a></td>
+                <td>Scroll to the bottom.</td>
+            </tr>
+            <tr>
+                <td>Brunch @ Findlay Market</td>
+                <td>?</td>
+                <td>?</td>
+                <td></td>
+                <td>The name is just "Brunch". They have omelets, sandwiches, and smoothies.</td>
+            </tr>
+            <tr>
+                <td>Cheapside Cafe</td>
+                <td>7am&ndash;3pm</td>
+                <td>7am&ndash;3pm</td>
+                <td><a href="http://cheapsidecafe.com/#menu">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Collective CAC</td>
+                <td>9am&ndash;2pm</td>
+                <td>9am&ndash;2pm</td>
+                <td><a href="http://www.contemporaryartscenter.org/files/learn/menufeb2016.pdf">menu</a></td>
+                <td>See both Brunch Menu and Weekend Menu.</td>
+            </tr>
+            <tr>
+                <td>French Crust Cafe</td>
+                <td>8am&ndash;10:30am</td>
+                <td>n/a</td>
+                <td><a href="http://www.jrcincy.com/french-crust-cafe/#/fcc-breakfast-menu/">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Gomez Salsa</td>
+                <td>n/a</td>
+                <td>10am&ndash;2pm</td>
+                <td><a href="http://www.gomezsalsa.com/wp-content/uploads/2015/08/Gomez_Brunch_Menu_7232015.pdf">menu</a></td>
+                <td>Brunch turtles are amazing.</td>
+            </tr>
+            <tr>
+                <td>Green Dog Cafe</td>
+                <td>9am&ndash;3pm</td>
+                <td>9am&ndash;3pm</td>
+                <td><a href="http://www.greendogcafe.net/brunch/">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Huit</td>
+                <td>10:30am&ndash;1:30pm</td>
+                <td>n/a</td>
+                <td><a href="https://orderup.com/restaurants/huit-craft-bbq/delivery/categories/93214">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Kaze</td>
+                <td>12pm&ndash;?</td>
+                <td>12pm&ndash;?</td>
+                <td><a href="http://www.kazeotr.com/uploads/1/3/6/0/13606600/brunch_07.12.15_web.pdf">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Lil's Bagels @ Covington Farmers Market</td>
+                <td>9am&ndash;1pm</td>
+                <td>n/a</td>
+                <td><a href="https://www.instagram.com/lilsbagels/">menu</a></td>
+                <td>No official menu, but you can see samples on their Instagram.</td>
+            </tr>
+            <tr>
+                <td>Melt (Northside)</td>
+                <td>n/a</td>
+                <td>10 am&ndash;2 pm</td>
+                <td><a href="http://www.meltcincy.com/main/?page_id=19">menu</a></td>
+                <td>Click More Menus > Brunch at Melt.</td>
+            </tr>
+            <tr>
+                <td>Melt @ Neons</td>
+                <td>n/a</td>
+                <td>12 pm&ndash;4 pm</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>MOTR</td>
+                <td>n/a</td>
+                <td>10am&ndash;2pm</td>
+                <td><a href="http://motrpub.com/index.php/menu/">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nation</td>
+                <td>10am&ndash;2pm</td>
+                <td>10am&ndash;2pm</td>
+                <td><a href="http://www.nationkitchenandbar.com/#brunch-menu-section">menu</a></td>
+                <td>Normal brunch menu and brunch with unlimited drinks.</td>
+            </tr>
+            <tr>
+                <td>Northside Yacht Club</td>
+                <td>11am&ndash;3pm</td>
+                <td>11am&ndash;3pm</td>
+                <td><a href="http://northsideyachtclub.com/nsyc-weekend-brunch-11am-3pm/">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Park + Vine</td>
+                <td>n/a</td>
+                <td>10am&ndash;2pm</td>
+                <td><a href="http://blog.parkandvine.com/lunch-counter/">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Pleasantry</td>
+                <td>8am&ndash;11am</td>
+                <td>n/a</td>
+                <td><a href="http://www.pleasantryotr.com">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sugar N' Spice</td>
+                <td>7am&ndash;3pm</td>
+                <td>7am&ndash;3pm</td>
+                <td><a href="http://sugar-n-spice-restaurant.com/wp-content/uploads/2016/01/sugar-n-spice-menu-2016.pdf">menu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Taft's Ale House</td>
+                <td>n/a</td>
+                <td>10am&ndash;2pm</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <!--
+            <tr>
+                <td><strike>Taste of Belgium (OTR)</strike></td>
+                <td>temporarily closed</td>
+                <td>temporarily closed</td>
+                <td><a href="https://authenticwaffle.com/menus.html">menu</a></td>
+                <td><em>Scheduled to reopen July 2016.</em>  See Breakfast Menu and Brunch Menu.</td>
+            </tr>
+            -->
+            <tr>
+                <td>Tucker’s on 13th</td>
+                <td>?</td>
+                <td>?</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <!--
+            <tr>
+                <td><strike>Tucker’s Restaurant (Vine St.)</strike></td>
+                <td>temporarily closed</td>
+                <td>temporarily closed</td>
+                <td></td>
+                <td><em>Scheduled to reopen July 25, 2016 (<a href="http://www.cincinnati.com/story/entertainment/dining/2016/02/26/tuckers-otr-sets-opening-date-benefit-event/80984310/" target="_blank">ref</a>).</em></td>
+            </tr>
+            -->
+            <tr>
+                <td>Urbana Cafe</td>
+                <td>8am&ndash;?</td>
+                <td>8am&ndash;?</td>
+                <td><a href="http://www.urbana-cafe.com/#snacks-section">menu</a></td>
+                <td>Toast bar, breakfast sandwiches, house-made pastries.</td>
+            </tr>
+        </table>
+        <div id="misc-notes">
+            <p id="closed-places"><strong>Temporary Closures</strong> — A few locations are temporarily closed and will be included above when they reopen: Taste of Belgium (OTR) and Tucker's Restaurant (Vine St.).</p>
+            <hr>
+            <h2>🍩 Honorable mentions ☕️</h2>
+            <p>When you don't have time for brunch (maybe reconsider your priorities)… <a href="https://foursquare.com/kicksopenminds/list/cincinnati-top-coffee">coffee</a>, donuts, and pastries are available at great places around OTR such as Collective Espresso, Holtman's Donuts, Shadeau Breads, and Findlay Market.</p>
+        </div>
+        <div id="footer">
+            <hr>
+            <p><em>Launched June 13, 2016</em></p>
+            <p>Made in Cincy by <a href="https://twitter.com/kicksopenminds" target="_blank">@kicksopenminds</a> + <a href="https://twitter.com/AnnaHider" target="_blank">@annahider</a></p>
+            <p>Feedback and free brunch always welcome!</p>
+        </div>
+        <!-- TODO: add custom google map -->
+        <!-- TODO: add filter for what's open now -->
+        <!-- TODO: add the rest from facebook post https://www.facebook.com/tedmiston/posts/10154041107836802 -->
+        <!-- TODO consider adding more fields: Google Maps link, Price, Source, Reviews, Instagram (Restaurant, Location, Hashtag) -->
+    </div>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-6800686-6', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>
