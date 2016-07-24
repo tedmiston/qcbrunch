@@ -25,199 +25,68 @@
     article, aside, canvas, details, embed, 
     figure, figcaption, footer, header, hgroup, 
     menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
+    time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure, 
-    footer, header, hgroup, menu, nav, section {
-        display: block;
-    }
-    body {
-        line-height: 1;
-    }
-    ol, ul {
-        list-style: none;
-    }
-    blockquote, q {
-        quotes: none;
-    }
+    footer, header, hgroup, menu, nav, section { display: block; }
+    body { line-height: 1; }
+    ol, ul { list-style: none; }
+    blockquote, q { quotes: none; }
     blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
+    q:before, q:after { content: ''; content: none; }
+    table { border-collapse: collapse; border-spacing: 0; }
     </style>
 
     <style>
-    html {
-        -webkit-text-size-adjust: 100%;
-    }
+    html { -webkit-text-size-adjust: 100%; }
 
-    body {
-        font-size: 16px;
-    }
+    body { font-size: 16px; }
 
-    #wrapper {
-        margin: 1.5em auto;
-        max-width: 100%;
-        width: 50em;
-    }
+    #wrapper { margin: 1.5em auto; max-width: 100%; width: 50em; }
 
-    #header {
-        margin-bottom: 1.5em;
-        padding: 0 1.5em;
-        text-align: center;
-    }
+    #header { margin-bottom: 1.5em; padding: 0 1.5em; text-align: center; }
 
-    h1 {
-        font-size: 2em;
-        font-weight: bold;
-        margin-bottom: .5em;
-    }
+    h1 { font-size: 2em; font-weight: bold; margin-bottom: .5em; }
+    h2 { font-size: 1.5em; font-weight: bold; margin-bottom: .5em; text-align: center; }
 
-    h2 {
-        font-size: 1.5em;
-        font-weight: bold;
-        margin-bottom: .5em;
-        text-align: center;
-    }
+    p { line-height: 130%; margin-bottom: 1em; }
 
-    p {
-        line-height: 130%;
-        margin-bottom: 1em;
-    }
+    em { font-style: italic; }
 
-    em {
-        font-style: italic;
-    }
+    #crown { margin-right: .25em; }
+    #fork { margin-left: .0625em; }
+    #headline { font-size: 1.4em; font-style: italic; font-weight: bold; margin-bottom: .75em; }
 
-    #crown {
-        margin-right: .25em;
-    }
+    table { border: 1px solid black; margin-bottom: 1em; }
 
-    #fork {
-        margin-left: .0625em;
-    }
+    #col-place-name { width: 25%; }
+    #col-saturday-hours { width: 20%; }
+    #col-sunday-hours { width: 20%; }
+    #col-brunch-menu { width: 10%; }
+    #col-toast-bar { width: 5%; }
+    #col-notes { width: 20%; }
 
-    #headline {
-        font-size: 1.4em;
-        font-style: italic;
-        font-weight: bold;
-        margin-bottom: .75em;
-    }
+    th { background-color: #ddd; border: 1px solid #ccc; font-weight: bold; line-height: 130%; padding: 3px 4px 2px; vertical-align: middle; }
 
-    table {
-        border: 1px solid black;
-        margin-bottom: 1em;
-    }
-
-    #col-place-name {
-        width: 25%;
-    }
-
-    #col-saturday-hours {
-        width: 20%;
-    }
-
-    #col-sunday-hours {
-        width: 20%;
-    }
-
-    #col-brunch-menu {
-        width: 10%;
-    }
-
-    #col-toast-bar {
-        width: 5%;
-    }
-
-    #col-notes {
-        width: 20%;
-    }
-
-    th {
-        background-color: #ddd;
-        border: 1px solid #ccc;
-        font-weight: bold;
-        line-height: 130%;
-        padding: 3px 4px 2px;
-        vertical-align: middle;
-    }
-
-    td {
-        border: 1px solid #ddd;
-        line-height: 130%;
-        padding: 4px 4px 2px;
-        vertical-align: middle;
-    }
-
-    td:nth-child(1) {
-        font-weight: bold;
-    }
-    td:nth-child(1) span {
-        font-size: 90%;
-        font-weight: normal;
-    }
-
+    td { border: 1px solid #ddd; line-height: 130%; padding: 4px 4px 2px; vertical-align: middle; }
+    td:nth-child(1) { font-weight: bold; }
+    td:nth-child(1) span { font-size: 90%; font-weight: normal; }
     td:nth-child(2),
     td:nth-child(3),
     td:nth-child(4),
-    td:nth-child(5) {
-        text-align: center;
-    }
+    td:nth-child(5) { text-align: center; }
 
-    #table-key {
-        font-weight: bold;
-        margin-bottom: 1.5em;
-        text-align: center;
-    }
+    #table-key { font-weight: bold; margin-bottom: 1.5em; text-align: center; }
+    .table-key-tooltip { font-size: 80%; font-weight: normal; }
 
-    .table-key-tooltip {
-        font-size: 80%;
-        font-weight: normal;
-    }
+    #misc-notes { margin: 0 auto 1.25em; max-width: 100%; width: 33em; }
+    #misc-notes p { margin: 0 1.5em; }
+    #misc-notes hr { margin-bottom: 1em; width: 5em; }
 
-    #misc-notes {
-        margin: 0 auto 1.25em;
-        max-width: 100%;
-        width: 33em;
-    }
-
-    #misc-notes p {
-        margin: 0 1.5em;
-    }
-
-    #misc-notes hr {
-        margin-bottom: 1em;
-        width: 5em;
-    }
-
-    #footer {
-        text-align: center;
-    }
-
-    #footer hr {
-        margin-bottom: 1em;
-        width: 5em;
-    }
-
-    #footer p {
-        margin-bottom: .5em;
-    }
-
-    #footer p+p {
-        margin-bottom: .25em;
-    }
+    #footer { text-align: center; }
+    #footer hr { margin-bottom: 1em; width: 5em; }
+    #footer p { margin-bottom: .5em; }
+    #footer p+p { margin-bottom: .25em; }
     </style>
 </head>
 <body>
