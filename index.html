@@ -91,6 +91,7 @@
     @media only screen
     and (min-device-width: 320px)
     and (max-device-width: 736px) {
+        #wrapper { margin-bottom: 4.5em; }
         h1 { font-size: 1.5em; }
         #headline { font-size: 1.2em; }
     }
@@ -734,6 +735,28 @@
         <!-- TODO: add the rest from facebook post https://www.facebook.com/tedmiston/posts/10154041107836802 -->
         <!-- TODO consider adding more fields: Google Maps link, Price, Source, Reviews, Instagram (Restaurant, Location, Hashtag) -->
     </div>
+    <script>
+    !function() {
+      var t;
+      if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+      t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+      t.factory = function(e) {
+        return function() {
+          var n;
+          return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e, n, o, i;
+        e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+        n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+      });
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('zr6pag8wthr2');
+    </script>
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
