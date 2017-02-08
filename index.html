@@ -53,6 +53,9 @@
 
     em { font-style: italic; }
 
+    img.emoji { height: 1.25em; margin-bottom: .05em; vertical-align: top; width: 1.25em; }
+
+    h1 img.emoji { height: 1em; width: 1em; }
     #crown { margin-right: .25em; }
     #fork { margin-left: .0625em; }
     #headline { font-size: 1.4em; font-style: italic; font-weight: bold; margin-bottom: .75em; }
@@ -96,6 +99,16 @@
         #headline { font-size: 1.2em; }
     }
     </style>
+
+    <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.2.3"></script>
+    <script>
+    window.onload = function() {
+        twemoji.parse(document.body, {
+            ext: '.svg',
+            folder: '../svg'
+        });
+    }
+    </script>
 </head>
 <body>
     <div id="wrapper">
