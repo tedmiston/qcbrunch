@@ -91,6 +91,7 @@
     #restaurants td:nth-child(5) { text-align: center; }
 
     #table-key { font-weight: bold; margin-bottom: 1.5em; text-align: center; }
+    #table-key span+span { margin-left: 15px; }
     .table-key-tooltip { font-size: 80%; font-weight: normal; }
 
     #misc-notes { margin: 0 auto 1.25em; max-width: 100%; width: 33em; }
@@ -112,6 +113,9 @@
         #col-events-date { width: 6em; }
         #col-events-title { width: auto; }
         #col-events-notes { width: 8em; }
+
+        #table-key span { display: block; }
+        #table-key span+span { margin-left: 0; }
     }
     </style>
 
@@ -835,10 +839,21 @@
             </tbody>
         </table>
         <p id="table-key">
-            🆕 recently opened or added &middot;
-            🔥 popular &middot;
-            🍞 toast bar <small class="table-key-tooltip"><a href="http://www.eater.com/2014/5/30/6215971/artisanal-toast-is-taking-the-nation-by-storm" target="_blank">[wat?]</a></small> &middot;
-            ? = unknown
+            <span>
+                🆕 recently opened or added
+            </span>
+            <span>
+                🔥 popular
+            </span>
+            <span>
+                🍞 toast bar
+                <small class="table-key-tooltip">
+                    <a href="http://www.eater.com/2014/5/30/6215971/artisanal-toast-is-taking-the-nation-by-storm" target="_blank">[wat?]</a>
+                </small>
+            </span>
+            <span>
+                ? = unknown
+            </span>
         </p>
         <div id="misc-notes">
             <hr>
