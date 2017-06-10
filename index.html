@@ -1038,9 +1038,10 @@
      * @returns {string} A string like "January 2017".
      */
     function buildDateString(date) {
+        var day = date.getDate();
         var month = getMonthName(date.getMonth());
         var year = date.getFullYear();
-        return month + ' ' + year;
+        return month + ' ' + day + ', ' + year;
     }
 
     /**
