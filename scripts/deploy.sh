@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Based on CircleCI docs [1][2]. Somewhat inspired by [3], but simplified.
 # [1]: https://circleci.com/docs/1.0/configuration/#deployment
