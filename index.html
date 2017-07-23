@@ -128,9 +128,9 @@
     }
     </style>
 
-    <script src="js/twemoji.min.js"></script>
+    <script async src="js/twemoji.min.js" onload="parseEmojis()"></script>
     <script>
-    window.onload = function() {
+    function parseEmojis() {
         twemoji.parse(document.body, {
             ext: '.svg',
             folder: '../svg'
