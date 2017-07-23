@@ -1,0 +1,80 @@
+@import url('reset.css');
+
+html { -webkit-text-size-adjust: 100%; }
+
+body { font-size: 16px; }
+
+#wrapper { margin: 1.5em auto; max-width: 100%; width: 50em; }
+
+#header { margin-bottom: 1.5em; padding: 0 1.5em; text-align: center; }
+
+h1 { font-size: 2em; font-weight: bold; margin-bottom: .5em; }
+h2 { font-size: 1.5em; font-weight: bold; margin-bottom: .5em; text-align: center; }
+
+p { line-height: 130%; margin-bottom: 1em; }
+
+em { font-style: italic; }
+
+img.emoji { height: 1.25em; margin-bottom: .05em; vertical-align: top; width: 1.25em; }
+
+h1 img.emoji,
+h2 img.emoji { height: 1em; width: 1em; }
+
+#crown { margin-right: .25em; }
+#fork { margin-left: .0625em; }
+#headline { font-size: 1.4em; font-style: italic; font-weight: bold; margin-bottom: .75em; }
+
+table { border: 1px solid black; margin-bottom: 1em; }
+
+#events { max-width: 100%; width: 100%; }
+#col-events-date { width: 15%; }
+#col-events-title { width: 55%; }
+#col-events-notes { width: 30%; }
+#events th { background-color: #ddd; border: 1px solid #ccc; font-weight: bold; line-height: 130%; padding: 3px 4px 2px; vertical-align: middle; }
+#events td { border: 1px solid #ddd; line-height: 130%; padding: 4px 4px 2px; vertical-align: middle; }
+#events td:nth-child(1) { font-weight: bold; }
+#events td:nth-child(1) span { display: block; font-size: 90%; font-weight: normal; }
+#events-empty { font-style: italic; text-align: center; }
+
+#restaurants { max-width: 100%; width: 100%; }
+#col-place-name { width: 25%; }
+#col-saturday-hours { width: 18%; }
+#col-sunday-hours { width: 18%; }
+#col-brunch-menu { width: 9%; }
+#col-toast-bar { width: 8%; }
+#col-notes { width: 22%; }
+#restaurants th { background-color: #ddd; border: 1px solid #ccc; font-weight: bold; line-height: 130%; padding: 3px 4px 2px; vertical-align: middle; }
+#restaurants td { border: 1px solid #ddd; line-height: 130%; padding: 4px 4px 2px; vertical-align: middle; }
+#restaurants td:nth-child(1) { font-weight: bold; }
+#restaurants td:nth-child(1) span { font-size: 90%; font-weight: normal; }
+#restaurants td:nth-child(2),
+#restaurants td:nth-child(3),
+#restaurants td:nth-child(4),
+#restaurants td:nth-child(5) { text-align: center; }
+
+#table-key { font-weight: bold; margin-bottom: 1.5em; text-align: center; }
+#table-key span+span { margin-left: 15px; }
+.table-key-tooltip { font-size: 80%; font-weight: normal; }
+
+#misc-notes { margin: 0 auto 1.25em; max-width: 100%; width: 33em; }
+#misc-notes p { margin: 0 1.5em; }
+#misc-notes hr { margin-bottom: 1em; width: 5em; }
+
+#footer { text-align: center; }
+#footer hr { margin-bottom: 1em; width: 5em; }
+#footer p { margin-bottom: .25em; }
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 736px) {
+    #wrapper { margin-bottom: 4.5em; }
+    h1 { font-size: 1.5em; }
+    #headline { font-size: 1.2em; }
+
+    #col-events-date { width: 6em; }
+    #col-events-title { width: auto; }
+    #col-events-notes { width: 8em; }
+
+    #table-key span { display: block; }
+    #table-key span+span { margin-left: 0; }
+}
