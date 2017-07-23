@@ -1070,7 +1070,7 @@
         <!-- TODO: add the rest from facebook post https://www.facebook.com/tedmiston/posts/10154041107836802 -->
         <!-- TODO consider adding more fields: Google Maps link, Price, Source, Reviews, Instagram (Restaurant, Location, Hashtag) -->
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" onload="checkWhenLastUpdated()" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script>
     /**
      * Convert month integer value to month name.
@@ -1138,10 +1138,6 @@
         //         $("#updated-date").text(updatedDate);
         //     });
     }
-
-    $(function(){
-        checkWhenLastUpdated();
-    });
     </script>
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
