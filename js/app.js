@@ -3,7 +3,7 @@
 function parseEmojis() {
     twemoji.parse(document.body, {
         ext: '.svg',
-        folder: '../svg'
+        folder: '../2/svg'
     });
 }
 
