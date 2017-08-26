@@ -41,7 +41,7 @@ function buildDateString(date) {
  * @param {string} dateStr2 - Another date string.
  * @returns {Object} The greater of the two.
  */
-function getMaxDate(dateStr1, dateStr2) {  
+function getMaxDate(dateStr1, dateStr2) {
     var d1 = new Date(dateStr1);
     var d2 = new Date(dateStr2);
     return d1 > d2 ? d1 : d2;
