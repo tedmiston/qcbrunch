@@ -4,7 +4,7 @@ Discover the best breakfast and brunch in Cincinnati, Ohio.
 
 Yes, there are a few others also called the Queen City, but this one is ours.
 
-http://www.qcbrunch.com
+https://www.qcbrunch.com
 
 ## Features
 
