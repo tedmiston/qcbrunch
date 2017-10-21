@@ -54,7 +54,7 @@ function checkWhenLastUpdated() {
     // FIXME: getting aggressively rate limited
     // TODO: pull from gh-pages branch
 
-    $("#updated-date").text("September 2017");
+    $("#updated-date").text("October 2017");
 
     // var updatedDate;
     // $.getJSON("https://api.github.com/repos/tedmiston/qcbrunch/commits/HEAD")
