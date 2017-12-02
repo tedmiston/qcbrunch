@@ -76,3 +76,10 @@ function checkWhenLastUpdated() {
     //         $("#updated-date").text(updatedDate);
     //     });
 }
+
+/**
+ * App entrypoint.
+ */
+function init() {
+    checkWhenLastUpdated();
+}
