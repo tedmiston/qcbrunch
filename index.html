@@ -77,6 +77,15 @@
         </div>
 
         <h2>Restaurants</h2>
+
+        <div id="restaurants-filters">
+            <p>
+                Filters:
+                <button id="hideClosedButton" onclick="hideClosed(1000);">hide closed</button>
+                <button id="showClosedButton" onclick="showClosed(1000);">show closed</button>
+            </p>
+        </div>
+
         <table id="restaurants">
             <colgroup>
                 <col id="col-place-name">
@@ -1015,7 +1024,7 @@
 
     <!-- jQuery -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-            onload="checkWhenLastUpdated()"
+            onload="init()"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
 

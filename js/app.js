@@ -76,3 +76,48 @@ function checkWhenLastUpdated() {
     //         $("#updated-date").text(updatedDate);
     //     });
 }
+
+
+// -- Filters --
+
+/**
+ * Run a function on restaurants that are closed.
+ */
+function funcClosed(func, duration, hideButtonDisabled, showButtonDisabled) {
+    $("#restaurants td:first-child").each(function(){
+        const params = { duration };
+        if (this.innerHTML.startsWith("<s>")) {
+            if (func === 'hide') {
+                $(this.parentElement).hide(params);
+            } else if (func === 'show') {
+                $(this.parentElement).show(params);
+            }
+        }
+    });
+
+    $("#hideClosedButton").prop('disabled', hideButtonDisabled);
+    $("#showClosedButton").prop('disabled', showButtonDisabled);
+}
+
+/**
+ * Hide restaurants that are closed.
+ */
+function hideClosed(duration=0) {
+    funcClosed('hide', duration, true, false);
+}
+
+/**
+ * Show restaurants that are closed.
+ */
+function showClosed(duration=0) {
+    funcClosed('show', duration, false, true);
+}
+
+
+/**
+ * App entrypoint.
+ */
+function init() {
+    checkWhenLastUpdated();
+    hideClosed();
+}
