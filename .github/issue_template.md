@@ -4,9 +4,10 @@ I would like to add or update a location on QCBrunch.
 - [ ] Saturday brunch hours: 
 - [ ] Sunday brunch hours: 
 - [ ] Brunch menu link: 
+- [ ] Instagram link: 
 - [ ] Toast bar (*y/n*): 
 - [ ] Notes (*optional*): 
 
-If you can't find some info, just leave it blank.
+*If you can't find some info, just leave it blank.*
 
 Thank you!
