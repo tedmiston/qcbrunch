@@ -40,12 +40,13 @@ table { border: 1px solid black; margin-bottom: 1em; }
 #restaurants-filters p { text-align: center; }
 
 #restaurants { margin-top: 0.75em; max-width: 100%; width: 100%; }
-#col-place-name { width: 25%; }
-#col-saturday-hours { width: 18%; }
-#col-sunday-hours { width: 18%; }
-#col-brunch-menu { width: 9%; }
+#col-place-name { width: 23%; }
+#col-saturday-hours { width: 17%; }
+#col-sunday-hours { width: 17%; }
+#col-brunch-menu { width: 8%; }
+#col-photos { width: 8%; }
 #col-toast-bar { width: 8%; }
-#col-notes { width: 22%; }
+#col-notes { width: 19%; }
 #restaurants th { background-color: #ddd; border: 1px solid #ccc; font-weight: bold; line-height: 130%; padding: 3px 4px 2px; vertical-align: middle; }
 #restaurants td { border: 1px solid #ddd; line-height: 130%; padding: 4px 4px 2px; vertical-align: middle; }
 #restaurants td:nth-child(1) { font-weight: bold; }
@@ -53,7 +54,8 @@ table { border: 1px solid black; margin-bottom: 1em; }
 #restaurants td:nth-child(2),
 #restaurants td:nth-child(3),
 #restaurants td:nth-child(4),
-#restaurants td:nth-child(5) { text-align: center; }
+#restaurants td:nth-child(5),
+#restaurants td:nth-child(6) { text-align: center; }
 
 #table-key { font-weight: bold; margin-bottom: 1.5em; text-align: center; }
 #table-key span+span { margin-left: 15px; }
