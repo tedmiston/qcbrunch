@@ -77,9 +77,42 @@ function checkWhenLastUpdated() {
     //     });
 }
 
+
+// -- Filters --
+
+/**
+ * Hide restaurants that are closed.
+ */
+function hideClosed(duration=0) {
+    $("#restaurants td:first-child").each(function(){
+        if (this.innerHTML.startsWith("<s>")) {
+            $(this.parentElement).hide({ duration });
+        }
+    });
+
+    $("#hideClosedButton").prop("disabled", true);
+    $("#showClosedButton").prop("disabled", false);
+}
+
+/**
+ * Show restaurants that are closed.
+ */
+function showClosed(duration=0) {
+    $("#restaurants td:first-child").each(function(){
+        if (this.innerHTML.startsWith("<s>")) {
+            $(this.parentElement).show({ duration });
+        }
+    });
+
+    $("#showClosedButton").prop("disabled", true);
+    $("#hideClosedButton").prop("disabled", false);
+}
+
+
 /**
  * App entrypoint.
  */
 function init() {
     checkWhenLastUpdated();
+    hideClosed();
 }
