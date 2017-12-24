@@ -87,11 +87,8 @@ function funcClosed(func, duration, hideButtonDisabled, showButtonDisabled) {
     $("#restaurants td:first-child").each(function(){
         const params = { duration };
         if (this.innerHTML.startsWith("<s>")) {
-            if (func === 'hide') {
-                $(this.parentElement).hide(params);
-            } else if (func === 'show') {
-                $(this.parentElement).show(params);
-            }
+            const tr = $(this.parentElement);
+            func === 'hide' ? tr.hide(params) : tr.show(params);
         }
     });
 
