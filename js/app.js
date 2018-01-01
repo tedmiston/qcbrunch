@@ -121,6 +121,7 @@ function addNewBadges() {
 
     // Anything added in the past 30 days is considered new
     const earliestNewDate = new Date();
+    earliestNewDate.setHours(0, 0, 0, 0);
     earliestNewDate.setDate(earliestNewDate.getDate() - DAYS_AGO);
 
     const places = $("#restaurants td:first-child");
