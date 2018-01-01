@@ -110,6 +110,30 @@ function showClosed(duration=0) {
     funcClosed('show', duration, false, true);
 }
 
+/**
+ * Dynamically add an emoji badge to newly added places.
+ *
+ */
+function addNewBadges() {
+    const DAYS_AGO = 60;
+    const badge = '🆕';
+    const defaultAddedDate = '2016-06-19';  // initial commit
+
+    // Anything added in the past 30 days is considered new
+    const earliestNewDate = new Date();
+    earliestNewDate.setDate(earliestNewDate.getDate() - DAYS_AGO);
+
+    const places = $("#restaurants td:first-child");
+    places.each(function(){
+        const tr = $(this.parentElement);
+        const dateAdded = Date.parse(tr.data('dateAdded') || defaultAddedDate);
+        if (dateAdded > earliestNewDate) {
+            this.innerHTML += ' ' + badge;
+        }
+    });
+
+    parseEmojis();
+}
 
 /**
  * App entrypoint.
@@ -117,4 +141,5 @@ function showClosed(duration=0) {
 function init() {
     checkWhenLastUpdated();
     hideClosed();
+    addNewBadges();
 }
