@@ -1,0 +1,9 @@
+{
+  "name": "qcbrunch",
+  "version": "1.0.0",
+  "description": "Breakfast & brunch discovery in Cincinnati",
+  "main": "index.js",
+  "repository": "https://github.com/tedmiston/qcbrunch",
+  "author": "Taylor D. Edmiston <tedmiston@gmail.com>",
+  "license": "MIT"
+}
