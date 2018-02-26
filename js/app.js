@@ -111,15 +111,17 @@ function showClosed(duration=0) {
 }
 
 /**
- * Dynamically add an emoji badge to newly added places.
+ * Dynamically add an emoji badge to newly added or coming soon places.
  *
  */
 function addNewBadges() {
     const DAYS_AGO = 60;
-    const badge = '🆕';
+    const badgeNew = '🆕';
+    const badgeSoon = '🔜';
     const defaultAddedDate = '2016-06-19';  // initial commit
+    const defaultOpenedDate = '2016-06-19';  // initial commit
 
-    // Anything added in the past 30 days is considered new
+    // Anything added in the past DAYS_AGO days is considered new
     const earliestNewDate = new Date();
     earliestNewDate.setHours(0, 0, 0, 0);
     earliestNewDate.setDate(earliestNewDate.getDate() - DAYS_AGO);
@@ -128,8 +130,13 @@ function addNewBadges() {
     places.each(function(){
         const tr = $(this.parentElement);
         const dateAdded = Date.parse(tr.data('dateAdded') || defaultAddedDate);
-        if (dateAdded > earliestNewDate) {
-            this.innerHTML += ' ' + badge;
+        const dateOpened = Date.parse(tr.data('dateOpened') || defaultOpenedDate);
+
+        // Display new badge for p
+        if (dateOpened > dateAdded) {
+            this.innerHTML += ' ' + badgeSoon;
+        } else if (dateAdded > earliestNewDate) {
+            this.innerHTML += ' ' + badgeNew;
         }
     });
 
