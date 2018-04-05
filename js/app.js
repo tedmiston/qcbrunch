@@ -101,6 +101,7 @@ function funcClosed(func, duration, hideButtonDisabled, showButtonDisabled) {
  */
 function hideClosed(duration=0) {
     funcClosed('hide', duration, true, false);
+    analytics.track('Archived Hidden');
 }
 
 /**
