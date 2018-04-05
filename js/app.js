@@ -101,7 +101,9 @@ function funcClosed(func, duration, hideButtonDisabled, showButtonDisabled) {
  */
 function hideClosed(duration=0) {
     funcClosed('hide', duration, true, false);
-    analytics.track('Archived Hidden');
+    analytics.track('Archived Hidden', {
+        duration: duration,
+    });
 }
 
 /**
@@ -109,6 +111,9 @@ function hideClosed(duration=0) {
  */
 function showClosed(duration=0) {
     funcClosed('show', duration, false, true);
+    analytics.track('Archived Shown', {
+        duration: duration,
+    });
 }
 
 /**
