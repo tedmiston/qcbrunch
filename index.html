@@ -1,1384 +1,1384 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>QCBrunch - Making Cincinnati a better place through brunch discovery</title>
-    <meta name="description" content="Queen City Brunch – Find the best breakfast and brunch around Cincinnati, Ohio.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>QCBrunch - Making Cincinnati a better place through brunch discovery</title>
+  <meta name="description" content="Queen City Brunch – Find the best breakfast and brunch around Cincinnati, Ohio.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- favicon etc -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#99aab4">
-    <meta name="apple-mobile-web-app-title" content="QCBrunch">
-    <meta name="application-name" content="QCBrunch">
-    <meta name="theme-color" content="#ffffff">
+  <!-- favicon etc -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#99aab4">
+  <meta name="apple-mobile-web-app-title" content="QCBrunch">
+  <meta name="application-name" content="QCBrunch">
+  <meta name="theme-color" content="#ffffff">
 
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
+  <link href="css/reset.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
 
-    <!-- Astronomer (analytics.js) -->
-    <script>
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Astronomer snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.astronomer.io/analytics.js/v1/"+t+"/"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
-      analytics.load("bHH7hcK25FRRwGeQwgPNQ");
-      analytics.page()
-    }}();
-    </script>
+  <!-- Astronomer (analytics.js) -->
+  <script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Astronomer snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.astronomer.io/analytics.js/v1/"+t+"/"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load("bHH7hcK25FRRwGeQwgPNQ");
+    analytics.page()
+  }}();
+  </script>
 </head>
 <body>
-    <div id="wrapper">
-        <div id="header">
-            <h1><span id="crown">👑</span>QCBrunch<span id="fork">🍴</span></h1>
-            <p id="headline">Discover the best breakfast and brunch restaurants in Cincinnati, Ohio</p>
-        </div>
-
-        <h2>Special Events</h2>
-        <p id="events-empty">Check back later for more events.</p>
-        <!--
-        <table id="events">
-            <colgroup>
-                <col id="col-events-date">
-                <col id="col-events-title">
-                <col id="col-events-notes">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Event</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr id="feb-10-lils-bagels">
-                    <td>Fri Feb 10 <span>8am</span></td>
-                    <td><a href="https://www.instagram.com/p/BQQgtPtlqfe/" target="_blank" rel="noopener">Bagels, Brews, and Booch: Lil's Bagels at Streetside Brewery</a></td>
-                    <td>Starts at 8am. Featuring hot coffee, cold brew, and kombucha.</td>
-                </tr>
-                <tr id="feb-11-gadabout-doughnuts">
-                    <td>Sat Feb 11 <span>9am–11:30am</span></td>
-                    <td><a href="https://www.facebook.com/BrickCoffeeCo/photos/a.636924333134384.1073741827.631484013678416/723156201177863/?type=1&theater" target="_blank" rel="noopener">Gadabout Doughnuts at Brick Coffee Company pop-up</a></td>
-                    <td>Come early! They will sell out.</td>
-                </tr>
-                <tr id="sep-17-mecca-brunch">
-                    <td>Sun Sep 17 <span>12pm–4pm</span></td>
-                    <td><a href="https://www.facebook.com/events/346224875827357/" target="_blank" rel="noopener">Mecca Brunch</a></td>
-                    <td>New brunch menu at the food cart.</td>
-                </tr>
-            </tbody>
-        </table>
-        -->
-
-        <div id="brunch-map">
-            <h2>🗺 The Brunch Map 🗺</h2>
-            <p><em>QCBrunch on Google Maps</em></p>
-            <p><a href="https://drive.google.com/open?id=1q1ikNFAU1WKUtkeGjK2mTaq6dvo&usp=sharing" target="_blank" rel="noopener">Open The Brunch Map</a></p>
-        </div>
-
-        <h2>Restaurants</h2>
-
-        <div id="restaurants-filters">
-            <p>
-                Filters:
-                <button id="hideClosedButton" onclick="hideClosed(1000);" title="hide restaurants that are temporarily or permanently closed">hide archived</button>
-                <button id="showClosedButton" onclick="showClosed(1000);" title="show restaurants that are temporarily or permanently closed">show archived</button>
-            </p>
-        </div>
-
-        <table id="restaurants">
-            <colgroup>
-                <col id="col-place-name">
-                <col id="col-saturday-hours">
-                <col id="col-sunday-hours">
-                <col id="col-brunch-menu">
-                <col id="col-photos">
-                <col id="col-toast-bar">
-                <col id="col-notes">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Place</th>
-                    <th>Saturday Brunch</th>
-                    <th>Sunday Brunch</th>
-                    <th>Brunch Menu</th>
-                    <th>Photos</th>
-                    <th>Artisanal Toast</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr id="27-bar+kitchen" data-date-added="2016-12-10">
-                    <td>27 Bar + Kitchen</td>
-                    <td>10am–3pm</td>
-                    <td>10am–3pm</td>
-                    <td><a href="http://27bar.kitchen/#menu" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/27barkitchen/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="adesso-coffee" data-date-added="2018-04-25" data-date-opened="2018-09-01">
-                    <td>Adesso Coffee</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/adessocoffee/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Anticipated to open <a href="https://www.wcpo.com/news/insider/mercantile-librarys-popular-adesso-coffee-cart-expanding-to-a-brick-and-mortar-site-in-mason" target="_blank" rel="noopener">Sept 2018</a>.</td>
-                </tr>
-                <tr id="aster" data-date-added="2018-02-25" data-date-opened="2018-01-04">
-                    <td>Aster</td>
-                    <td>11am–3pm</td>
-                    <td>11am–3pm</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/aster_onfourth/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Opened <a href="https://www.cincinnati.com/story/entertainment/dining/2018/01/05/sleepy-bee-cafes-bar-opens-downtown-cincinnati/1007532001/" target="_blank" rel="noopener">Jan 2018</a>. Hip &amp; fancy. On the 3rd floor <a href="https://www.citybeat.com/food-drink/eats-feature/media-gallery/20991323/inside-aster-sleepy-bees-new-downtown-bar" target="_blank" rel="noopener">above Sleepy Bee</a>.</td>
-                </tr>
-                <tr id="avril-bleh" data-date-added="2017-03-19">
-                    <td>Avril-Bleh Deli</td>
-                    <td>10am–11am</td>
-                    <td></td>
-                    <td><a href="https://www.facebook.com/pg/Avril-Bleh-Marketplace-and-Deli-239442680077/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/306477807/avril-bleh-meat-market/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Breakfast wrap, sandwich, bowl, platter.</td>
-                </tr>
-                <tr id="b-a-street-kitchen" data-date-added="2017-04-14">
-                    <td>B &amp; A Street Kitchen</td>
-                    <td>7am–11am</td>
-                    <td>7am–11am</td>
-                    <td><a href="https://www.facebook.com/pg/bastreetkitchen/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/bastreetkitchen/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Bring on the carbs! Serving breakfast, lunch, and dinner during the week too.</td>
-                </tr>
-                <tr id="bistro-grace" data-date-added="2016-11-13">
-                    <td><s>Bistro Grace</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="bloc" data-date-added="2016-11-13">
-                    <td><s>BLOC Coffee Company (Price Hill)</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="blue-jay" data-date-added="2016-09-24">
-                    <td>Blue Jay Restaurant</td>
-                    <td>8am–3:30pm</td>
-                    <td></td>
-                    <td><a href="https://www.zomato.com/cincinnati/blue-jay-cincinnati/menu#tabtop" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/3292419/blue-jay-restaurant/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>On menu, go to page 4.</td>
-                </tr>
-                <tr id="blue-oven" data-date-added="2016-09-24">
-                    <td>Blue Oven Bakery @ Findlay Market</td>
-                    <td>8am–?</td>
-                    <td>10am–?</td>
-                    <td><a href="http://blueovenbakery.com/thefood/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/blueoven/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td>Toast bar.</td>
-                </tr>
-                <tr id="boomtown" data-date-added="2018-02-25" data-date-opened="2018-03-03">
-                    <td>Boomtown Biscuits &amp; Whiskey</td>
-                    <td>9am–10pm</td>
-                    <td>9am–3pm</td>
-                    <td><a href="https://www.boomtownbiscuitsandwhiskey.com/#provisions" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/boomtownbiscuitbar/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Opened <a href="https://www.facebook.com/boomtownbiscuitbar/photos/a.1682580411755683.1073741828.1676330379047353/1960500260630362/?type=3" target="_blank" rel="noopener">March 2018</a>.</td>
-                </tr>
-                <tr id="bottle-and-basket" data-date-added="2016-11-13">
-                    <td><s>Bottle &amp; Basket (OTR)</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Now <a href="https://www.facebook.com/BottleandBasket/posts/1646239058742433" target="_blank" rel="noopener">catering only</a>.</td>
-                </tr>
-                <tr id="brewriver" data-date-added="2016-09-24">
-                    <td>BrewRiver GastroPub</td>
-                    <td></td>
-                    <td>11am–3pm</td>
-                    <td><a href="https://www.brewrivergastropub.com/menu" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/brewrivergastropub/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Scroll to the bottom.</td>
-                </tr>
-                <tr id="bronte-bistro" data-date-added="2016-09-24">
-                    <td>Brontë Bistro</td>
-                    <td>8am–3pm</td>
-                    <td>8am–3pm</td>
-                    <td><a href="http://www.josephbeth.com/Bronte/Images/Rookwood_Lunch.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/2240033/bronte-bistro/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>See menu pages 4–5. Inside Joseph-Beth Booksellers.</td>
-                </tr>
-                <tr id="brown-bear-bakery" data-date-added="2017-07-09">
-                    <td>Brown Bear Bakery 🔥</td>
-                    <td>10am–4pm</td>
-                    <td>10am–4pm</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/brownbearbakery/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Sometimes sells out early! See <a href="https://www.instagram.com/brownbearbakery/" target="_blank" rel="noopener">Instagram</a> for current offerings.</td>
-                </tr>
-                <tr id="brunch-findlay-market" data-date-added="2016-11-13">
-                    <td><s>Brunch @ Findlay Market</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="cake-rack" data-date-added="2016-12-03" data-date-closed="2018-02-20" data-date-closed-source="https://www.facebook.com/Jeannette.CRBakery/posts/2053467931335498" data-date-archived="2018-04-05">
-                    <td><s>Cake Rack</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="catch-a-fire-madtree" data-date-added="2017-12-23">
-                    <td>Catch-a-Fire Cafe @ MadTree</td>
-                    <td>10am–2pm</td>
-                    <td>10am–2pm</td>
-                    <td><a href="http://www.catchafirepizza.com/s/website-menus.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/catchafirepizza/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="che" data-date-added="2016-09-24">
-                    <td>Ché</td> <!-- this one is a little weird because of how "é" sorts; let's treat it as "e" for display purposes -->
-                    <td>11am–3pm</td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://www.checincinnati.com/#!menu/cqj0" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/che_cincinnati/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Click "Brunch" for menu.</td>
-                </tr>
-                <tr id="cheapside" data-date-added="2016-09-24">
-                    <td>Cheapside Cafe</td>
-                    <td>7am–3pm</td>
-                    <td>7am–3pm</td>
-                    <td><a href="http://cheapsidecafe.com/#menu" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/cheapsidecincinnati/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="coffee-emporium-hyde-park" data-date-added="2018-03-22">
-                    <td>Coffee Emporium (Hyde Park)</td>
-                    <td>7am–?</td>
-                    <td>7am–?</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/coffee_emporium/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Waffles on Sunday.</td>
-                </tr>
-                <tr id="coffee-emporium" data-date-added="2016-09-24">
-                    <td>Coffee Emporium (OTR)</td>
-                    <td>7am–?</td>
-                    <td>7am–?</td>
-                    <td><a href="http://static1.squarespace.com/static/52924582e4b03c01cb161408/t/54417d35e4b02f1c0e52d7f4/1413578037896/Coffee+Emporium+Take+Away+Menu.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/coffee_emporium/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Additional items in store beyond the linked menu.</td>
-                </tr>
-                <tr id="collective-cac" data-date-added="2016-11-13">
-                    <td><s>Collective CAC</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="collective-northside" data-date-added="2017-03-05">
-                    <td>Collective Espresso (Northside)</td>
-                    <td>8am–5pm</td>
-                    <td>8am–5pm</td>
-                    <td><a href="http://www.collectiveespresso.com/northside" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/collective_espresso/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Excellent coffee, espresso, housemade pastries, hip.</td>
-                </tr>
-                <tr id="collective-otr" data-date-added="2017-03-05">
-                    <td>Collective Espresso (OTR)</td>
-                    <td>8am–5pm</td>
-                    <td>8am–5pm</td>
-                    <td><a href="http://www.collectiveespresso.com/over-the-rhine" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/collective_espresso/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Excellent coffee, espresso, housemade pastries, cozy.</td>
-                </tr>
-                <tr id="commonwealth-bistro" data-date-added="2016-12-03">
-                    <td>Commonwealth Bistro</td>
-                    <td>10am–2pm</td>
-                    <td>10am–2pm</td>
-                    <td><a href="http://commonwealthbistro.com/s/Brunch-Menu-20161112.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/commonwealthbistro/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Fancy. <a href="https://www.instagram.com/commonwealthbistro/" target="_blank" rel="noopener">Photos</a>.</td>
-                </tr>
-                <tr id="condado" data-date-added="2018-02-25" data-date-opened="2018-04-26">
-                    <td>Condado Tacos (The Banks)</td>
-                    <td>11am–?</td>
-                    <td>11am–?</td>
-                    <td><a href="http://www.condadotacos.com/eat/brunch/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/condadotacos/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Opened <a href="https://www.wcpo.com/news/insider/condado-tacos-to-host-grand-opening-at-the-banks-on-april-26" target="_blank" rel="noopener">April 2018</a>.</td>
-                </tr>
-                <tr id="court-st-lobster-bar" data-date-added="2017-05-20">
-                    <td>Court Street Lobster Bar</td>
-                    <td>10am–2pm</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/p/BUUCvqCFWW4/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/courtstlobster/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Crab and lobster breakfast sandwiches, french toast. Drinks.</td>
-                </tr>
-                <tr id="covington-coffee-co" data-date-added="2016-09-24">
-                    <td>Covington Coffee Co</td>
-                    <td>7am–2pm</td>
-                    <td>7am–2pm</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/covcoffeeco/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/lilsbagels/" target="_blank" rel="noopener">Lil's Bagels</a>, baked goods, waffles. <a href="https://www.instagram.com/covcoffeeco/" target="_blank" rel="noopener">Photos</a>.</td>
-                </tr>
-                <tr id="crown-republic-gastropub" data-date-added="2018-04-25" data-date-opened="2018-07-01">
-                    <td>Crown Republic Gastropub</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/crownrepublicgastropub/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Anticipated opening <a href="https://www.bizjournals.com/cincinnati/news/2018/04/10/exclusive-gastropub-with-bakery-window-opening.html" target="_blank" rel="noopener">June 2018</a>.</td>
-                </tr>
-                <tr id="deans-mediterranean-imports" data-date-added="2017-03-19">
-                    <td>Dean's Mediterranean Imports</td>
-                    <td>7am–6pm</td>
-                    <td>10am–4pm</td>
-                    <td><a href="http://mediterranean-imports.com/catering-and-take-out/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/deansmediterranean/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Pastries &amp; bagels, nice cheeses, yogurt, sandwiches, smoothies. Carry out.</td>
-                </tr>
-                <tr id="deeper-roots" data-date-added="2016-11-13">
-                    <td>Deeper Roots Coffee (Oakley)</td>
-                    <td>8am–?</td>
-                    <td>8am–?</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/drc_oakley/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td><a href="https://www.facebook.com/deeperrootsoakley/photos/a.338629589652811.1073741828.338609626321474/519237178258717/?type=3&amp;theater" target="_blank" rel="noopener">Photos</a>.</td>
-                </tr>
-                <tr id="deeper-roots-findlay" data-date-added="2017-10-21">
-                    <td>Deeper Roots Coffee @ Findlay Market</td>
-                    <td>8am–4pm</td>
-                    <td>8am–4pm</td>
-                    <td><a href="https://www.instagram.com/p/Baooor3jQGh/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/drc_findlay/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td>Opened <a href="https://www.instagram.com/drc_findlay/" target="_blank" rel="noopener">Oct 2017</a>.</td>
-                </tr>
-                <tr id="django" data-date-added="2016-09-24">
-                    <td>Django Western Taco</td>
-                    <td></td>
-                    <td>11am–3pm</td>
-                    <td><a href="https://img1.wsimg.com/blobby/go/66d8f901-4c47-4f53-8c29-5c0f7ab3a391/downloads/1btna5viv_752613.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/djangowesterntaco/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="dunlap-cafe" data-date-added="2016-09-24">
-                    <td>Dunlap Cafe</td>
-                    <td>8am–3pm</td>
-                    <td></td>
-                    <td><a href="https://www.zomato.com/cincinnati/dunlap-cafe-cincinnati/menu#tabtop" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/dunlapcafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="fat-bens-bakery" data-date-added="2018-02-25" data-date-opened="2018-06-01">
-                    <td>Fat Ben's Bakery</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/fatbensbakery/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Expected to open in <a href="https://www.instagram.com/p/BeoKSEpHNOJ/" target="_blank" rel="noopener">June 2018</a>.</td>
-                </tr>
-                <tr id="fifty-west" data-date-added="2016-09-24">
-                    <td>Fifty West Brewing Company</td>
-                    <td></td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://fiftywestbrew.com/food-pairing/sunday-brunch-menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/fiftywestbrew/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>We like the <a href="http://drinkupcincinnati.com/2015/07/29/drunk-brunch-50-west-brewing-company/" target="_blank" rel="noopener">Fifty West brunch review</a> by Drink Up Cincinnati.</td>
-                </tr>
-                <tr id="first-watch-downtown" data-date-added="2016-09-24">
-                    <td>First Watch (Downtown)</td>
-                    <td>7am–2:30pm</td>
-                    <td>7am–2:30pm</td>
-                    <td><a href="http://www.allmenus.com/oh/cincinnati/231236-first-watch/menu/brunch/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/first.watch/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>See both breakfast &amp; brunch menus.</td>
-                </tr>
-                <tr id="five-one-three-bagel-co" data-date-added="2017-07-08">
-                    <td>Five One Three Bagel Co<br><span>(mobile)</span></td>
-                    <td>*</td>
-                    <td>*</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/fiveonethreebagelco/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Check <a href="https://www.facebook.com/fiveonethreebagelco/" target="_blank" rel="noopener">Facebook page</a> for upcoming events and locations. <a href="https://findlaykitchen.org/current-members-five-one-three-bagel-co" target="_blank" rel="noopener">Findlay Kitchen member</a>.</td>
-                </tr>
-                <tr id="forno" data-date-added="2016-09-24">
-                    <td>Forno Osteria+Bar</td>
-                    <td></td>
-                    <td>9am–2pm</td>
-                    <td><a href="http://fornoosteriabar.com/wp-content/uploads/2015/10/FornoBrunch10-11-15.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/fornoosteriabar/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="french-crust-cafe" data-date-added="2016-09-24">
-                    <td>French Crust Cafe</td>
-                    <td>8am–3pm</td>
-                    <td></td>
-                    <td><a href="https://static1.squarespace.com/static/55833ea9e4b06d2f27908a29/t/58d48dace3df28a024a6bb66/1490324912525/All_FCmenus.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/frenchcrustcafebistro/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="gomez" data-date-added="2016-11-13">
-                    <td><s>Gomez Salsa (OTR)</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="gomez-walnut-hills" data-date-added="2017-04-29">
-                    <td>Gomez Salsa Cantina (Walnut Hills)</td>
-                    <td>11am–3pm</td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/gomezsalsa/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Now serving <a href="https://www.instagram.com/p/BTKMIMbjoRa/" target="_blank" rel="noopener">chicken &amp; waffle breakfast turtle</a>!</td>
-                </tr>
-                <tr id="grand-finale" data-date-added="2016-09-24">
-                    <td>Grand Finale</td>
-                    <td></td>
-                    <td>10:30am–2:30pm</td>
-                    <td><a href="http://www.grandfinale.info/brunch.htm" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/19212073/grand-finale-restaurant/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>A loaded brunch buffet and light cocktails.</td>
-                </tr>
-                <tr id="green-dog-cafe" data-date-added="2016-09-24">
-                    <td>Green Dog Cafe</td>
-                    <td>9am–3pm</td>
-                    <td>9am–3pm</td>
-                    <td><a href="http://www.greendogcafe.net/brunch/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/481615/green-dog-cafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="habits-cafe" data-date-added="2016-09-24">
-                    <td>Habits Cafe</td>
-                    <td>9am–2pm</td>
-                    <td>9am–2pm</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/habitscafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td><a href="https://www.facebook.com/habitscafe/photos/a.83224808811.80056.77097578811/10154802438148812/" target="_blank" rel="noopener">Photos</a>.</td>
-                </tr>
-                <tr id="half-day-cafe" data-date-added="2017-12-31">
-                    <td>Half Day Cafe</td>
-                    <td>7am–2pm</td>
-                    <td>9am–2pm</td>
-                    <td><a href="http://halfdaycafe.org/wp-content/uploads/2017/12/Winter-2017-2018-MENU-All-For-Web.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/half_day_cafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="hang-over-easy" data-date-added="2016-09-24">
-                    <td>Hang Over Easy</td>
-                    <td>8am–1:30am</td>
-                    <td>8am–1:30am</td>
-                    <td><a href="http://www.hangovereasycincinnati.com/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/hangovereasycincinnati/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Limited late night menu 10pm–1:30am.</td>
-                </tr>
-                <tr id="hitching-post-hp" data-date-added="2017-05-20">
-                    <td>Hitching Post Hyde Park</td>
-                    <td>7am–2pm</td>
-                    <td>7am–2pm</td>
-                    <td><a href="http://www.hydeparkhitchingpost.com/sunshine-delights/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/7548503/hyde-park-hitching-post/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="hitching-post-kellogg" data-date-added="2017-05-20">
-                    <td>Hitching Post Kellogg</td>
-                    <td>8am–10:30am</td>
-                    <td>8am–10:30am</td>
-                    <td><a href="http://hitchingpostkellogg.com/breakfast.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/15218046/the-hitching-post/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="hotel-covington" data-date-added="2016-11-01">
-                    <td>Hotel Covington</td>
-                    <td>6:30am–2pm</td>
-                    <td>6:30am–2pm</td>
-                    <td><a href="http://hotelcovington.com/dining/brunch/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/hotelcovington/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td>Also see <a href="http://hotelcovington.com/dining/breakfast/" target="_blank" rel="noopener">breakfast menu</a>. Breakfast 6:30am–11am, brunch 11am–2pm. And there's a coffee bar.</td>
-                </tr>
-                <tr id="huit" data-date-added="2016-11-13">
-                    <td><s>Huit</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="jack-casino-buffet" data-date-added="2017-05-20">
-                    <td>JACK Casino - Market District Buffet</td>
-                    <td>11am–2pm</td>
-                    <td>11am–2pm</td>
-                    <td><a href="https://www.jackentertainment.com/cincinnati/restaurants/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/jackcincycasino/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Brunch buffet inside the casino.</td>
-                </tr>
-                <tr id="jack-casino-local-yolk" data-date-added="2017-05-20">
-                    <td>JACK Casino - Local Yolk</td>
-                    <td>4am–10am</td>
-                    <td>4am–10am</td>
-                    <td><a href="https://www.jackentertainment.com/cincinnati/restaurants/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/jackcincycasino/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="kaze" data-date-added="2016-09-24">
-                    <td>Kaze</td>
-                    <td>12pm–?</td>
-                    <td>12pm–?</td>
-                    <td><a href="http://www.kazeotr.com/uploads/1/3/6/0/13606600/brunch_07.12.15_web.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/kazeotr/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="keystone-clifton" data-date-added="2016-09-24">
-                    <td>Keystone (Clifton)</td>
-                    <td>10am–2pm</td>
-                    <td>10am–2pm</td>
-                    <td><a href="http://keystonebar.com/our-menus/brunch-menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/keystonebar/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="keystone-covington" data-date-added="2016-09-24">
-                    <td>Keystone (Covington)</td>
-                    <td>10am–2pm</td>
-                    <td>10am–2pm</td>
-                    <td><a href="http://keystonebar.com/our-menus/brunch-menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/keystonebar/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="keystone-hyde-park" data-date-added="2016-09-24">
-                    <td>Keystone (Hyde Park)</td>
-                    <td>10am–2pm</td>
-                    <td>10am–2pm</td>
-                    <td><a href="http://keystonebar.com/our-menus/brunch-menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/keystonebar/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="kitchen-1883" data-date-added="2018-02-25">
-                    <td>Kitchen 1883</td>
-                    <td>9am–2pm</td>
-                    <td>9am–2pm</td>
-                    <td><a href="https://www.kitchen1883.com/menu/brunch" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/kitchen1883/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>A concept restaurant quietly launched by Kroger in <a href="http://www.businessinsider.com/kroger-just-opened-its-first-restaurant-2017-12" target="_blank" rel="noopener">Dec 2017</a>.</td>
-                </tr>
-                <tr id="kruegers" data-date-added="2016-09-24">
-                    <td>Krueger's Tavern</td>
-                    <td>11am–3pm</td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://docs.thunderdomerestaurants.com/kruegers/brunch-menu.jpg" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/kruegerstavern/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="lacheys" data-date-added="2016-11-01" data-date-closed="2018-02-11">
-                    <td><s>Lachey's</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="ladder-19" data-date-added="2016-09-24">
-                    <td>Ladder 19 🔥</td>
-                    <td>11am–3pm</td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://www.ladder19.com/bar-menu/#firemansbrunch" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/ladder_19/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Bottomless mimosas or bloody marys + a brunch skillet for $19.</td>
-                </tr>
-                <tr id="landlocked-social-house" data-date-added="2017-12-23">
-                    <td>Landlocked Social House</td>
-                    <td>6:30am–?</td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/landlockedsocialhouse/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Pastries &amp; breakfast sandwiches (<a href="https://www.instagram.com/p/Bco-mggladE/" target="_blank" rel="noopener">photo</a>).</td>
-                </tr>
-                <tr id="lils-bagels" data-date-added="2016-09-24">
-                    <td>Lil's Bagels @ Covington Farmers Market</td>
-                    <td>9am–1pm</td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/lilsbagels/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/lilsbagels/" target="_blank" rel="noopener">Photos</a>.</td>
-                </tr>
-                <tr id="log-cabin-inn" data-date-added="2017-03-19">
-                    <td>Log Cabin Inn</td>
-                    <td>?–?</td>
-                    <td>?–?</td>
-                    <td><a href="https://www.zomato.com/cincinnati/log-cabin-inn-covington/menu" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/51041072/the-log-cabin/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Reopened in 2017.</td>
-                </tr>
-                <tr id="lydias-on-ludlow" data-date-added="2016-09-24">
-                    <td>Lydia's on Ludlow</td>
-                    <td>8am–11pm</td>
-                    <td>9am–3pm</td>
-                    <td><a href="http://www.aquariusstar.com/home/menu.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/lydiasonludlow/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Formerly Aquarius Star / Om Eco Café.</td>
-                </tr>
-                <tr id="madison-diner" data-date-added="2016-09-24">
-                    <td>Madison Diner</td>
-                    <td>7:30am–11am</td>
-                    <td>7:30am–11am</td>
-                    <td><a href="http://madisondiner.com/downloads/MadisonDiner_menu_060216.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/6884845/madison-diner/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>The <a href="https://blog.casamatic.com/cincinnati/madisonville/madison-diner/" target="_blank" rel="noopener">secret</a> is out! Inside Madison Bowl 🎳.</td>
-                </tr>
-                <tr id="mainwood-pastry" data-date-added="2018-04-05" data-date-opened="2018-04-04" data-date-opened-source="https://instagram.com/p/BhKKJ1clZqk/">
-                    <td>Mainwood Pastry</td>
-                    <td>7am–?</td>
-                    <td>7am–?</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/mainwoodpastry/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Opened <a href="https://instagram.com/p/BhKKJ1clZqk/" target="_blank" rel="noopener">April 2018</a>. A bakery from the owners of Collective Espresso.</td>
-                </tr>
-                <tr id="maplewood" data-date-added="2016-11-13">
-                    <td>Maplewood</td>
-                    <td>7am–3pm</td>
-                    <td></td>
-                    <td><a href="http://www.maplewoodkitchenandbar.com/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/maplewoodcincy/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td><a href="https://www.facebook.com/MaplewoodKitchen/" target="_blank" rel="noopener">Photos</a>.</td>
-                </tr>
-                <tr id="maribelles" data-date-added="2017-04-14">
-                    <td>Maribelle's Eat + Drink</td>
-                    <td>11am–2pm</td>
-                    <td>11am–2pm</td>
-                    <td><a href="http://www.maribellestavern.com/saturdaysundaybrunch.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/242248997/maribelles-eat-drink/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="martys-waffles" data-date-added="2016-11-13">
-                    <td>Marty's Waffles<br><span>(food truck)</span></td>
-                    <td>*</td>
-                    <td>*</td>
-                    <td><a href="http://www.martyswaffles.com/Menu.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/martyswaffles/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Schedule, location vary. See <a href="https://www.facebook.com/MartysWafflesCincinnati" target="_blank" rel="noopener">Fb</a>, <a href="https://twitter.com/martyswaffles" target="_blank" rel="noopener">Twitter</a>, <a href="http://www.martyswaffles.com/TruckSchedule.html" target="_blank" rel="noopener">calendar</a>.</td>
-                </tr>
-                <tr id="mazunte" data-date-added="2017-01-15">
-                    <td>Mazunte</td>
-                    <td></td>
-                    <td>10am–3pm</td>
-                    <td><a href="http://mazuntetacos.com/wp-content/uploads/2017/01/mazunte-menu-Sunday.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/mazuntetaqueria/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>🙌</td>
-                </tr>
-                <tr id="melt-cac" data-date-added="2017-10-21">
-                    <td>Melt (CAC)</td>
-                    <td>10am–2pm</td>
-                    <td></td>
-                    <td><a href="http://wellmannsbrands.com/melt-eclectic-cafe-cac/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/melteclecticcafecincinnati/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Previously Bottle &amp; Basket CAC.</td>
-                </tr>
-                <tr id="melt" data-date-added="2016-09-24">
-                    <td>Melt (Northside)</td>
-                    <td></td>
-                    <td>10am–2pm</td>
-                    <td><a href="http://wellmannsbrands.com/melt-cincy/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/melteclecticcafecincinnati/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="melt-at-neons" data-date-added="2016-11-13">
-                    <td><s>Melt @ Neons</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="metropole" data-date-added="2016-09-24">
-                    <td>Metropole</td>
-                    <td>7am–2pm</td>
-                    <td>7am–2pm</td>
-                    <td><a href="http://www.metropoleonwalnut.com/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/metropoleonwalnut/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Breakfast menu before 9:30am; brunch menu after. <a href="http://www.cincinnatimagazine.com/dining-reviews/brunch-report-metropole/" target="_blank" rel="noopener">Fancy</a>.</td>
-                </tr>
-                <tr id="motr" data-date-added="2016-09-24">
-                    <td>MOTR</td>
-                    <td></td>
-                    <td>10am–2pm</td>
-                    <td><a href="http://motrpub.com/index.php/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/motrpub/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="mt-lookout-tavern" data-date-added="2017-08-26">
-                    <td>Mt. Lookout Tavern</td>
-                    <td>11am–?</td>
-                    <td>11am–?</td>
-                    <td><a href="http://mtlookouttavern.com/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/mtlookouttavern/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Starting <a href="http://www.wcpo.com/news/insider/mount-lookout-tavern-puts-brunch-on-menu-plans-reveal-of-new-look" target="_blank" rel="noopener">Sept 2, 2017</a>. Breakfast burritos &amp; sandwiches, wings, etc. Fresh mimosas.</td>
-                </tr>
-                <tr id="muse" data-date-added="2018-02-25">
-                    <td>Muse</td>
-                    <td></td>
-                    <td>12pm–3pm</td>
-                    <td><a href="http://www.musemtlookout.com/wp-content/uploads/2018/02/Brunch_no-crops.jpg" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/MuseMtLookout/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td>Hip, fancy, local. Sometimes brunch opens earlier. <a href="http://cincinnatirefined.com/eat-drink/muse-mt-lookout-cincinnati-restaurant-with-locally-sourced-healthy-food" target="_blank" rel="noopener">Photos</a>.</td>
-                </tr>
-                <tr id="nada" data-date-added="2016-09-24">
-                    <td>Nada</td>
-                    <td>10:30am–2:30pm</td>
-                    <td>10:30am–2:30pm</td>
-                    <td><a href="http://eatdrinknada.com/cincinnati/#Menu" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/nadacincy/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Click "Brunch".</td>
-                </tr>
-                <tr id="nation" data-date-added="2016-09-24">
-                    <td>Nation</td>
-                    <td>10am–2pm</td>
-                    <td>10am–2pm</td>
-                    <td><a href="http://www.nationkitchenandbar.com/#brunch-menu-section" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/nationkitchenandbar/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>A hangover cure brunch menu plus bottomless drinks.</td>
-                </tr>
-                <tr id="nectar" data-date-added="2017-01-28">
-                    <td><s>Nectar</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="nicholsons" data-date-added="2017-12-02">
-                    <td>Nicholson's</td>
-                    <td></td>
-                    <td>11am–2pm</td>
-                    <td><a href="http://nicholsonspub.com/menu/sunday-brunch/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/nicholsonspub/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="nsyc" data-date-added="2016-09-24">
-                    <td>Northside Yacht Club</td>
-                    <td>11am–3pm</td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://northsideyachtclub.com/nsyc-weekend-brunch-11am-3pm/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/northside_yacht_club/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="o-pie-o" data-date-added="2016-11-13">
-                    <td>O Pie O</td>
-                    <td></td>
-                    <td>10am–3pm</td>
-                    <td><a href="http://www.opieo.com/menu-1/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/opieobakery/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Scroll to "Brunch Menu". Quiche daily, plus a special menu for Sunday.</td>
-                </tr>
-                <tr id="otr-bagel-bar" data-date-added="2017-06-10">
-                    <td>OTR Bagel Bar</td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/otrbagelbar/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td><a href="http://www.wcpo.com/news/insider/scpa-grad-craved-new-york-bagels-so-now-hes-opening-otr-bagel-bar-at-findlay-market" target="_blank" rel="noopener">Opening 2018</a>. Currently available at popup events — check <a href="https://www.facebook.com/otrbagelbar/" target="_blank" rel="noopener">Facebook page</a>.</td>
-                </tr>
-                <tr id="otr-bagelry" data-date-added="2017-07-09">
-                    <td>OTR Bagelry<br><span>(mobile)</span></td>
-                    <td>*</td>
-                    <td>*</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/otrbagelry/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Check <a href="https://www.otrbagelry.com/events/" target="_blank" rel="noopener">calendar</a> or <a href="https://www.facebook.com/otrbagelry/" target="_blank" rel="noopener">Facebook page</a> for upcoming events. <a href="https://findlaykitchen.org/current-members-otr-bagelry/" target="_blank" rel="noopener">Findlay Kitchen member</a>.</td>
-                </tr>
-                <tr id="oakley-wines" data-date-added="2016-11-13">
-                    <td>Oakley Wines</td>
-                    <td>?</td>
-                    <td>?</td>
-                    <td><a href="https://www.facebook.com/freedrinkinglessons/photos/a.10151495527436343.533604.303163161342/10154170607451343/?type=3&theater" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/oakleywines/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>A great review from <a href="http://www.cincinnatimagazine.com/dining-reviews/oakley-wines-brunch/" target="_blank" rel="noopener">Cincinnati Magazine</a>.</td>
-                </tr>
-                <tr id="ollies-trolley" data-date-added="2016-09-24">
-                    <td>Ollie's Trolley</td>
-                    <td>9am–4pm</td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/explore/locations/479795125738038/ollies-trolley/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>The <a href="https://www.yelp.com/biz_photos/ollies-trolley-cincinnati?select=-rOi6ZuLdeUrLq7xy4j4ww&amp;reviewid=jglmqCRofmFcbVAGFLbwhw" target="_blank" rel="noopener">Breakfast Cup</a> is life-changing.</td>
-                </tr>
-                <tr id="orchids-at-palm-court" data-date-added="2017-03-19">
-                    <td>Orchids at Palm Court</td>
-                    <td>6:30am–11am</td>
-                    <td>6:30am–9:30am, 10:30am–1:30pm</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/explore/locations/2331513/orchids-at-palm-court/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Breakfast &amp; brunch are served at <a href="http://www.orchidsatpalmcourt.com/restaurants.aspx" target="_blank" rel="noopener"><em>The Grille</em></a>. <a href="https://www.cincinnati.com/story/entertainment/dining/2018/02/21/orchids-palm-court-earns-5-diamonds-aaa/358415002/" target="_blank" rel="noopener">AAA 5 diamonds</a>.</td>
-                </tr>
-                <tr id="ottos" data-date-added="2016-11-13">
-                    <td>Otto's</td>
-                    <td>10am–2pm</td>
-                    <td>10am–2pm</td>
-                    <td><a href="https://ottosonmain.com/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/1371591/ottos/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="panino" data-date-added="2018-02-25">
-                    <td>Panino</td>
-                    <td>11:30am–4:30pm</td>
-                    <td>11:30am–4:30pm</td>
-                    <td><a href="https://www.instagram.com/p/BfliZz5n9ur/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/panino.otr/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>So many delicious meats. Also <a href="https://www.instagram.com/p/BfeVom-nVrG/" target="_blank" rel="noopener">brunch drinks</a>.</td>
-                </tr>
-                <tr id="park-and-vine" data-date-added="2016-11-13">
-                    <td><s>Park + Vine</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="pipers-cafe" data-date-added="2017-07-22">
-                    <td>Piper's Cafe</td>
-                    <td>10am–9pm</td>
-                    <td>10am–9pm</td>
-                    <td><a href="http://www.piperscafe.biz/printable-menu.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/267588672/pipers-cafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>All day breakfast featuring local meats and cheeses! Seating is mostly outdoors. Also serves ice cream.</td>
-                </tr>
-                <tr id="pleasantry" data-date-added="2016-11-13">
-                    <td>Pleasantry</td>
-                    <td>9am–2pm</td>
-                    <td>11am–2pm</td>
-                    <td><a href="http://www.pleasantryotr.com" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/pleasantryotr/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td><a href="http://www.aaconnphoto.com/pleasantry-otr-cincinnati-ohio/" target="_blank" rel="noopener">Photos</a>.</td>
-                </tr>
-                <tr id="pontiac" data-date-added="2016-11-13">
-                    <td><s>Pontiac</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="press-on-monmouth" data-date-added="2016-09-24">
-                    <td>Press on Monmouth</td>
-                    <td>8am–3pm</td>
-                    <td></td>
-                    <td><a href="http://pressonmonmouthnky.com/#menu-section" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/pressonmonmouth/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="prvlgd" data-date-added="2017-12-23">
-                    <td>PRVLGD</td>
-                    <td></td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://www.prvlgdcincy.com/#menu-section" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/prvlgdcincy/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="quan-hapa" data-date-added="2016-09-24">
-                    <td>Quan Hapa</td>
-                    <td>11am–3pm</td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://www.quanhapa.com/#menu" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/quanhapa/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="red-feather" data-date-added="2018-02-28">
-                    <td>Red Feather Kitchen</td>
-                    <td></td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://redfeatherkitchen.com/#pg-2040-2" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/redfeatherkitchen/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="redtree" data-date-added="2016-09-24">
-                    <td>Redtree Art Gallery &amp; Coffee Shop</td>
-                    <td>8am–6pm</td>
-                    <td>8am–3pm</td>
-                    <td><a href="http://redtreegallery.net/coffee/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/redtreegallery/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>For menu, click "Food". Breakfast burritos &amp; quiche from <a href="http://www.maribellestavern.com" target="_blank" rel="noopener">Maribelle's</a>.</td>
-                </tr>
-                <tr id="revolution-rotisserie" data-date-added="2017-03-19">
-                    <td>Revolution Rotisserie</td>
-                    <td></td>
-                    <td>10am–3pm</td>
-                    <td><a href="http://revolutionrotisserie.com/brunch/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/revolutionrotisserie/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Featuring bottomless mimosas.</td>
-                </tr>
-                <tr id="sacred-beast" data-date-added="2017-05-06">
-                    <td>Sacred Beast</td>
-                    <td>10:30am–?</td>
-                    <td>10:30am–?</td>
-                    <td><a href="https://www.sacredbeastdiner.com/s/Brunch_0426.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/sacredbeastdiner/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Just a handful of breakfasty offerings, but they all sound really good.</td>
-                </tr>
-                <tr id="senate-blue-ash" data-date-added="2018-01-21">
-                    <td>Senate (Blue Ash)</td>
-                    <td></td>
-                    <td>10am–3pm</td>
-                    <td><a href="http://senateblueash.com/sunday-brunch/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/senatepub/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td></td>
-                </tr>
-                <tr id="sleepy-bee-blue-ash" data-date-added="2018-02-25">
-                    <td>Sleepy Bee Cafe (Blue Ash)</td>
-                    <td>8am–3pm</td>
-                    <td>8am–3pm</td>
-                    <td><a href="http://sleepybeecafe.com/sleepy-bee-cafe-blue-ash/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/sleepybeecafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="sleepy-bee-downtown" data-date-added="2018-02-25" data-date-opened="2018-01-27">
-                    <td>Sleepy Bee Cafe (Downtown)</td>
-                    <td>8am–3pm</td>
-                    <td>8am–3pm</td>
-                    <td><a href="http://sleepybeecafe.com/sleepy-bee-cafe-downtown-cincinnati/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/sleepybeecafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Opened <a href="https://www.facebook.com/sleepybeecafe/photos/a.643350392371214.1073741831.613450872027833/1743139085725667/" target="_blank" rel="noopener">Jan 2018</a>.</td>
-                </tr>
-                <tr id="sleepy-bee-oakley" data-date-added="2016-09-24">
-                    <td>Sleepy Bee Cafe (Oakley) 🔥</td>
-                    <td>8am–3pm</td>
-                    <td>8am–3pm</td>
-                    <td><a href="http://sleepybeecafe.com/sleepy-bee-cafe-oakley/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/sleepybeecafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Wait is usually at least an hour.</td>
-                </tr>
-                <tr id="streetside-brewery" data-date-added="2017-03-19">
-                    <td>Streetside Brewery</td>
-                    <td>8am–11pm</td>
-                    <td>11am–9pm</td>
-                    <td><a href="http://streetsidebrewery.com/streetside-brewery-taproom-menu.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/streetsidebrewery/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Steamed breakfast sandwiches. Also coffee &amp; kombucha.</td>
-                </tr>
-                <tr id="sugar-n-spice" data-date-added="2016-11-13">
-                    <td>Sugar n' Spice</td>
-                    <td>7am–3pm</td>
-                    <td>7am–3pm</td>
-                    <td><a href="http://sugar-n-spice-restaurant.com/wp-content/uploads/2016/01/sugar-n-spice-menu-2016.pdf" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/eatsugarnspice/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="sundry-and-vice" data-date-added="2016-12-03">
-                    <td>Sundry and Vice</td>
-                    <td></td>
-                    <td>12pm–3pm*</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/sundryandvice/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>*Not every week (check <a href="https://www.facebook.com/sundryandvice/" target="_blank" rel="noopener">Facebook</a>). Breakfast by <a href="https://www.facebook.com/BabushkaPierogies" target="_blank" rel="noopener">Babushka Pierogies</a>.</td>
-                </tr>
-                <tr id="sunny-side-brunch" data-date-added="2016-11-01">
-                    <td>Sunny Side Brunch<br><span>(food truck)</span></td>
-                    <td>*</td>
-                    <td>*</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/sunnysidebrunch/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Schedule, location vary. See <a href="https://www.facebook.com/Sunny-Side-Brunch-1729133800652596/" target="_blank" rel="noopener">Facebook</a>, <a href="https://twitter.com/Sunnysidebrunch" target="_blank" rel="noopener">Twitter</a>.</td>
-                </tr>
-                <tr id="symphony-hotel" data-date-added="2017-03-19">
-                    <td>Symphony Hotel</td>
-                    <td></td>
-                    <td>10:30am–2pm</td>
-                    <td><a href="http://www.symphonyhotel.com/cincinnati-restaurant/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/symphonyhotelotr/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>A cozy little hidden gem in OTR.</td>
-                </tr>
-                <tr id="tafts" data-date-added="2016-09-24">
-                    <td>Taft's Ale House</td>
-                    <td></td>
-                    <td>10am–2pm</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/taftsbrewingco/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="taste-of-belgium-clifton" data-date-added="2016-09-24">
-                    <td>Taste of Belgium (Clifton)</td>
-                    <td>8am–11pm</td>
-                    <td>8am–3pm</td>
-                    <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>See both Breakfast and Brunch menus.</td>
-                </tr>
-                <tr id="taste-of-belgium-otr" data-date-added="2016-09-24">
-                    <td>Taste of Belgium (OTR)</td>
-                    <td>8am–11pm</td>
-                    <td>8am–3pm</td>
-                    <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>See both Breakfast and Brunch menus. Breakfast menu until 4:30pm Saturday, 3pm Sunday. Long wait — <a href="http://www.opentable.com/taste-of-belgium-otr-reservations-cincinnati?restref=167995" target="_blank" rel="noopener">make a reservation</a>.</td>
-                </tr>
-                <tr id="taste-of-belgium-rookwood" data-date-added="2016-09-24">
-                    <td>Taste of Belgium (Rookwood)</td>
-                    <td>7am–11pm</td>
-                    <td>7am–3pm</td>
-                    <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>See both Breakfast and Brunch menus.</td>
-                </tr>
-                <tr id="taste-of-belgium-findlay" data-date-added="2016-09-24">
-                    <td>Taste of Belgium Marketplace @ Findlay Market</td>
-                    <td>8am–6pm</td>
-                    <td>10am–4pm</td>
-                    <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Waffles, crepes, waffle sandwiches. Scroll to "Marketplace > Findlay Market" on menu.</td>
-                </tr>
-                <tr id="taste-of-belgium-the-banks" data-date-added="2018-03-22">
-                    <td>Taste of Belgium (The Banks)</td>
-                    <td>8am–11pm</td>
-                    <td>8am–3pm</td>
-                    <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>See both Breakfast and Brunch menus.</td>
-                </tr>
-                <tr id="the-booksellers-on-fountain-square" data-date-added="2017-07-23">
-                    <td>The Booksellers on Fountain Square</td>
-                    <td>9am–?</td>
-                    <td>11am–?</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/explore/locations/147540805/the-booksellers-on-fountain-square/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Breakfast sandwiches, smoothies, espresso.</td>
-                </tr>
-                <tr id="the-comet" data-date-added="2016-09-24">
-                    <td>The Comet</td>
-                    <td></td>
-                    <td>11am–2pm</td>
-                    <td><a href="https://www.facebook.com/10150106138530346/photos/a.10150113465900346.386672.10150106138530346/10157177241130346/?type=3&amp;theater" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/cometbar/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>See <a href="http://drinkupcincinnati.com/2015/10/30/drunk-brunch-the-comet/" target="_blank" rel="noopener">Drink Up Cincinnati review</a> [plus their <a href="http://drinkupcincinnati.com/drunk-brunch-directory/" target="_blank" rel="noopener">brunch directory</a>].</td>
-                </tr>
-                <tr id="the-echo" data-date-added="2017-07-24">
-                    <td>The Echo</td>
-                    <td>6am–3pm</td>
-                    <td>7am–3pm</td>
-                    <td><a href="http://www.echo-hydepark.com/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/363282/the-echo/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="the-globe" data-date-added="2016-11-13">
-                    <td>The Globe</td>
-                    <td></td>
-                    <td>11:30am–2:30pm</td>
-                    <td></td>
-                    <td><a href="https://www.instagram.com/theglobe.covington/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Bagel bar featuring Lil's Bagels. Photos: <a href="https://www.instagram.com/p/BMMC0oQhkJ6/" target="_blank" rel="noopener">[1]</a> <a href="https://www.instagram.com/p/BMMCr_uh2Rq/" target="_blank" rel="noopener">[2]</a>.</td>
-                </tr>
-                <tr id="the-gruff" data-date-added="2017-12-02">
-                    <td>The Gruff</td>
-                    <td>10am–2pm</td>
-                    <td>10am–3pm</td>
-                    <td><a href="http://www.atthegruff.com/brunch.html" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/thegruff/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td></td>
-                </tr>
-                <tr id="the-littlefield" data-date-added="2016-09-24">
-                    <td>The Littlefield</td>
-                    <td></td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://littlefieldns.com/brunch/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/thelittlefieldns/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="tuckers" data-date-added="2017-07-24">
-                    <td>Tucker’s</td>
-                    <td>8am–3pm</td>
-                    <td>8am–2pm</td>
-                    <td><a href="https://www.facebook.com/TuckersRestaurantOTR/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/explore/locations/12498327/tuckers-restaurant/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td>Since <a href="https://gettinmycityon.wordpress.com/2016/10/14/a-poem-for-tuckers-since-1946/" target="_blank" rel="noopener">1946</a>.</td>
-                </tr>
-                <tr id="tuckers-on-13th" data-date-added="2016-11-13">
-                    <td><s>Tucker’s on 13th</s></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="urbana-cafe" data-date-added="2016-09-24">
-                    <td>Urbana Cafe</td>
-                    <td>8am–5pm</td>
-                    <td>8am–5pm</td>
-                    <td><a href="http://www.urbana-cafe.com/#snacks-section" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/urbanacafe/" target="_blank" rel="noopener">📷</a></td>
-                    <td>🍞</td>
-                    <td>Toast bar until 1pm, and house-made pastries.</td>
-                </tr>
-                <tr id="washington-platform" data-date-added="2016-09-24">
-                    <td>Washington Platform</td>
-                    <td>11am–3pm</td>
-                    <td>11am–3pm</td>
-                    <td><a href="http://www.washingtonplatform.com/#!brunch-saturday-and-sunday/zh7p7" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/washingtonplatform/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="wild-eggs" data-date-added="2017-10-23">
-                    <td>Wild Eggs</td>
-                    <td>7am–3pm</td>
-                    <td>7am–3pm</td>
-                    <td><a href="http://wildeggs.com/menu/" target="_blank" rel="noopener">menu</a></td>
-                    <td><a href="https://www.instagram.com/wildeggsrestaurant/" target="_blank" rel="noopener">📷</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-        <p id="table-key">
-            <span>
-                🔜 coming soon
-            </span>
-            <span>
-                🆕 recently opened or added
-            </span>
-            <span>
-                🔥 popular
-            </span>
-            <span>
-                🍞 artisanal toast
-                <small class="table-key-tooltip">
-                    <a href="http://www.eater.com/2014/5/30/6215971/artisanal-toast-is-taking-the-nation-by-storm" target="_blank" rel="noopener">[wat?]</a>
-                </small>
-            </span>
-            <span>
-                ? = unknown
-            </span>
-        </p>
-        <div id="misc-notes">
-            <hr>
-            <h2>🍩 Honorable mentions ☕</h2>
-            <p>When you don't have time for brunch (maybe reconsider your priorities)… <a href="https://foursquare.com/kicksopenminds/list/cincinnati-top-coffee" target="_blank" rel="noopener">coffee</a>, donuts, and pastries are available at great places around OTR such as Collective Espresso, Holtman's Donuts, Shadeau Breads, and Findlay Market.</p>
-        </div>
-        <div id="footer">
-            <hr>
-            <p>Questions, comments, suggestions?</p>
-            <div style="padding-bottom: 0.75em;">
-                <p>
-                    <a href="https://twitter.com/QCBrunch" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow @QCBrunch</a><br>
-                    <a href="https://twitter.com/intent/tweet?screen_name=QCBrunch" class="twitter-mention-button" data-dnt="true" data-show-count="false">Tweet to @QCBrunch</a>
-                </p>
-                <div class="fb-like" data-href="https://www.facebook.com/qcbrunch" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
-            </div>
-            <hr>
-            <p style="margin-bottom: 0.75em;">
-                <a href="http://blog.tedmiston.com/queen-city-brunch/" target="_blank" rel="noopener">About</a> ·
-                <a href="https://www.facebook.com/qcbrunch" target="_blank" rel="noopener">Facebook</a> ·
-                <a href="https://twitter.com/qcbrunch" target="_blank" rel="noopener">Twitter</a>
-            </p>
-            <p id="updated-date-container">Updated <a href="https://github.com/tedmiston/qcbrunch/graphs/contributors" target="_blank" rel="noopener" id="updated-date">Loading...</a></p>
-            <p style="font-size: 85%; margin-top: 0.75em;">Made in Cincy by
-                <a href="https://twitter.com/kicksopenminds" target="_blank" rel="noopener">@kicksopenminds</a> +
-                <a href="https://twitter.com/AnnaHider" target="_blank" rel="noopener">@annahider</a>
-            </p>
-        </div>
-        <!-- TODO: add filter for what's open now -->
-        <!-- TODO: add the rest from facebook post https://www.facebook.com/tedmiston/posts/10154041107836802 -->
-        <!-- TODO consider adding more fields: Google Maps link, Price, Source, Reviews, Instagram (Restaurant, Location, Hashtag) -->
+  <div id="wrapper">
+    <div id="header">
+      <h1><span id="crown">👑</span>QCBrunch<span id="fork">🍴</span></h1>
+      <p id="headline">Discover the best breakfast and brunch restaurants in Cincinnati, Ohio</p>
     </div>
 
-    <!-- jQuery -->
-    <script defer
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-
-    <!-- Twitter Emoji -->
-    <script defer
-            src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/2.5.0/2/twemoji.min.js"
-            integrity="sha256-t5bxASdQ5tDbKQZy330h/YufCiZg82xG8PqIYzFpwhU="
-            crossorigin="anonymous"></script>
-
-    <!-- QCBrunch core -->
-    <script defer
-            src="js/app.js"
-            onload="init()"></script>
-
-    <!-- Twitter buttons -->
+    <h2>Special Events</h2>
+    <p id="events-empty">Check back later for more events.</p>
     <!--
-    <script>
-    window.twttr = (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-      if (d.getElementById(id)) return t;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
-
-      t._e = [];
-      t.ready = function(f) {
-        t._e.push(f);
-      };
-
-      return t;
-    }(document, "script", "twitter-wjs"));
-    </script>
-    -->
-    <!-- Facebook like button -->
-    <!--
-    <div id="fb-root"></div>
-    <script>
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=271191906687509";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <table id="events">
+      <colgroup>
+        <col id="col-events-date">
+        <col id="col-events-title">
+        <col id="col-events-notes">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Event</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="feb-10-lils-bagels">
+          <td>Fri Feb 10 <span>8am</span></td>
+          <td><a href="https://www.instagram.com/p/BQQgtPtlqfe/" target="_blank" rel="noopener">Bagels, Brews, and Booch: Lil's Bagels at Streetside Brewery</a></td>
+          <td>Starts at 8am. Featuring hot coffee, cold brew, and kombucha.</td>
+        </tr>
+        <tr id="feb-11-gadabout-doughnuts">
+          <td>Sat Feb 11 <span>9am–11:30am</span></td>
+          <td><a href="https://www.facebook.com/BrickCoffeeCo/photos/a.636924333134384.1073741827.631484013678416/723156201177863/?type=1&theater" target="_blank" rel="noopener">Gadabout Doughnuts at Brick Coffee Company pop-up</a></td>
+          <td>Come early! They will sell out.</td>
+        </tr>
+        <tr id="sep-17-mecca-brunch">
+          <td>Sun Sep 17 <span>12pm–4pm</span></td>
+          <td><a href="https://www.facebook.com/events/346224875827357/" target="_blank" rel="noopener">Mecca Brunch</a></td>
+          <td>New brunch menu at the food cart.</td>
+        </tr>
+      </tbody>
+    </table>
     -->
 
-    <!-- Inspectlet -->
-    <script id="inspectletjs">
-    window.__insp = window.__insp || [];
-    __insp.push(['wid', 351603550]);
-    (function() {
-    function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-    setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
-    })();
-    </script>
+    <div id="brunch-map">
+      <h2>🗺 The Brunch Map 🗺</h2>
+      <p><em>QCBrunch on Google Maps</em></p>
+      <p><a href="https://drive.google.com/open?id=1q1ikNFAU1WKUtkeGjK2mTaq6dvo&usp=sharing" target="_blank" rel="noopener">Open The Brunch Map</a></p>
+    </div>
 
-    <!-- W3Counter -->
-    <script async
-            data-cfasync="true"
-            src="https://www.w3counter.com/tracker.js?id=107010"></script>
+    <h2>Restaurants</h2>
+
+    <div id="restaurants-filters">
+      <p>
+        Filters:
+        <button id="hideClosedButton" onclick="hideClosed(1000);" title="hide restaurants that are temporarily or permanently closed">hide archived</button>
+        <button id="showClosedButton" onclick="showClosed(1000);" title="show restaurants that are temporarily or permanently closed">show archived</button>
+      </p>
+    </div>
+
+    <table id="restaurants">
+      <colgroup>
+        <col id="col-place-name">
+        <col id="col-saturday-hours">
+        <col id="col-sunday-hours">
+        <col id="col-brunch-menu">
+        <col id="col-photos">
+        <col id="col-toast-bar">
+        <col id="col-notes">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Place</th>
+          <th>Saturday Brunch</th>
+          <th>Sunday Brunch</th>
+          <th>Brunch Menu</th>
+          <th>Photos</th>
+          <th>Artisanal Toast</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="27-bar+kitchen" data-date-added="2016-12-10">
+          <td>27 Bar + Kitchen</td>
+          <td>10am–3pm</td>
+          <td>10am–3pm</td>
+          <td><a href="http://27bar.kitchen/#menu" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/27barkitchen/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="adesso-coffee" data-date-added="2018-04-25" data-date-opened="2018-09-01">
+          <td>Adesso Coffee</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/adessocoffee/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Anticipated to open <a href="https://www.wcpo.com/news/insider/mercantile-librarys-popular-adesso-coffee-cart-expanding-to-a-brick-and-mortar-site-in-mason" target="_blank" rel="noopener">Sept 2018</a>.</td>
+        </tr>
+        <tr id="aster" data-date-added="2018-02-25" data-date-opened="2018-01-04">
+          <td>Aster</td>
+          <td>11am–3pm</td>
+          <td>11am–3pm</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/aster_onfourth/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Opened <a href="https://www.cincinnati.com/story/entertainment/dining/2018/01/05/sleepy-bee-cafes-bar-opens-downtown-cincinnati/1007532001/" target="_blank" rel="noopener">Jan 2018</a>. Hip &amp; fancy. On the 3rd floor <a href="https://www.citybeat.com/food-drink/eats-feature/media-gallery/20991323/inside-aster-sleepy-bees-new-downtown-bar" target="_blank" rel="noopener">above Sleepy Bee</a>.</td>
+        </tr>
+        <tr id="avril-bleh" data-date-added="2017-03-19">
+          <td>Avril-Bleh Deli</td>
+          <td>10am–11am</td>
+          <td></td>
+          <td><a href="https://www.facebook.com/pg/Avril-Bleh-Marketplace-and-Deli-239442680077/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/306477807/avril-bleh-meat-market/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Breakfast wrap, sandwich, bowl, platter.</td>
+        </tr>
+        <tr id="b-a-street-kitchen" data-date-added="2017-04-14">
+          <td>B &amp; A Street Kitchen</td>
+          <td>7am–11am</td>
+          <td>7am–11am</td>
+          <td><a href="https://www.facebook.com/pg/bastreetkitchen/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/bastreetkitchen/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Bring on the carbs! Serving breakfast, lunch, and dinner during the week too.</td>
+        </tr>
+        <tr id="bistro-grace" data-date-added="2016-11-13">
+          <td><s>Bistro Grace</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="bloc" data-date-added="2016-11-13">
+          <td><s>BLOC Coffee Company (Price Hill)</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="blue-jay" data-date-added="2016-09-24">
+          <td>Blue Jay Restaurant</td>
+          <td>8am–3:30pm</td>
+          <td></td>
+          <td><a href="https://www.zomato.com/cincinnati/blue-jay-cincinnati/menu#tabtop" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/3292419/blue-jay-restaurant/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>On menu, go to page 4.</td>
+        </tr>
+        <tr id="blue-oven" data-date-added="2016-09-24">
+          <td>Blue Oven Bakery @ Findlay Market</td>
+          <td>8am–?</td>
+          <td>10am–?</td>
+          <td><a href="http://blueovenbakery.com/thefood/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/blueoven/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td>Toast bar.</td>
+        </tr>
+        <tr id="boomtown" data-date-added="2018-02-25" data-date-opened="2018-03-03">
+          <td>Boomtown Biscuits &amp; Whiskey</td>
+          <td>9am–10pm</td>
+          <td>9am–3pm</td>
+          <td><a href="https://www.boomtownbiscuitsandwhiskey.com/#provisions" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/boomtownbiscuitbar/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Opened <a href="https://www.facebook.com/boomtownbiscuitbar/photos/a.1682580411755683.1073741828.1676330379047353/1960500260630362/?type=3" target="_blank" rel="noopener">March 2018</a>.</td>
+        </tr>
+        <tr id="bottle-and-basket" data-date-added="2016-11-13">
+          <td><s>Bottle &amp; Basket (OTR)</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Now <a href="https://www.facebook.com/BottleandBasket/posts/1646239058742433" target="_blank" rel="noopener">catering only</a>.</td>
+        </tr>
+        <tr id="brewriver" data-date-added="2016-09-24">
+          <td>BrewRiver GastroPub</td>
+          <td></td>
+          <td>11am–3pm</td>
+          <td><a href="https://www.brewrivergastropub.com/menu" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/brewrivergastropub/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Scroll to the bottom.</td>
+        </tr>
+        <tr id="bronte-bistro" data-date-added="2016-09-24">
+          <td>Brontë Bistro</td>
+          <td>8am–3pm</td>
+          <td>8am–3pm</td>
+          <td><a href="http://www.josephbeth.com/Bronte/Images/Rookwood_Lunch.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/2240033/bronte-bistro/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>See menu pages 4–5. Inside Joseph-Beth Booksellers.</td>
+        </tr>
+        <tr id="brown-bear-bakery" data-date-added="2017-07-09">
+          <td>Brown Bear Bakery 🔥</td>
+          <td>10am–4pm</td>
+          <td>10am–4pm</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/brownbearbakery/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Sometimes sells out early! See <a href="https://www.instagram.com/brownbearbakery/" target="_blank" rel="noopener">Instagram</a> for current offerings.</td>
+        </tr>
+        <tr id="brunch-findlay-market" data-date-added="2016-11-13">
+          <td><s>Brunch @ Findlay Market</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="cake-rack" data-date-added="2016-12-03" data-date-closed="2018-02-20" data-date-closed-source="https://www.facebook.com/Jeannette.CRBakery/posts/2053467931335498" data-date-archived="2018-04-05">
+          <td><s>Cake Rack</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="catch-a-fire-madtree" data-date-added="2017-12-23">
+          <td>Catch-a-Fire Cafe @ MadTree</td>
+          <td>10am–2pm</td>
+          <td>10am–2pm</td>
+          <td><a href="http://www.catchafirepizza.com/s/website-menus.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/catchafirepizza/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="che" data-date-added="2016-09-24">
+          <td>Ché</td> <!-- this one is a little weird because of how "é" sorts; let's treat it as "e" for display purposes -->
+          <td>11am–3pm</td>
+          <td>11am–3pm</td>
+          <td><a href="http://www.checincinnati.com/#!menu/cqj0" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/che_cincinnati/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Click "Brunch" for menu.</td>
+        </tr>
+        <tr id="cheapside" data-date-added="2016-09-24">
+          <td>Cheapside Cafe</td>
+          <td>7am–3pm</td>
+          <td>7am–3pm</td>
+          <td><a href="http://cheapsidecafe.com/#menu" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/cheapsidecincinnati/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="coffee-emporium-hyde-park" data-date-added="2018-03-22">
+          <td>Coffee Emporium (Hyde Park)</td>
+          <td>7am–?</td>
+          <td>7am–?</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/coffee_emporium/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Waffles on Sunday.</td>
+        </tr>
+        <tr id="coffee-emporium" data-date-added="2016-09-24">
+          <td>Coffee Emporium (OTR)</td>
+          <td>7am–?</td>
+          <td>7am–?</td>
+          <td><a href="http://static1.squarespace.com/static/52924582e4b03c01cb161408/t/54417d35e4b02f1c0e52d7f4/1413578037896/Coffee+Emporium+Take+Away+Menu.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/coffee_emporium/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Additional items in store beyond the linked menu.</td>
+        </tr>
+        <tr id="collective-cac" data-date-added="2016-11-13">
+          <td><s>Collective CAC</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="collective-northside" data-date-added="2017-03-05">
+          <td>Collective Espresso (Northside)</td>
+          <td>8am–5pm</td>
+          <td>8am–5pm</td>
+          <td><a href="http://www.collectiveespresso.com/northside" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/collective_espresso/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Excellent coffee, espresso, housemade pastries, hip.</td>
+        </tr>
+        <tr id="collective-otr" data-date-added="2017-03-05">
+          <td>Collective Espresso (OTR)</td>
+          <td>8am–5pm</td>
+          <td>8am–5pm</td>
+          <td><a href="http://www.collectiveespresso.com/over-the-rhine" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/collective_espresso/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Excellent coffee, espresso, housemade pastries, cozy.</td>
+        </tr>
+        <tr id="commonwealth-bistro" data-date-added="2016-12-03">
+          <td>Commonwealth Bistro</td>
+          <td>10am–2pm</td>
+          <td>10am–2pm</td>
+          <td><a href="http://commonwealthbistro.com/s/Brunch-Menu-20161112.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/commonwealthbistro/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Fancy. <a href="https://www.instagram.com/commonwealthbistro/" target="_blank" rel="noopener">Photos</a>.</td>
+        </tr>
+        <tr id="condado" data-date-added="2018-02-25" data-date-opened="2018-04-26">
+          <td>Condado Tacos (The Banks)</td>
+          <td>11am–?</td>
+          <td>11am–?</td>
+          <td><a href="http://www.condadotacos.com/eat/brunch/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/condadotacos/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Opened <a href="https://www.wcpo.com/news/insider/condado-tacos-to-host-grand-opening-at-the-banks-on-april-26" target="_blank" rel="noopener">April 2018</a>.</td>
+        </tr>
+        <tr id="court-st-lobster-bar" data-date-added="2017-05-20">
+          <td>Court Street Lobster Bar</td>
+          <td>10am–2pm</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/p/BUUCvqCFWW4/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/courtstlobster/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Crab and lobster breakfast sandwiches, french toast. Drinks.</td>
+        </tr>
+        <tr id="covington-coffee-co" data-date-added="2016-09-24">
+          <td>Covington Coffee Co</td>
+          <td>7am–2pm</td>
+          <td>7am–2pm</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/covcoffeeco/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/lilsbagels/" target="_blank" rel="noopener">Lil's Bagels</a>, baked goods, waffles. <a href="https://www.instagram.com/covcoffeeco/" target="_blank" rel="noopener">Photos</a>.</td>
+        </tr>
+        <tr id="crown-republic-gastropub" data-date-added="2018-04-25" data-date-opened="2018-07-01">
+          <td>Crown Republic Gastropub</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/crownrepublicgastropub/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Anticipated opening <a href="https://www.bizjournals.com/cincinnati/news/2018/04/10/exclusive-gastropub-with-bakery-window-opening.html" target="_blank" rel="noopener">June 2018</a>.</td>
+        </tr>
+        <tr id="deans-mediterranean-imports" data-date-added="2017-03-19">
+          <td>Dean's Mediterranean Imports</td>
+          <td>7am–6pm</td>
+          <td>10am–4pm</td>
+          <td><a href="http://mediterranean-imports.com/catering-and-take-out/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/deansmediterranean/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Pastries &amp; bagels, nice cheeses, yogurt, sandwiches, smoothies. Carry out.</td>
+        </tr>
+        <tr id="deeper-roots" data-date-added="2016-11-13">
+          <td>Deeper Roots Coffee (Oakley)</td>
+          <td>8am–?</td>
+          <td>8am–?</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/drc_oakley/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td><a href="https://www.facebook.com/deeperrootsoakley/photos/a.338629589652811.1073741828.338609626321474/519237178258717/?type=3&amp;theater" target="_blank" rel="noopener">Photos</a>.</td>
+        </tr>
+        <tr id="deeper-roots-findlay" data-date-added="2017-10-21">
+          <td>Deeper Roots Coffee @ Findlay Market</td>
+          <td>8am–4pm</td>
+          <td>8am–4pm</td>
+          <td><a href="https://www.instagram.com/p/Baooor3jQGh/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/drc_findlay/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td>Opened <a href="https://www.instagram.com/drc_findlay/" target="_blank" rel="noopener">Oct 2017</a>.</td>
+        </tr>
+        <tr id="django" data-date-added="2016-09-24">
+          <td>Django Western Taco</td>
+          <td></td>
+          <td>11am–3pm</td>
+          <td><a href="https://img1.wsimg.com/blobby/go/66d8f901-4c47-4f53-8c29-5c0f7ab3a391/downloads/1btna5viv_752613.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/djangowesterntaco/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="dunlap-cafe" data-date-added="2016-09-24">
+          <td>Dunlap Cafe</td>
+          <td>8am–3pm</td>
+          <td></td>
+          <td><a href="https://www.zomato.com/cincinnati/dunlap-cafe-cincinnati/menu#tabtop" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/dunlapcafe/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="fat-bens-bakery" data-date-added="2018-02-25" data-date-opened="2018-06-01">
+          <td>Fat Ben's Bakery</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/fatbensbakery/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Expected to open in <a href="https://www.instagram.com/p/BeoKSEpHNOJ/" target="_blank" rel="noopener">June 2018</a>.</td>
+        </tr>
+        <tr id="fifty-west" data-date-added="2016-09-24">
+          <td>Fifty West Brewing Company</td>
+          <td></td>
+          <td>11am–3pm</td>
+          <td><a href="http://fiftywestbrew.com/food-pairing/sunday-brunch-menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/fiftywestbrew/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>We like the <a href="http://drinkupcincinnati.com/2015/07/29/drunk-brunch-50-west-brewing-company/" target="_blank" rel="noopener">Fifty West brunch review</a> by Drink Up Cincinnati.</td>
+        </tr>
+        <tr id="first-watch-downtown" data-date-added="2016-09-24">
+          <td>First Watch (Downtown)</td>
+          <td>7am–2:30pm</td>
+          <td>7am–2:30pm</td>
+          <td><a href="http://www.allmenus.com/oh/cincinnati/231236-first-watch/menu/brunch/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/first.watch/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>See both breakfast &amp; brunch menus.</td>
+        </tr>
+        <tr id="five-one-three-bagel-co" data-date-added="2017-07-08">
+          <td>Five One Three Bagel Co<br><span>(mobile)</span></td>
+          <td>*</td>
+          <td>*</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/fiveonethreebagelco/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Check <a href="https://www.facebook.com/fiveonethreebagelco/" target="_blank" rel="noopener">Facebook page</a> for upcoming events and locations. <a href="https://findlaykitchen.org/current-members-five-one-three-bagel-co" target="_blank" rel="noopener">Findlay Kitchen member</a>.</td>
+        </tr>
+        <tr id="forno" data-date-added="2016-09-24">
+          <td>Forno Osteria+Bar</td>
+          <td></td>
+          <td>9am–2pm</td>
+          <td><a href="http://fornoosteriabar.com/wp-content/uploads/2015/10/FornoBrunch10-11-15.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/fornoosteriabar/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="french-crust-cafe" data-date-added="2016-09-24">
+          <td>French Crust Cafe</td>
+          <td>8am–3pm</td>
+          <td></td>
+          <td><a href="https://static1.squarespace.com/static/55833ea9e4b06d2f27908a29/t/58d48dace3df28a024a6bb66/1490324912525/All_FCmenus.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/frenchcrustcafebistro/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="gomez" data-date-added="2016-11-13">
+          <td><s>Gomez Salsa (OTR)</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="gomez-walnut-hills" data-date-added="2017-04-29">
+          <td>Gomez Salsa Cantina (Walnut Hills)</td>
+          <td>11am–3pm</td>
+          <td></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/gomezsalsa/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Now serving <a href="https://www.instagram.com/p/BTKMIMbjoRa/" target="_blank" rel="noopener">chicken &amp; waffle breakfast turtle</a>!</td>
+        </tr>
+        <tr id="grand-finale" data-date-added="2016-09-24">
+          <td>Grand Finale</td>
+          <td></td>
+          <td>10:30am–2:30pm</td>
+          <td><a href="http://www.grandfinale.info/brunch.htm" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/19212073/grand-finale-restaurant/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>A loaded brunch buffet and light cocktails.</td>
+        </tr>
+        <tr id="green-dog-cafe" data-date-added="2016-09-24">
+          <td>Green Dog Cafe</td>
+          <td>9am–3pm</td>
+          <td>9am–3pm</td>
+          <td><a href="http://www.greendogcafe.net/brunch/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/481615/green-dog-cafe/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="habits-cafe" data-date-added="2016-09-24">
+          <td>Habits Cafe</td>
+          <td>9am–2pm</td>
+          <td>9am–2pm</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/habitscafe/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td><a href="https://www.facebook.com/habitscafe/photos/a.83224808811.80056.77097578811/10154802438148812/" target="_blank" rel="noopener">Photos</a>.</td>
+        </tr>
+        <tr id="half-day-cafe" data-date-added="2017-12-31">
+          <td>Half Day Cafe</td>
+          <td>7am–2pm</td>
+          <td>9am–2pm</td>
+          <td><a href="http://halfdaycafe.org/wp-content/uploads/2017/12/Winter-2017-2018-MENU-All-For-Web.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/half_day_cafe/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="hang-over-easy" data-date-added="2016-09-24">
+          <td>Hang Over Easy</td>
+          <td>8am–1:30am</td>
+          <td>8am–1:30am</td>
+          <td><a href="http://www.hangovereasycincinnati.com/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/hangovereasycincinnati/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Limited late night menu 10pm–1:30am.</td>
+        </tr>
+        <tr id="hitching-post-hp" data-date-added="2017-05-20">
+          <td>Hitching Post Hyde Park</td>
+          <td>7am–2pm</td>
+          <td>7am–2pm</td>
+          <td><a href="http://www.hydeparkhitchingpost.com/sunshine-delights/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/7548503/hyde-park-hitching-post/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="hitching-post-kellogg" data-date-added="2017-05-20">
+          <td>Hitching Post Kellogg</td>
+          <td>8am–10:30am</td>
+          <td>8am–10:30am</td>
+          <td><a href="http://hitchingpostkellogg.com/breakfast.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/15218046/the-hitching-post/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="hotel-covington" data-date-added="2016-11-01">
+          <td>Hotel Covington</td>
+          <td>6:30am–2pm</td>
+          <td>6:30am–2pm</td>
+          <td><a href="http://hotelcovington.com/dining/brunch/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/hotelcovington/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td>Also see <a href="http://hotelcovington.com/dining/breakfast/" target="_blank" rel="noopener">breakfast menu</a>. Breakfast 6:30am–11am, brunch 11am–2pm. And there's a coffee bar.</td>
+        </tr>
+        <tr id="huit" data-date-added="2016-11-13">
+          <td><s>Huit</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="jack-casino-buffet" data-date-added="2017-05-20">
+          <td>JACK Casino - Market District Buffet</td>
+          <td>11am–2pm</td>
+          <td>11am–2pm</td>
+          <td><a href="https://www.jackentertainment.com/cincinnati/restaurants/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/jackcincycasino/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Brunch buffet inside the casino.</td>
+        </tr>
+        <tr id="jack-casino-local-yolk" data-date-added="2017-05-20">
+          <td>JACK Casino - Local Yolk</td>
+          <td>4am–10am</td>
+          <td>4am–10am</td>
+          <td><a href="https://www.jackentertainment.com/cincinnati/restaurants/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/jackcincycasino/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="kaze" data-date-added="2016-09-24">
+          <td>Kaze</td>
+          <td>12pm–?</td>
+          <td>12pm–?</td>
+          <td><a href="http://www.kazeotr.com/uploads/1/3/6/0/13606600/brunch_07.12.15_web.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/kazeotr/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="keystone-clifton" data-date-added="2016-09-24">
+          <td>Keystone (Clifton)</td>
+          <td>10am–2pm</td>
+          <td>10am–2pm</td>
+          <td><a href="http://keystonebar.com/our-menus/brunch-menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/keystonebar/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="keystone-covington" data-date-added="2016-09-24">
+          <td>Keystone (Covington)</td>
+          <td>10am–2pm</td>
+          <td>10am–2pm</td>
+          <td><a href="http://keystonebar.com/our-menus/brunch-menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/keystonebar/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="keystone-hyde-park" data-date-added="2016-09-24">
+          <td>Keystone (Hyde Park)</td>
+          <td>10am–2pm</td>
+          <td>10am–2pm</td>
+          <td><a href="http://keystonebar.com/our-menus/brunch-menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/keystonebar/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="kitchen-1883" data-date-added="2018-02-25">
+          <td>Kitchen 1883</td>
+          <td>9am–2pm</td>
+          <td>9am–2pm</td>
+          <td><a href="https://www.kitchen1883.com/menu/brunch" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/kitchen1883/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>A concept restaurant quietly launched by Kroger in <a href="http://www.businessinsider.com/kroger-just-opened-its-first-restaurant-2017-12" target="_blank" rel="noopener">Dec 2017</a>.</td>
+        </tr>
+        <tr id="kruegers" data-date-added="2016-09-24">
+          <td>Krueger's Tavern</td>
+          <td>11am–3pm</td>
+          <td>11am–3pm</td>
+          <td><a href="http://docs.thunderdomerestaurants.com/kruegers/brunch-menu.jpg" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/kruegerstavern/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="lacheys" data-date-added="2016-11-01" data-date-closed="2018-02-11">
+          <td><s>Lachey's</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="ladder-19" data-date-added="2016-09-24">
+          <td>Ladder 19 🔥</td>
+          <td>11am–3pm</td>
+          <td>11am–3pm</td>
+          <td><a href="http://www.ladder19.com/bar-menu/#firemansbrunch" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/ladder_19/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Bottomless mimosas or bloody marys + a brunch skillet for $19.</td>
+        </tr>
+        <tr id="landlocked-social-house" data-date-added="2017-12-23">
+          <td>Landlocked Social House</td>
+          <td>6:30am–?</td>
+          <td></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/landlockedsocialhouse/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Pastries &amp; breakfast sandwiches (<a href="https://www.instagram.com/p/Bco-mggladE/" target="_blank" rel="noopener">photo</a>).</td>
+        </tr>
+        <tr id="lils-bagels" data-date-added="2016-09-24">
+          <td>Lil's Bagels @ Covington Farmers Market</td>
+          <td>9am–1pm</td>
+          <td></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/lilsbagels/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/lilsbagels/" target="_blank" rel="noopener">Photos</a>.</td>
+        </tr>
+        <tr id="log-cabin-inn" data-date-added="2017-03-19">
+          <td>Log Cabin Inn</td>
+          <td>?–?</td>
+          <td>?–?</td>
+          <td><a href="https://www.zomato.com/cincinnati/log-cabin-inn-covington/menu" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/51041072/the-log-cabin/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Reopened in 2017.</td>
+        </tr>
+        <tr id="lydias-on-ludlow" data-date-added="2016-09-24">
+          <td>Lydia's on Ludlow</td>
+          <td>8am–11pm</td>
+          <td>9am–3pm</td>
+          <td><a href="http://www.aquariusstar.com/home/menu.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/lydiasonludlow/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Formerly Aquarius Star / Om Eco Café.</td>
+        </tr>
+        <tr id="madison-diner" data-date-added="2016-09-24">
+          <td>Madison Diner</td>
+          <td>7:30am–11am</td>
+          <td>7:30am–11am</td>
+          <td><a href="http://madisondiner.com/downloads/MadisonDiner_menu_060216.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/6884845/madison-diner/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>The <a href="https://blog.casamatic.com/cincinnati/madisonville/madison-diner/" target="_blank" rel="noopener">secret</a> is out! Inside Madison Bowl 🎳.</td>
+        </tr>
+        <tr id="mainwood-pastry" data-date-added="2018-04-05" data-date-opened="2018-04-04" data-date-opened-source="https://instagram.com/p/BhKKJ1clZqk/">
+          <td>Mainwood Pastry</td>
+          <td>7am–?</td>
+          <td>7am–?</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/mainwoodpastry/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Opened <a href="https://instagram.com/p/BhKKJ1clZqk/" target="_blank" rel="noopener">April 2018</a>. A bakery from the owners of Collective Espresso.</td>
+        </tr>
+        <tr id="maplewood" data-date-added="2016-11-13">
+          <td>Maplewood</td>
+          <td>7am–3pm</td>
+          <td></td>
+          <td><a href="http://www.maplewoodkitchenandbar.com/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/maplewoodcincy/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td><a href="https://www.facebook.com/MaplewoodKitchen/" target="_blank" rel="noopener">Photos</a>.</td>
+        </tr>
+        <tr id="maribelles" data-date-added="2017-04-14">
+          <td>Maribelle's Eat + Drink</td>
+          <td>11am–2pm</td>
+          <td>11am–2pm</td>
+          <td><a href="http://www.maribellestavern.com/saturdaysundaybrunch.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/242248997/maribelles-eat-drink/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="martys-waffles" data-date-added="2016-11-13">
+          <td>Marty's Waffles<br><span>(food truck)</span></td>
+          <td>*</td>
+          <td>*</td>
+          <td><a href="http://www.martyswaffles.com/Menu.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/martyswaffles/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Schedule, location vary. See <a href="https://www.facebook.com/MartysWafflesCincinnati" target="_blank" rel="noopener">Fb</a>, <a href="https://twitter.com/martyswaffles" target="_blank" rel="noopener">Twitter</a>, <a href="http://www.martyswaffles.com/TruckSchedule.html" target="_blank" rel="noopener">calendar</a>.</td>
+        </tr>
+        <tr id="mazunte" data-date-added="2017-01-15">
+          <td>Mazunte</td>
+          <td></td>
+          <td>10am–3pm</td>
+          <td><a href="http://mazuntetacos.com/wp-content/uploads/2017/01/mazunte-menu-Sunday.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/mazuntetaqueria/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>🙌</td>
+        </tr>
+        <tr id="melt-cac" data-date-added="2017-10-21">
+          <td>Melt (CAC)</td>
+          <td>10am–2pm</td>
+          <td></td>
+          <td><a href="http://wellmannsbrands.com/melt-eclectic-cafe-cac/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/melteclecticcafecincinnati/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Previously Bottle &amp; Basket CAC.</td>
+        </tr>
+        <tr id="melt" data-date-added="2016-09-24">
+          <td>Melt (Northside)</td>
+          <td></td>
+          <td>10am–2pm</td>
+          <td><a href="http://wellmannsbrands.com/melt-cincy/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/melteclecticcafecincinnati/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="melt-at-neons" data-date-added="2016-11-13">
+          <td><s>Melt @ Neons</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="metropole" data-date-added="2016-09-24">
+          <td>Metropole</td>
+          <td>7am–2pm</td>
+          <td>7am–2pm</td>
+          <td><a href="http://www.metropoleonwalnut.com/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/metropoleonwalnut/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Breakfast menu before 9:30am; brunch menu after. <a href="http://www.cincinnatimagazine.com/dining-reviews/brunch-report-metropole/" target="_blank" rel="noopener">Fancy</a>.</td>
+        </tr>
+        <tr id="motr" data-date-added="2016-09-24">
+          <td>MOTR</td>
+          <td></td>
+          <td>10am–2pm</td>
+          <td><a href="http://motrpub.com/index.php/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/motrpub/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="mt-lookout-tavern" data-date-added="2017-08-26">
+          <td>Mt. Lookout Tavern</td>
+          <td>11am–?</td>
+          <td>11am–?</td>
+          <td><a href="http://mtlookouttavern.com/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/mtlookouttavern/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Starting <a href="http://www.wcpo.com/news/insider/mount-lookout-tavern-puts-brunch-on-menu-plans-reveal-of-new-look" target="_blank" rel="noopener">Sept 2, 2017</a>. Breakfast burritos &amp; sandwiches, wings, etc. Fresh mimosas.</td>
+        </tr>
+        <tr id="muse" data-date-added="2018-02-25">
+          <td>Muse</td>
+          <td></td>
+          <td>12pm–3pm</td>
+          <td><a href="http://www.musemtlookout.com/wp-content/uploads/2018/02/Brunch_no-crops.jpg" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/MuseMtLookout/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td>Hip, fancy, local. Sometimes brunch opens earlier. <a href="http://cincinnatirefined.com/eat-drink/muse-mt-lookout-cincinnati-restaurant-with-locally-sourced-healthy-food" target="_blank" rel="noopener">Photos</a>.</td>
+        </tr>
+        <tr id="nada" data-date-added="2016-09-24">
+          <td>Nada</td>
+          <td>10:30am–2:30pm</td>
+          <td>10:30am–2:30pm</td>
+          <td><a href="http://eatdrinknada.com/cincinnati/#Menu" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/nadacincy/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Click "Brunch".</td>
+        </tr>
+        <tr id="nation" data-date-added="2016-09-24">
+          <td>Nation</td>
+          <td>10am–2pm</td>
+          <td>10am–2pm</td>
+          <td><a href="http://www.nationkitchenandbar.com/#brunch-menu-section" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/nationkitchenandbar/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>A hangover cure brunch menu plus bottomless drinks.</td>
+        </tr>
+        <tr id="nectar" data-date-added="2017-01-28">
+          <td><s>Nectar</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="nicholsons" data-date-added="2017-12-02">
+          <td>Nicholson's</td>
+          <td></td>
+          <td>11am–2pm</td>
+          <td><a href="http://nicholsonspub.com/menu/sunday-brunch/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/nicholsonspub/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="nsyc" data-date-added="2016-09-24">
+          <td>Northside Yacht Club</td>
+          <td>11am–3pm</td>
+          <td>11am–3pm</td>
+          <td><a href="http://northsideyachtclub.com/nsyc-weekend-brunch-11am-3pm/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/northside_yacht_club/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="o-pie-o" data-date-added="2016-11-13">
+          <td>O Pie O</td>
+          <td></td>
+          <td>10am–3pm</td>
+          <td><a href="http://www.opieo.com/menu-1/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/opieobakery/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Scroll to "Brunch Menu". Quiche daily, plus a special menu for Sunday.</td>
+        </tr>
+        <tr id="otr-bagel-bar" data-date-added="2017-06-10">
+          <td>OTR Bagel Bar</td>
+          <td></td>
+          <td></td>
+          <td><a href="" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/otrbagelbar/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td><a href="http://www.wcpo.com/news/insider/scpa-grad-craved-new-york-bagels-so-now-hes-opening-otr-bagel-bar-at-findlay-market" target="_blank" rel="noopener">Opening 2018</a>. Currently available at popup events — check <a href="https://www.facebook.com/otrbagelbar/" target="_blank" rel="noopener">Facebook page</a>.</td>
+        </tr>
+        <tr id="otr-bagelry" data-date-added="2017-07-09">
+          <td>OTR Bagelry<br><span>(mobile)</span></td>
+          <td>*</td>
+          <td>*</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/otrbagelry/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Check <a href="https://www.otrbagelry.com/events/" target="_blank" rel="noopener">calendar</a> or <a href="https://www.facebook.com/otrbagelry/" target="_blank" rel="noopener">Facebook page</a> for upcoming events. <a href="https://findlaykitchen.org/current-members-otr-bagelry/" target="_blank" rel="noopener">Findlay Kitchen member</a>.</td>
+        </tr>
+        <tr id="oakley-wines" data-date-added="2016-11-13">
+          <td>Oakley Wines</td>
+          <td>?</td>
+          <td>?</td>
+          <td><a href="https://www.facebook.com/freedrinkinglessons/photos/a.10151495527436343.533604.303163161342/10154170607451343/?type=3&theater" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/oakleywines/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>A great review from <a href="http://www.cincinnatimagazine.com/dining-reviews/oakley-wines-brunch/" target="_blank" rel="noopener">Cincinnati Magazine</a>.</td>
+        </tr>
+        <tr id="ollies-trolley" data-date-added="2016-09-24">
+          <td>Ollie's Trolley</td>
+          <td>9am–4pm</td>
+          <td></td>
+          <td></td>
+          <td><a href="https://www.instagram.com/explore/locations/479795125738038/ollies-trolley/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>The <a href="https://www.yelp.com/biz_photos/ollies-trolley-cincinnati?select=-rOi6ZuLdeUrLq7xy4j4ww&amp;reviewid=jglmqCRofmFcbVAGFLbwhw" target="_blank" rel="noopener">Breakfast Cup</a> is life-changing.</td>
+        </tr>
+        <tr id="orchids-at-palm-court" data-date-added="2017-03-19">
+          <td>Orchids at Palm Court</td>
+          <td>6:30am–11am</td>
+          <td>6:30am–9:30am, 10:30am–1:30pm</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/explore/locations/2331513/orchids-at-palm-court/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Breakfast &amp; brunch are served at <a href="http://www.orchidsatpalmcourt.com/restaurants.aspx" target="_blank" rel="noopener"><em>The Grille</em></a>. <a href="https://www.cincinnati.com/story/entertainment/dining/2018/02/21/orchids-palm-court-earns-5-diamonds-aaa/358415002/" target="_blank" rel="noopener">AAA 5 diamonds</a>.</td>
+        </tr>
+        <tr id="ottos" data-date-added="2016-11-13">
+          <td>Otto's</td>
+          <td>10am–2pm</td>
+          <td>10am–2pm</td>
+          <td><a href="https://ottosonmain.com/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/1371591/ottos/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="panino" data-date-added="2018-02-25">
+          <td>Panino</td>
+          <td>11:30am–4:30pm</td>
+          <td>11:30am–4:30pm</td>
+          <td><a href="https://www.instagram.com/p/BfliZz5n9ur/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/panino.otr/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>So many delicious meats. Also <a href="https://www.instagram.com/p/BfeVom-nVrG/" target="_blank" rel="noopener">brunch drinks</a>.</td>
+        </tr>
+        <tr id="park-and-vine" data-date-added="2016-11-13">
+          <td><s>Park + Vine</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="pipers-cafe" data-date-added="2017-07-22">
+          <td>Piper's Cafe</td>
+          <td>10am–9pm</td>
+          <td>10am–9pm</td>
+          <td><a href="http://www.piperscafe.biz/printable-menu.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/267588672/pipers-cafe/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>All day breakfast featuring local meats and cheeses! Seating is mostly outdoors. Also serves ice cream.</td>
+        </tr>
+        <tr id="pleasantry" data-date-added="2016-11-13">
+          <td>Pleasantry</td>
+          <td>9am–2pm</td>
+          <td>11am–2pm</td>
+          <td><a href="http://www.pleasantryotr.com" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/pleasantryotr/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td><a href="http://www.aaconnphoto.com/pleasantry-otr-cincinnati-ohio/" target="_blank" rel="noopener">Photos</a>.</td>
+        </tr>
+        <tr id="pontiac" data-date-added="2016-11-13">
+          <td><s>Pontiac</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="press-on-monmouth" data-date-added="2016-09-24">
+          <td>Press on Monmouth</td>
+          <td>8am–3pm</td>
+          <td></td>
+          <td><a href="http://pressonmonmouthnky.com/#menu-section" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/pressonmonmouth/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="prvlgd" data-date-added="2017-12-23">
+          <td>PRVLGD</td>
+          <td></td>
+          <td>11am–3pm</td>
+          <td><a href="http://www.prvlgdcincy.com/#menu-section" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/prvlgdcincy/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="quan-hapa" data-date-added="2016-09-24">
+          <td>Quan Hapa</td>
+          <td>11am–3pm</td>
+          <td>11am–3pm</td>
+          <td><a href="http://www.quanhapa.com/#menu" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/quanhapa/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="red-feather" data-date-added="2018-02-28">
+          <td>Red Feather Kitchen</td>
+          <td></td>
+          <td>11am–3pm</td>
+          <td><a href="http://redfeatherkitchen.com/#pg-2040-2" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/redfeatherkitchen/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="redtree" data-date-added="2016-09-24">
+          <td>Redtree Art Gallery &amp; Coffee Shop</td>
+          <td>8am–6pm</td>
+          <td>8am–3pm</td>
+          <td><a href="http://redtreegallery.net/coffee/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/redtreegallery/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>For menu, click "Food". Breakfast burritos &amp; quiche from <a href="http://www.maribellestavern.com" target="_blank" rel="noopener">Maribelle's</a>.</td>
+        </tr>
+        <tr id="revolution-rotisserie" data-date-added="2017-03-19">
+          <td>Revolution Rotisserie</td>
+          <td></td>
+          <td>10am–3pm</td>
+          <td><a href="http://revolutionrotisserie.com/brunch/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/revolutionrotisserie/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Featuring bottomless mimosas.</td>
+        </tr>
+        <tr id="sacred-beast" data-date-added="2017-05-06">
+          <td>Sacred Beast</td>
+          <td>10:30am–?</td>
+          <td>10:30am–?</td>
+          <td><a href="https://www.sacredbeastdiner.com/s/Brunch_0426.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/sacredbeastdiner/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Just a handful of breakfasty offerings, but they all sound really good.</td>
+        </tr>
+        <tr id="senate-blue-ash" data-date-added="2018-01-21">
+          <td>Senate (Blue Ash)</td>
+          <td></td>
+          <td>10am–3pm</td>
+          <td><a href="http://senateblueash.com/sunday-brunch/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/senatepub/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td></td>
+        </tr>
+        <tr id="sleepy-bee-blue-ash" data-date-added="2018-02-25">
+          <td>Sleepy Bee Cafe (Blue Ash)</td>
+          <td>8am–3pm</td>
+          <td>8am–3pm</td>
+          <td><a href="http://sleepybeecafe.com/sleepy-bee-cafe-blue-ash/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/sleepybeecafe/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="sleepy-bee-downtown" data-date-added="2018-02-25" data-date-opened="2018-01-27">
+          <td>Sleepy Bee Cafe (Downtown)</td>
+          <td>8am–3pm</td>
+          <td>8am–3pm</td>
+          <td><a href="http://sleepybeecafe.com/sleepy-bee-cafe-downtown-cincinnati/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/sleepybeecafe/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Opened <a href="https://www.facebook.com/sleepybeecafe/photos/a.643350392371214.1073741831.613450872027833/1743139085725667/" target="_blank" rel="noopener">Jan 2018</a>.</td>
+        </tr>
+        <tr id="sleepy-bee-oakley" data-date-added="2016-09-24">
+          <td>Sleepy Bee Cafe (Oakley) 🔥</td>
+          <td>8am–3pm</td>
+          <td>8am–3pm</td>
+          <td><a href="http://sleepybeecafe.com/sleepy-bee-cafe-oakley/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/sleepybeecafe/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Wait is usually at least an hour.</td>
+        </tr>
+        <tr id="streetside-brewery" data-date-added="2017-03-19">
+          <td>Streetside Brewery</td>
+          <td>8am–11pm</td>
+          <td>11am–9pm</td>
+          <td><a href="http://streetsidebrewery.com/streetside-brewery-taproom-menu.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/streetsidebrewery/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Steamed breakfast sandwiches. Also coffee &amp; kombucha.</td>
+        </tr>
+        <tr id="sugar-n-spice" data-date-added="2016-11-13">
+          <td>Sugar n' Spice</td>
+          <td>7am–3pm</td>
+          <td>7am–3pm</td>
+          <td><a href="http://sugar-n-spice-restaurant.com/wp-content/uploads/2016/01/sugar-n-spice-menu-2016.pdf" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/eatsugarnspice/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="sundry-and-vice" data-date-added="2016-12-03">
+          <td>Sundry and Vice</td>
+          <td></td>
+          <td>12pm–3pm*</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/sundryandvice/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>*Not every week (check <a href="https://www.facebook.com/sundryandvice/" target="_blank" rel="noopener">Facebook</a>). Breakfast by <a href="https://www.facebook.com/BabushkaPierogies" target="_blank" rel="noopener">Babushka Pierogies</a>.</td>
+        </tr>
+        <tr id="sunny-side-brunch" data-date-added="2016-11-01">
+          <td>Sunny Side Brunch<br><span>(food truck)</span></td>
+          <td>*</td>
+          <td>*</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/sunnysidebrunch/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Schedule, location vary. See <a href="https://www.facebook.com/Sunny-Side-Brunch-1729133800652596/" target="_blank" rel="noopener">Facebook</a>, <a href="https://twitter.com/Sunnysidebrunch" target="_blank" rel="noopener">Twitter</a>.</td>
+        </tr>
+        <tr id="symphony-hotel" data-date-added="2017-03-19">
+          <td>Symphony Hotel</td>
+          <td></td>
+          <td>10:30am–2pm</td>
+          <td><a href="http://www.symphonyhotel.com/cincinnati-restaurant/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/symphonyhotelotr/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>A cozy little hidden gem in OTR.</td>
+        </tr>
+        <tr id="tafts" data-date-added="2016-09-24">
+          <td>Taft's Ale House</td>
+          <td></td>
+          <td>10am–2pm</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/taftsbrewingco/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="taste-of-belgium-clifton" data-date-added="2016-09-24">
+          <td>Taste of Belgium (Clifton)</td>
+          <td>8am–11pm</td>
+          <td>8am–3pm</td>
+          <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>See both Breakfast and Brunch menus.</td>
+        </tr>
+        <tr id="taste-of-belgium-otr" data-date-added="2016-09-24">
+          <td>Taste of Belgium (OTR)</td>
+          <td>8am–11pm</td>
+          <td>8am–3pm</td>
+          <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>See both Breakfast and Brunch menus. Breakfast menu until 4:30pm Saturday, 3pm Sunday. Long wait — <a href="http://www.opentable.com/taste-of-belgium-otr-reservations-cincinnati?restref=167995" target="_blank" rel="noopener">make a reservation</a>.</td>
+        </tr>
+        <tr id="taste-of-belgium-rookwood" data-date-added="2016-09-24">
+          <td>Taste of Belgium (Rookwood)</td>
+          <td>7am–11pm</td>
+          <td>7am–3pm</td>
+          <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>See both Breakfast and Brunch menus.</td>
+        </tr>
+        <tr id="taste-of-belgium-findlay" data-date-added="2016-09-24">
+          <td>Taste of Belgium Marketplace @ Findlay Market</td>
+          <td>8am–6pm</td>
+          <td>10am–4pm</td>
+          <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Waffles, crepes, waffle sandwiches. Scroll to "Marketplace > Findlay Market" on menu.</td>
+        </tr>
+        <tr id="taste-of-belgium-the-banks" data-date-added="2018-03-22">
+          <td>Taste of Belgium (The Banks)</td>
+          <td>8am–11pm</td>
+          <td>8am–3pm</td>
+          <td><a href="https://authenticwaffle.com/menus.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/tasteofbelgium/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>See both Breakfast and Brunch menus.</td>
+        </tr>
+        <tr id="the-booksellers-on-fountain-square" data-date-added="2017-07-23">
+          <td>The Booksellers on Fountain Square</td>
+          <td>9am–?</td>
+          <td>11am–?</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/explore/locations/147540805/the-booksellers-on-fountain-square/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Breakfast sandwiches, smoothies, espresso.</td>
+        </tr>
+        <tr id="the-comet" data-date-added="2016-09-24">
+          <td>The Comet</td>
+          <td></td>
+          <td>11am–2pm</td>
+          <td><a href="https://www.facebook.com/10150106138530346/photos/a.10150113465900346.386672.10150106138530346/10157177241130346/?type=3&amp;theater" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/cometbar/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>See <a href="http://drinkupcincinnati.com/2015/10/30/drunk-brunch-the-comet/" target="_blank" rel="noopener">Drink Up Cincinnati review</a> [plus their <a href="http://drinkupcincinnati.com/drunk-brunch-directory/" target="_blank" rel="noopener">brunch directory</a>].</td>
+        </tr>
+        <tr id="the-echo" data-date-added="2017-07-24">
+          <td>The Echo</td>
+          <td>6am–3pm</td>
+          <td>7am–3pm</td>
+          <td><a href="http://www.echo-hydepark.com/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/363282/the-echo/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="the-globe" data-date-added="2016-11-13">
+          <td>The Globe</td>
+          <td></td>
+          <td>11:30am–2:30pm</td>
+          <td></td>
+          <td><a href="https://www.instagram.com/theglobe.covington/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Bagel bar featuring Lil's Bagels. Photos: <a href="https://www.instagram.com/p/BMMC0oQhkJ6/" target="_blank" rel="noopener">[1]</a> <a href="https://www.instagram.com/p/BMMCr_uh2Rq/" target="_blank" rel="noopener">[2]</a>.</td>
+        </tr>
+        <tr id="the-gruff" data-date-added="2017-12-02">
+          <td>The Gruff</td>
+          <td>10am–2pm</td>
+          <td>10am–3pm</td>
+          <td><a href="http://www.atthegruff.com/brunch.html" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/thegruff/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td></td>
+        </tr>
+        <tr id="the-littlefield" data-date-added="2016-09-24">
+          <td>The Littlefield</td>
+          <td></td>
+          <td>11am–3pm</td>
+          <td><a href="http://littlefieldns.com/brunch/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/thelittlefieldns/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="tuckers" data-date-added="2017-07-24">
+          <td>Tucker’s</td>
+          <td>8am–3pm</td>
+          <td>8am–2pm</td>
+          <td><a href="https://www.facebook.com/TuckersRestaurantOTR/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/explore/locations/12498327/tuckers-restaurant/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td>Since <a href="https://gettinmycityon.wordpress.com/2016/10/14/a-poem-for-tuckers-since-1946/" target="_blank" rel="noopener">1946</a>.</td>
+        </tr>
+        <tr id="tuckers-on-13th" data-date-added="2016-11-13">
+          <td><s>Tucker’s on 13th</s></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="urbana-cafe" data-date-added="2016-09-24">
+          <td>Urbana Cafe</td>
+          <td>8am–5pm</td>
+          <td>8am–5pm</td>
+          <td><a href="http://www.urbana-cafe.com/#snacks-section" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/urbanacafe/" target="_blank" rel="noopener">📷</a></td>
+          <td>🍞</td>
+          <td>Toast bar until 1pm, and house-made pastries.</td>
+        </tr>
+        <tr id="washington-platform" data-date-added="2016-09-24">
+          <td>Washington Platform</td>
+          <td>11am–3pm</td>
+          <td>11am–3pm</td>
+          <td><a href="http://www.washingtonplatform.com/#!brunch-saturday-and-sunday/zh7p7" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/washingtonplatform/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="wild-eggs" data-date-added="2017-10-23">
+          <td>Wild Eggs</td>
+          <td>7am–3pm</td>
+          <td>7am–3pm</td>
+          <td><a href="http://wildeggs.com/menu/" target="_blank" rel="noopener">menu</a></td>
+          <td><a href="https://www.instagram.com/wildeggsrestaurant/" target="_blank" rel="noopener">📷</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p id="table-key">
+      <span>
+        🔜 coming soon
+      </span>
+      <span>
+        🆕 recently opened or added
+      </span>
+      <span>
+        🔥 popular
+      </span>
+      <span>
+        🍞 artisanal toast
+        <small class="table-key-tooltip">
+          <a href="http://www.eater.com/2014/5/30/6215971/artisanal-toast-is-taking-the-nation-by-storm" target="_blank" rel="noopener">[wat?]</a>
+        </small>
+      </span>
+      <span>
+        ? = unknown
+      </span>
+    </p>
+    <div id="misc-notes">
+      <hr>
+      <h2>🍩 Honorable mentions ☕</h2>
+      <p>When you don't have time for brunch (maybe reconsider your priorities)… <a href="https://foursquare.com/kicksopenminds/list/cincinnati-top-coffee" target="_blank" rel="noopener">coffee</a>, donuts, and pastries are available at great places around OTR such as Collective Espresso, Holtman's Donuts, Shadeau Breads, and Findlay Market.</p>
+    </div>
+    <div id="footer">
+      <hr>
+      <p>Questions, comments, suggestions?</p>
+      <div style="padding-bottom: 0.75em;">
+        <p>
+          <a href="https://twitter.com/QCBrunch" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow @QCBrunch</a><br>
+          <a href="https://twitter.com/intent/tweet?screen_name=QCBrunch" class="twitter-mention-button" data-dnt="true" data-show-count="false">Tweet to @QCBrunch</a>
+        </p>
+        <div class="fb-like" data-href="https://www.facebook.com/qcbrunch" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+      </div>
+      <hr>
+      <p style="margin-bottom: 0.75em;">
+        <a href="http://blog.tedmiston.com/queen-city-brunch/" target="_blank" rel="noopener">About</a> ·
+        <a href="https://www.facebook.com/qcbrunch" target="_blank" rel="noopener">Facebook</a> ·
+        <a href="https://twitter.com/qcbrunch" target="_blank" rel="noopener">Twitter</a>
+      </p>
+      <p id="updated-date-container">Updated <a href="https://github.com/tedmiston/qcbrunch/graphs/contributors" target="_blank" rel="noopener" id="updated-date">Loading...</a></p>
+      <p style="font-size: 85%; margin-top: 0.75em;">Made in Cincy by
+        <a href="https://twitter.com/kicksopenminds" target="_blank" rel="noopener">@kicksopenminds</a> +
+        <a href="https://twitter.com/AnnaHider" target="_blank" rel="noopener">@annahider</a>
+      </p>
+    </div>
+    <!-- TODO: add filter for what's open now -->
+    <!-- TODO: add the rest from facebook post https://www.facebook.com/tedmiston/posts/10154041107836802 -->
+    <!-- TODO consider adding more fields: Google Maps link, Price, Source, Reviews, Instagram (Restaurant, Location, Hashtag) -->
+  </div>
+
+  <!-- jQuery -->
+  <script defer
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+
+  <!-- Twitter Emoji -->
+  <script defer
+          src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/2.5.0/2/twemoji.min.js"
+          integrity="sha256-t5bxASdQ5tDbKQZy330h/YufCiZg82xG8PqIYzFpwhU="
+          crossorigin="anonymous"></script>
+
+  <!-- QCBrunch core -->
+  <script defer
+          src="js/app.js"
+          onload="init()"></script>
+
+  <!-- Twitter buttons -->
+  <!--
+  <script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+    t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));
+  </script>
+  -->
+  <!-- Facebook like button -->
+  <!--
+  <div id="fb-root"></div>
+  <script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=271191906687509";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+  -->
+
+  <!-- Inspectlet -->
+  <script id="inspectletjs">
+  window.__insp = window.__insp || [];
+  __insp.push(['wid', 351603550]);
+  (function() {
+  function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+  setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+  })();
+  </script>
+
+  <!-- W3Counter -->
+  <script async
+          data-cfasync="true"
+          src="https://www.w3counter.com/tracker.js?id=107010"></script>
 </body>
 </html>
