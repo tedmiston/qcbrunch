@@ -2,6 +2,10 @@
 
 QCBrunch is now deployed on Zeit Now.  It was previously hosted on GitHub Pages.
 
+## Add a Place
+
+To add a place, fill out as much info as possible using [TEMPLATE.html](https://github.com/tedmiston/qcbrunch/blob/master/TEMPLATE.html) to match what other listings have already in index.html, then submit as an issue or pull request.
+
 ## Development
 
 To run the site locally:
@@ -16,7 +20,7 @@ To deploy:
 now
 ```
 
-To alias the prod domain to the latest deploy:
+To point prod to the latest deploy:
 
 ```
 now alias
