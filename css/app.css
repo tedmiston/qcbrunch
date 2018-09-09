@@ -43,10 +43,10 @@ table { border: 1px solid black; margin-bottom: 1em; }
 
 #restaurants { margin-top: 0.75em; max-width: 100%; width: 100%; }
 #col-place-name { width: 23%; }
-#col-saturday-hours { width: 17%; }
-#col-sunday-hours { width: 17%; }
+#col-saturday-hours { width: 16%; }
+#col-sunday-hours { width: 16%; }
 #col-brunch-menu { width: 8%; }
-#col-photos { width: 8%; }
+#col-photos { width: 10%; }
 #col-toast-bar { width: 8%; }
 #col-notes { width: 19%; }
 #restaurants th { background-color: #ddd; border: 1px solid #ccc; font-weight: bold; line-height: 130%; padding: 3px 4px 2px; vertical-align: middle; }
