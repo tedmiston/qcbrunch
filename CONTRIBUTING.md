@@ -19,12 +19,8 @@ now
 To alias the prod domain to the latest deploy:
 
 ```
-now alias qcbrunch-fbfjmiyzkx.now.sh qcbrunch.com
+now alias
 ```
-
-(Replace the first URL with the most recently deployed URL.)
-
-TODO: can i get the domain alias stored in now.json?
 
 ## Notes
 
