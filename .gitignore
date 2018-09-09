@@ -1,9 +1,9 @@
 *.sublime-project
 *.sublime-workspace
-.DS_Store
 .cache/
+.DS_Store
 .jekyll-metadata
 .sass-cache
-_site
+_site/
 dist/
 node_modules/
