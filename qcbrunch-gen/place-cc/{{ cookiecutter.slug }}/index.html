@@ -1,4 +1,13 @@
-<div id="{{ cookiecutter.slug }}">
-  <p>{{ cookiecutter.place }}</p>
-  <p>{{ cookiecutter.sunday }}</p>
-</div>
+<tr id="{{ cookiecutter.slug }}" data-date-added="{{ cookiecutter.date_added }}" data-date-opened="{{ cookiecutter.date_opened }}" data-date-opened-source="{{ cookiecutter.date_opened_source }}">
+  <td>{{ cookiecutter.name }} ({{ cookiecutter.neighborhood }})</td>
+  <td>{{ cookiecutter.saturday_open }}–{{ cookiecutter.saturday_close }}</td>
+  <td>{{ cookiecutter.sunday_open }}–{{ cookiecutter.sunday_close }}</td>
+  <td><a href="{{ cookiecutter.menu_url }}" target="_blank" rel="noopener">menu</a></td>
+  <td>
+    <a href="{{ cookiecutter.instagram_account }}" target="_blank" rel="noopener">📷</a>
+    <a href="{{ cookiecutter.instagram_location }}" target="_blank" rel="noopener">📍</a>
+    <a href="{{ cookiecutter.instagram_hashtag }}" target="_blank" rel="noopener">#️⃣</a>
+  </td>
+  <td>{{ cookiecutter.feature_toast_bar }}</td>
+  <td>{{ cookiecutter.notes }}</td>
+</tr>
