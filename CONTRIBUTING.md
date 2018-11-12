@@ -11,7 +11,7 @@ To add a place, fill out as much info as possible using [TEMPLATE.html](https://
 To run the site locally:
 
 ```
-serve
+./run.sh
 ```
 
 To deploy:
@@ -23,7 +23,7 @@ now
 To point prod to the latest deploy:
 
 ```
-now alias
+./deploy.sh
 ```
 
 ## Notes
