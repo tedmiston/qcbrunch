@@ -1,0 +1,24 @@
+{
+  "name": "BLOC Coffee Company",
+  "slug": "bloc",
+  "neighborhood": "Price Hill",
+
+  "saturday_open": "7am",
+  "saturday_close": "4pm",
+  "sunday_open": null,
+  "sunday_close": null,
+
+  "menu_url": null,
+
+  "instagram_account": "https://www.instagram.com/bloccoffeecompany/",
+  "instagram_location": "https://www.instagram.com/explore/locations/530172/bloc-coffee-company/",
+  "instagram_hashtag": "https://www.instagram.com/explore/tags/bloccoffeecompany/",
+
+  "has_toast_bar": false,
+
+  "notes": "Soft re-opened on Oct 8, 2018. <a href=\"http://www.bloccoffeecompany.com/\" target=\"_blank\" rel=\"noopener\">Grand Re-Opening</a> is Oct 27, 2018.",
+
+  "date_added": "2016-11-13",
+  "date_opened": "2018-10-08",
+  "date_opened_source": "https://www.facebook.com/CornerBlocCoffee/posts/10157730344997646"
+}
