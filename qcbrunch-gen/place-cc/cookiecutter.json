@@ -3,10 +3,10 @@
   "slug": "bloc",
   "neighborhood": "Price Hill",
 
-  "saturday_open": "7am",
-  "saturday_close": "4pm",
-  "sunday_open": null,
-  "sunday_close": null,
+  "saturday_start": "7am",
+  "saturday_end": "4pm",
+  "sunday_start": null,
+  "sunday_end": null,
 
   "menu_url": null,
 
