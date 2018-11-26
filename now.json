@@ -1,11 +1,39 @@
 {
   "version": 2,
-  "public": true,
   "alias": [
     "qcbrunch.com",
     "www.qcbrunch.com"
   ],
-  "static": {
-    "trailingSlash": false
-  }
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@now/static"
+    },
+    {
+      "src": "*/*.html",
+      "use": "@now/static"
+    },
+    {
+      "src": "css/*.css",
+      "use": "@now/static"
+    },
+    {
+      "src": "images/*",
+      "use": "@now/static"
+    },
+    {
+      "src": "js/*.js",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/stats",
+      "dest": "/stats.html"
+    }
+  ],
+  "regions": [
+    "all"
+  ],
+  "public": false
 }
