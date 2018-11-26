@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cookiecutter place-cc --output-dir=output
+pipenv run cookiecutter place-cc --output-dir=output
