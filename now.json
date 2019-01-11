@@ -14,11 +14,7 @@
       "use": "@now/static"
     },
     {
-      "src": "css/*.css",
-      "use": "@now/static"
-    },
-    {
-      "src": "images/*",
+      "src": "css/*.css|images/*",
       "use": "@now/static"
     },
     {
