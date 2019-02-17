@@ -12,7 +12,7 @@ action "Deploy" {
 }
 
 action "Master" {
-  uses = "actions/bin/filter@46ffca7632504e61db2d4cb16be1e80f333cb859"
+  uses = "actions/bin/filter@master"
   needs = ["Deploy"]
   args = "branch master"
 }
