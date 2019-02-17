@@ -1,6 +1,9 @@
 workflow "Zeit Now Deploy" {
   on = "push"
-  resolves = ["Alias"]
+  resolves = [
+    "Alias",
+    "Master",
+  ]
 }
 
 action "Deploy" {
@@ -8,9 +11,15 @@ action "Deploy" {
   secrets = ["ZEIT_TOKEN"]
 }
 
+action "Master" {
+  uses = "actions/bin/filter@46ffca7632504e61db2d4cb16be1e80f333cb859"
+  needs = ["Deploy"]
+  args = "branch master"
+}
+
 action "Alias" {
   uses = "actions/zeit-now@master"
-  needs = ["Deploy"]
   args = "alias"
   secrets = ["ZEIT_TOKEN"]
+  needs = ["Master"]
 }
