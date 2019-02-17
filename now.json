@@ -35,5 +35,8 @@
   "regions": [
     "all"
   ],
-  "public": false
+  "public": false,
+  "github": {
+    "enabled": false
+  }
 }
