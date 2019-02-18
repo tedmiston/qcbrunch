@@ -9,7 +9,7 @@ workflow "Zeit Now Deploy" {
 
 action "Validate" {
   uses = "docker://validator/validator"
-  args = "java -jar /vnu.jar $(find . -name '*.html')"
+  args = "find . -name '*.html' | xargs java -jar /vnu.jar"
 }
 
 action "Deploy" {
