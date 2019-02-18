@@ -9,7 +9,7 @@ workflow "Zeit Now Deploy" {
 
 action "Validate" {
   uses = "docker://validator/validator"
-  runs = "ls"
+  args = "java -jar /vnu.jar index.html"
 }
 
 action "Deploy" {
