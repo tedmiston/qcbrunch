@@ -12,7 +12,7 @@ action "Validate HTML" {
 
 action "Validate CSS" {
   uses = "docker://validator/validator:latest"
-  args = "echo TODO"
+  args = "java -jar /vnu.jar --skip-non-css --verbose css/"
 }
 
 action "Deploy" {
