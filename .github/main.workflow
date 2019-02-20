@@ -4,6 +4,7 @@ workflow "Zeit Now Deploy" {
     "Alias",
     "Master",
     "Validate HTML",
+    "Validate CSS",
   ]
 }
 
@@ -12,10 +13,18 @@ action "Validate HTML" {
   args = "java -jar /vnu.jar index.html stats.html"
 }
 
+action "Validate CSS" {
+  uses = "docker://validator/validator"
+  args = "echo TODO"
+}
+
 action "Deploy" {
   uses = "actions/zeit-now@master"
   secrets = ["ZEIT_TOKEN"]
-  needs = ["Validate HTML"]
+  needs = [
+    "Validate HTML",
+    "Validate CSS",
+  ]
 }
 
 action "Master" {
