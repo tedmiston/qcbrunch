@@ -22,6 +22,7 @@ action "Deploy" {
     "Validate HTML",
     "Validate CSS",
   ]
+  args = "deploy"
 }
 
 action "Master" {
