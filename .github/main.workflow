@@ -9,12 +9,12 @@ workflow "Zeit Now Deploy" {
 }
 
 action "Validate HTML" {
-  uses = "docker://validator/validator"
+  uses = "docker://validator/validator:latest"
   args = "java -jar /vnu.jar index.html stats.html"
 }
 
 action "Validate CSS" {
-  uses = "docker://validator/validator"
+  uses = "docker://validator/validator:latest"
   args = "echo TODO"
 }
 
