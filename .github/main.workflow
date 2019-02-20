@@ -2,9 +2,6 @@ workflow "Zeit Now Deploy" {
   on = "push"
   resolves = [
     "Alias",
-    "Master",
-    "Validate HTML",
-    "Validate CSS",
   ]
 }
 
