@@ -7,7 +7,7 @@ workflow "Zeit Now Deploy" {
 
 action "Validate HTML" {
   uses = "docker://validator/validator:latest"
-  args = "java -jar /vnu.jar index.html stats.html"
+  args = "java -jar /vnu.jar --errors-only --skip-non-html --verbose ."
 }
 
 action "Validate CSS" {
