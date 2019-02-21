@@ -16,6 +16,11 @@ action "Validate CSS" {
   args = "java -jar /vnu.jar --skip-non-css --verbose css/"
 }
 
+action "Validate Markdown" {
+  uses = "docker://mivok/markdownlint:latest"
+  args = "."
+}
+
 action "Deploy" {
   uses = "actions/zeit-now@master"
   secrets = ["ZEIT_TOKEN"]
@@ -38,9 +43,4 @@ action "Alias" {
   args = "alias"
   secrets = ["ZEIT_TOKEN"]
   needs = ["Master"]
-}
-
-action "Validate Markdown" {
-  uses = "docker://mivok/markdownlint:latest"
-  args = "."
 }
