@@ -2,6 +2,7 @@ workflow "Zeit Now Deploy" {
   on = "push"
   resolves = [
     "Alias",
+    "Validate Markdown",
   ]
 }
 
@@ -21,6 +22,7 @@ action "Deploy" {
   needs = [
     "Validate HTML",
     "Validate CSS",
+    "Validate Markdown",
   ]
   args = "deploy"
 }
@@ -36,4 +38,9 @@ action "Alias" {
   args = "alias"
   secrets = ["ZEIT_TOKEN"]
   needs = ["Master"]
+}
+
+action "Validate Markdown" {
+  uses = "docker://mivok/markdownlint:latest"
+  args = "."
 }
