@@ -17,7 +17,7 @@ action "Validate CSS" {
 
 action "Validate JS" {
   uses = "docker://node:alpine"
-  args = ""
+  args = "npx eslint ."
 }
 
 action "Validate Markdown" {
