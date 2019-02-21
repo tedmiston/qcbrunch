@@ -17,7 +17,7 @@ action "Validate CSS" {
 }
 
 action "Validate Markdown" {
-  uses = "docker://mivok/markdownlint:latest"
+  uses = "igorshubovych/markdownlint-cli@master"
   args = "."
 }
 
