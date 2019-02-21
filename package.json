@@ -1,0 +1,21 @@
+{
+  "name": "qcbrunch",
+  "version": "1.0.0",
+  "description": "The Breakfast & Brunch Guide for Cincinnati, Ohio.",
+  "main": "js/app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tedmiston/qcbrunch.git"
+  },
+  "author": "Taylor D. Edmiston <tedmiston@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tedmiston/qcbrunch/issues"
+  },
+  "homepage": "https://www.qcbrunch.com/"
+}
