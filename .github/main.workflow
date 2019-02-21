@@ -18,7 +18,7 @@ action "Validate CSS" {
 
 action "Validate Markdown" {
   uses = "igorshubovych/markdownlint-cli@master"
-  args = "."
+  args = "--ignore=_posts ."
 }
 
 action "Deploy" {
