@@ -2,7 +2,7 @@
 
 The Breakfast & Brunch Guide for Cincinnati, Ohio
 
-https://www.qcbrunch.com
+<https://www.qcbrunch.com>
 
 More info: [*Hello, Queen City Brunch!*](http://blog.tedmiston.com/queen-city-brunch/)
 

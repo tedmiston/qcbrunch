@@ -10,19 +10,19 @@ To add a place, fill out as much info as possible using [TEMPLATE.html](https://
 
 To run the site locally:
 
-```
+```shell
 ./run.sh
 ```
 
 To deploy:
 
-```
+```shell
 now
 ```
 
 To point prod to the latest deploy:
 
-```
+```shell
 ./deploy.sh
 ```
 
