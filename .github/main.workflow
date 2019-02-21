@@ -2,7 +2,6 @@ workflow "Zeit Now Deploy" {
   on = "push"
   resolves = [
     "Alias",
-    "Validate Markdown",
   ]
 }
 
