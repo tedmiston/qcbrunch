@@ -15,6 +15,11 @@ action "Validate CSS" {
   args = "java -jar /vnu.jar --skip-non-css --verbose css/"
 }
 
+action "Validate JS" {
+  uses = "docker://node:alpine"
+  args = ""
+}
+
 action "Validate Markdown" {
   uses = "igorshubovych/markdownlint-cli@master"
   args = "--ignore=_posts ."
@@ -26,6 +31,7 @@ action "Deploy" {
   needs = [
     "Validate HTML",
     "Validate CSS",
+    "Validate JS",
     "Validate Markdown",
   ]
   args = "deploy"
