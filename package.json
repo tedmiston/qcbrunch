@@ -4,7 +4,11 @@
   "description": "The Breakfast & Brunch Guide for Cincinnati, Ohio.",
   "main": "js/app.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
