@@ -21,7 +21,7 @@ action "Validate JS" {
 
 action "Validate Markdown" {
   uses = "igorshubovych/markdownlint-cli@master"
-  args = "--ignore=_posts ."
+  args = "--ignore=_posts/ --ignore=node_modules/ ."
 }
 
 action "Deploy" {
