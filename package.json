@@ -10,7 +10,7 @@
     "eslint-plugin-import": "^2.16.0"
   },
   "scripts": {
-    "lint": "eslint js/ ; exit 0",
+    "lint": "eslint js/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
