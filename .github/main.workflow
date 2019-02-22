@@ -8,17 +8,11 @@ workflow "Zeit Now Deploy" {
 action "Validate HTML" {
   uses = "docker://validator/validator:latest"
   args = "java -jar /vnu.jar --errors-only --skip-non-html --verbose ."
-  needs = [
-    "Validate JS",
-  ]
 }
 
 action "Validate CSS" {
   uses = "docker://validator/validator:latest"
   args = "java -jar /vnu.jar --skip-non-css --verbose css/"
-  needs = [
-    "Validate JS",
-  ]
 }
 
 action "Validate JS" {
@@ -28,9 +22,6 @@ action "Validate JS" {
 action "Validate Markdown" {
   uses = "igorshubovych/markdownlint-cli@master"
   args = "--ignore=_posts ."
-  needs = [
-    "Validate JS",
-  ]
 }
 
 action "Deploy" {
