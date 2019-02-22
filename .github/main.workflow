@@ -18,8 +18,8 @@ action "Validate CSS" {
 
 action "Validate JS" {
   uses = "docker://node:alpine"
-  runs = "sh"
-  args = "\"-c\" \"npm ci && npm run lint\""
+  runs = "sh -c"
+  args = "npm ci && npm run lint"
 }
 
 action "Validate Markdown" {
