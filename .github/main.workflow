@@ -6,9 +6,10 @@ workflow "Zeit Now Deploy" {
   ]
 }
 
+# TODO: remove --exit-zero-always once node_modules is excluded
 action "Validate HTML" {
   uses = "docker://validator/validator:latest"
-  args = "java -jar /vnu.jar --errors-only --skip-non-html --verbose ."
+  args = "java -jar /vnu.jar --errors-only --skip-non-html --exit-zero-always --verbose ."
 }
 
 action "Validate CSS" {
