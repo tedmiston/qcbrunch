@@ -1,9 +1,12 @@
 FROM node:alpine
 
-COPY .eslintrc.js ./
-COPY js/ ./js/
-COPY package-lock.json ./
-COPY package.json ./
+# COPY .eslintrc.js ./
+# COPY js/ ./js/
+# COPY package-lock.json ./
+# COPY package.json ./
+
+RUN pwd
+RUN ls
 
 RUN npm ci
 
