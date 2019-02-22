@@ -30,7 +30,6 @@ action "Deploy" {
   needs = [
     "Validate HTML",
     "Validate CSS",
-    "Validate JS",
     "Validate Markdown",
   ]
   args = "deploy"
