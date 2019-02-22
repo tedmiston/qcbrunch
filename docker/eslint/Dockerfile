@@ -1,7 +1,5 @@
 FROM node:alpine
 
-WORKDIR /usr/src/app
-
 COPY .eslintrc.js ./
 COPY js/ ./js/
 COPY package-lock.json ./
