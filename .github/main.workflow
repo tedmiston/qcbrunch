@@ -16,7 +16,7 @@ action "Validate CSS" {
 }
 
 action "Validate JS" {
-  uses = "./docker/eslint@eslint"
+  uses = "./docker/eslint/@eslint"
 }
 
 action "Validate Markdown" {
