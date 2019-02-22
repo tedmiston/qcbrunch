@@ -13,9 +13,10 @@ RUN ls $HOME
 RUN echo $GITHUB_WORKSPACE
 RUN ls $GITHUB_WORKSPACE
 
-RUN ls /github/workspace
-
 RUN pwd
 RUN ls
 
-CMD ["sh", "-c", "npm ci", "npm run lint"]
+# CMD ["sh", "-c", "npm ci", "npm run lint"]
+# CMD ["sh", "-c", "npm ci && npm run lint"]
+# CMD ["sh", "-c", "npm ci"]
+CMD ["sh", "-c", "npm ci && npm run lint"]
