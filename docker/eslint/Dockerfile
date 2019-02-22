@@ -18,6 +18,4 @@ RUN ls /github/workspace
 RUN pwd
 RUN ls
 
-RUN npm ci
-
-CMD ["npm", "run", "lint"]
+CMD ["sh", "-c", "npm ci", "npm run lint"]
