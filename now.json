@@ -6,15 +6,7 @@
   ],
   "builds": [
     {
-      "src": "*.html",
-      "use": "@now/static"
-    },
-    {
-      "src": "*/*.html",
-      "use": "@now/static"
-    },
-    {
-      "src": "{css/*.css,images/*,js/*.js}",
+      "src": "{*.html,*/*.html,css/*.css,images/*,js/*.js}",
       "use": "@now/static"
     }
   ],
