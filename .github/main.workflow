@@ -6,7 +6,7 @@ workflow "Zeit Now Deploy" {
 }
 
 action "Validate HTML" {
-  uses = "tedmiston/qcbrunch/docker/validator@html-lint-tighten"
+  uses = "tedmiston/qcbrunch/docker/validator@master"
 }
 
 action "Validate CSS" {
