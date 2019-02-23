@@ -17,7 +17,7 @@ action "Validate CSS" {
 }
 
 action "Validate JS" {
-  uses = "tedmiston/qcbrunch/docker/eslint@eslint"
+  uses = "tedmiston/qcbrunch/docker/eslint"
 }
 
 action "Validate Markdown" {
