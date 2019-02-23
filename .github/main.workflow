@@ -6,8 +6,7 @@ workflow "Zeit Now Deploy" {
 }
 
 action "Validate HTML" {
-  uses = "docker://validator/validator:latest"
-  args = "java -jar /vnu.jar --errors-only --skip-non-html --verbose $(find -name '*.html' -not -path './node_modules/*')"
+  uses = "tedmiston/qcbrunch/docker/validator@html-lint-tighten"
 }
 
 action "Validate CSS" {
