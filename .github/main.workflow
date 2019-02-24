@@ -1,4 +1,4 @@
-workflow "Zeit Now Deploy" {
+workflow "Deploy" {
   on = "push"
   resolves = [
     "Alias",
@@ -6,7 +6,7 @@ workflow "Zeit Now Deploy" {
 }
 
 action "Validate HTML" {
-  uses = "tedmiston/qcbrunch/docker/validator@master"
+  uses = "tedmiston/qcbrunch/docker/html-validator@master"
 }
 
 action "Validate CSS" {
@@ -15,7 +15,7 @@ action "Validate CSS" {
 }
 
 action "Validate JS" {
-  uses = "tedmiston/qcbrunch/docker/eslint@master"
+  uses = "tedmiston/qcbrunch/docker/js-validator@master"
 }
 
 action "Validate Markdown" {
@@ -67,7 +67,7 @@ action "Yelp Followers Count" {
 }
 
 action "Email" {
-  uses = "tedmiston/qcbrunch/docker/debian@master"
+  uses = "tedmiston/qcbrunch/docker/yelp-email@master"
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Yelp Followers Count"]
 }

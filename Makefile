@@ -2,9 +2,9 @@ SHELL := /usr/bin/env bash
 
 ROOT := $$(pwd)
 
-include docker/debian/Makefile
-include docker/eslint/Makefile
-include docker/validator/Makefile
+include docker/html-validator/Makefile
+include docker/js-validator/Makefile
+include docker/yelp-email/Makefile
 
 .PHONY: run
 run:

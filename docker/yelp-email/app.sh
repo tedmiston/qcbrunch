@@ -10,6 +10,7 @@ echo YELP_COUNT=${YELP_COUNT}
 if [ "$REPO_COUNT" == "$YELP_COUNT" ]
 then
     echo counts are equal
+    echo not sending email
     exit 78
 else
     echo counts are not equal

@@ -1,10 +1,11 @@
 SHELL := /usr/bin/env bash
 
-JS_VALIDATOR_IMAGE := tedmiston/qcbrunch-eslint:latest
+JS_VALIDATOR_IMAGE := tedmiston/qcbrunch-js-validator:latest
+JS_VALIDATOR_ROOT := docker/js-validator
 
 .PHONY: build-js-validator
 build-js-validator:
-	docker build --no-cache --tag=${JS_VALIDATOR_IMAGE} --file=docker/eslint/Dockerfile .
+	docker build --no-cache --tag=${JS_VALIDATOR_IMAGE} --file=${JS_VALIDATOR_ROOT}/Dockerfile .
 
 .PHONY: run-js-validator
 run-js-validator:
