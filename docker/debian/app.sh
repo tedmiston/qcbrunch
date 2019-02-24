@@ -13,8 +13,6 @@ then
     exit 78
 else
     echo counts are not equal
-    YELP_COUNT=1000
-    REPO_COUNT=1001
     GITHUB_RUN_URL=https://github.com/tedmiston/qcbrunch/runs/67864001
     TIMESTAMP=$(date)
     MESSAGE_JSON='{
