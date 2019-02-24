@@ -35,6 +35,7 @@ table { border: 1px solid black; margin-bottom: 1em; }
 #events-empty { font-style: italic; text-align: center; }
 
 #brunch-map { margin: 1.5em auto 1.5em; padding: 0 1.5em; text-align: center; }
+#brunch-map .fa-map-marked-alt { color: #20A464; }
 
 #brunch-yelp-collection { margin: 1.5em auto 1.5em; padding: 0 1.5em; text-align: center; }
 #brunch-yelp-collection .fa-yelp { color: rgb(196, 55, 46); }
