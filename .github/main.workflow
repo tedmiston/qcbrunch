@@ -1,8 +1,6 @@
 workflow "Deploy" {
   on = "push"
-  resolves = [
-    "Alias",
-  ]
+  resolves = ["Alias"]
 }
 
 action "Validate HTML" {
@@ -25,6 +23,7 @@ action "Validate Markdown" {
 
 action "Zeit Now Deploy" {
   uses = "actions/zeit-now@master"
+  args = "deploy"
   secrets = ["ZEIT_TOKEN"]
   needs = [
     "Validate HTML",
@@ -32,13 +31,12 @@ action "Zeit Now Deploy" {
     "Validate JS",
     "Validate Markdown",
   ]
-  args = "deploy"
 }
 
 action "Master" {
   uses = "actions/bin/filter@master"
-  needs = ["Zeit Now Deploy"]
   args = "branch master"
+  needs = ["Zeit Now Deploy"]
 }
 
 action "Alias" {
@@ -50,9 +48,7 @@ action "Alias" {
 
 workflow "Yelp Collection Stats" {
   on = "repository_dispatch"
-  resolves = [
-    "Email",
-  ]
+  resolves = ["Email"]
 }
 
 action "Action Filter" {
