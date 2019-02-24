@@ -47,3 +47,18 @@ action "Alias" {
   secrets = ["ZEIT_TOKEN"]
   needs = ["Master"]
 }
+
+workflow "Yelp Stats" {
+  on = "repository_dispatch"
+  resolves = ["HTTPie Test", "cURL Test"]
+}
+
+action "HTTPie Test" {
+  uses = "swinton/httpie.action@master"
+  args = "http://example.com/"
+}
+
+action "cURL Test" {
+  uses = "actions/bin/curl@master"
+  args = "http://example.com/"
+}
