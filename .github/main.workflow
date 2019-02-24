@@ -48,14 +48,14 @@ action "Alias" {
   needs = ["Master"]
 }
 
-workflow "Yelp Stats" {
+workflow "Yelp Collection Stats" {
   on = "repository_dispatch"
   resolves = [
     "Email",
   ]
 }
 
-action "Action" {
+action "Action Filter" {
   uses = "actions/bin/filter@master"
   args = "action yelp_follow_count"
 }
@@ -63,11 +63,11 @@ action "Action" {
 action "Yelp Followers Count" {
   uses = "swinton/httpie.action@master"
   args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9' > yelp_followers_count.txt"
-  needs = ["Action"]
+  needs = ["Action Filter"]
 }
 
 action "Email" {
   uses = "tedmiston/qcbrunch/docker/debian@master"
-  needs = ["Yelp Followers Count"]
   secrets = ["SENDGRID_API_KEY"]
+  needs = ["Yelp Followers Count"]
 }
