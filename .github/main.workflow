@@ -69,4 +69,5 @@ action "Yelp Followers Count" {
 action "Email" {
   uses = "tedmiston/qcbrunch/docker/debian@master"
   needs = ["Yelp Followers Count"]
+  secrets = ["SENDGRID_API_KEY"]
 }
