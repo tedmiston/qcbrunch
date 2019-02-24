@@ -58,7 +58,7 @@ workflow "Yelp Stats" {
 
 action "Action" {
   uses = "actions/bin/filter@master"
-  args = "action YELP_FOLLOW_COUNT"
+  args = "action yelp_follow_count"
 }
 
 action "HTTPie Test" {
