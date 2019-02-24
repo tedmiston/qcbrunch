@@ -2,6 +2,7 @@
 *.sublime-workspace
 .cache/
 .DS_Store
+.env
 .jekyll-metadata
 .sass-cache
 _site/
