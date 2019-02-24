@@ -33,11 +33,11 @@ else
         "name": "QCBrunch Alerts",
         "email": "no-reply@qcbrunch.com"
       },
-      "subject": "QCBrunch SendGrid test -TIMESTAMP-",
+      "subject": "QCBrunch Notification - Yelp Collection Stats Changed -TIMESTAMP-",
       "content": [
         {
           "type": "text/plain",
-          "value": "Do not panic — this is just a test!!!\n\nREPO_COUNT=-REPO_COUNT-\n\nYELP_COUNT=-YELP_COUNT-\n\nhttps://github.com/tedmiston/qcbrunch/actions"
+          "value": "The Yelp Collection stats have changed.\n\nREPO_COUNT=-REPO_COUNT-\n\nYELP_COUNT=-YELP_COUNT-\n\nhttps://github.com/tedmiston/qcbrunch/actions"
         }
       ]
     }'
