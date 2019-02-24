@@ -13,7 +13,7 @@ action "Validate CSS" {
 }
 
 action "Validate JS" {
-  uses = "tedmiston/qcbrunch/docker/js-validator@master"
+  uses = "tedmiston/qcbrunch/docker/js-validator@eslint-fixes"
 }
 
 action "Validate Markdown" {
