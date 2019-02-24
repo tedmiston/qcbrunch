@@ -13,7 +13,6 @@ then
     exit 78
 else
     echo counts are not equal
-    GITHUB_RUN_URL=https://github.com/tedmiston/qcbrunch/runs/67864001
     TIMESTAMP=$(date)
     MESSAGE_JSON='{
       "personalizations": [
@@ -26,7 +25,6 @@ else
           "substitutions": {
             "-YELP_COUNT-": "'"$YELP_COUNT"'",
             "-REPO_COUNT-": "'"$REPO_COUNT"'",
-            "-GITHUB_RUN_URL-": "'"$GITHUB_RUN_URL"'",
             "-TIMESTAMP-": "'"$TIMESTAMP"'"
           }
         }
@@ -39,9 +37,10 @@ else
       "content": [
         {
           "type": "text/plain",
-          "value": "Do not panic — this is just a test!!!\n\nREPO_COUNT=-REPO_COUNT-\n\nYELP_COUNT=-YELP_COUNT-\n\n-GITHUB_RUN_URL-"
+          "value": "Do not panic — this is just a test!!!\n\nREPO_COUNT=-REPO_COUNT-\n\nYELP_COUNT=-YELP_COUNT-\n\nhttps://github.com/tedmiston/qcbrunch/actions"
         }
       ]
     }'
     echo ${MESSAGE_JSON} | http POST https://api.sendgrid.com/v3/mail/send Authorization:"Bearer ${SENDGRID_API_KEY}"
+    echo email sent
 fi
