@@ -62,7 +62,7 @@ action "Action Filter" {
 
 action "Yelp Followers Count" {
   uses = "swinton/httpie.action@master"
-  args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9' > yelp_followers_count.txt"
+  args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9' > yelp_followers_count.txt && cat yelp_followers_count.txt"
   needs = ["Action Filter"]
 }
 
