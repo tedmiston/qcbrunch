@@ -51,7 +51,7 @@ action "Alias" {
 workflow "Yelp Stats" {
   on = "repository_dispatch"
   resolves = [
-    "actions/bin/sh@master",
+    "Email",
   ]
 }
 
@@ -60,15 +60,13 @@ action "Action" {
   args = "action yelp_follow_count"
 }
 
-action "Followers Count" {
+action "Yelp Followers Count" {
   uses = "swinton/httpie.action@master"
   args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9' > yelp_followers_count.txt"
   needs = ["Action"]
 }
 
-action "actions/bin/sh@master" {
-  uses = "actions/bin/sh@master"
-  needs = ["Followers Count"]
-  args = "cat yelp_followers_count.txt"
-  runs = "sh -c"
+action "Email" {
+  uses = "tedmiston/qcbrunch/docker/debian@master"
+  needs = ["Yelp Followers Count"]
 }
