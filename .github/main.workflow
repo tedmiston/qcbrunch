@@ -74,5 +74,5 @@ action "Debug" {
 action "actions/bin/sh@master" {
   uses = "actions/bin/sh@master"
   needs = ["Debug"]
-  args = "cat yelp_followers_count.txt"
+  args = "pwd ls \"cat yelp_followers_count.txt\""
 }
