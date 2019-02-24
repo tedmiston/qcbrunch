@@ -52,7 +52,8 @@ workflow "Yelp Stats" {
   on = "repository_dispatch"
   resolves = [
     "Action",
-    "Followers Count",
+    "actions/bin/debug@master",
+    "actions/bin/sh@master",
   ]
 }
 
@@ -63,6 +64,17 @@ action "Action" {
 
 action "Followers Count" {
   uses = "swinton/httpie.action@master"
-  args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9'"
+  args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9' > yelp_followers_cnt.txt"
   needs = ["Action"]
+}
+
+action "actions/bin/debug@master" {
+  uses = "actions/bin/debug@master"
+  needs = ["Followers Count"]
+}
+
+action "actions/bin/sh@master" {
+  uses = "actions/bin/sh@master"
+  needs = ["Followers Count"]
+  args = "FOO=$(cat yelp_followers_count.txt) && echo ${FOO}"
 }
