@@ -8,8 +8,8 @@ build-js-validator:
 
 .PHONY: run-js-validator
 run-js-validator:
-	docker run --rm -it -v ${ROOT}:/usr/src/app --workdir=/usr/src/app ${JS_VALIDATOR_IMAGE}
+	docker run --rm --interactive --tty --volume=${ROOT}:/usr/src/app --workdir=/usr/src/app ${JS_VALIDATOR_IMAGE}
 
 .PHONY: debug-js-validator
 debug-js-validator:
-	docker run --rm -it -v ${ROOT}:/usr/src/app --workdir=/usr/src/app ${JS_VALIDATOR_IMAGE} sh
+	docker run --rm --interactive --tty --volume=${ROOT}:/usr/src/app --workdir=/usr/src/app ${JS_VALIDATOR_IMAGE} sh

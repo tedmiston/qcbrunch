@@ -8,8 +8,8 @@ build-debian-validator:
 
 .PHONY: run-debian-validator
 run-debian-validator:
-	docker run --rm -it --env-file=docker/debian/.env -v ${ROOT}:/foo --workdir=/foo ${DEBIAN_VALIDATOR_IMAGE}
+	docker run --rm --interactive --tty --env-file=docker/debian/.env --volume=${ROOT}:/foo --workdir=/foo ${DEBIAN_VALIDATOR_IMAGE}
 
 .PHONY: debug-debian-validator
 debug-debian-validator:
-	docker run --rm -it --env-file=docker/debian/.env -v ${ROOT}:/foo --workdir=/foo ${DEBIAN_VALIDATOR_IMAGE} sh
+	docker run --rm --interactive --tty --env-file=docker/debian/.env --volume=${ROOT}:/foo --workdir=/foo ${DEBIAN_VALIDATOR_IMAGE} sh
