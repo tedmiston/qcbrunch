@@ -6,7 +6,7 @@ workflow "Deploy" {
 }
 
 action "Validate HTML" {
-  uses = "tedmiston/qcbrunch/docker/html-validator@master"
+  uses = "./docker/html-validator@master"
 }
 
 action "Validate CSS" {
