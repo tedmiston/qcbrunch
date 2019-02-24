@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -Eeuo pipefail
 
 REPO_COUNT=$(grep "id=\"yelp-collection-followers\"" index.html | sed -E 's/.*data-yelp-collection-followers-count="([[:digit:]]+)".*/\1/')
 echo REPO_COUNT=${REPO_COUNT}
