@@ -3,7 +3,7 @@
 function parseEmojis() {
   twemoji.parse(document.body, {
     ext: '.svg',
-    folder: '../2/svg'
+    folder: '../2/svg',
   });
 }
 
@@ -17,7 +17,7 @@ function parseEmojis() {
  * @returns {string} The name of the month.
  */
 function getMonthName(num) {
-  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   return months[num];
 }
 
@@ -28,10 +28,10 @@ function getMonthName(num) {
  * @returns {string} A string like "January 2017".
  */
 function buildDateString(date) {
-  var day = date.getDate();
-  var month = getMonthName(date.getMonth());
-  var year = date.getFullYear();
-  return month + ' ' + day + ', ' + year;
+  const day = date.getDate();
+  const month = getMonthName(date.getMonth());
+  const year = date.getFullYear();
+  return `${month} ${day}, ${year}`;
 }
 
 /**
@@ -42,19 +42,20 @@ function buildDateString(date) {
  * @returns {Object} The greater of the two.
  */
 function getMaxDate(dateStr1, dateStr2) {
-  var d1 = new Date(dateStr1);
-  var d2 = new Date(dateStr2);
+  const d1 = new Date(dateStr1);
+  const d2 = new Date(dateStr2);
   return d1 > d2 ? d1 : d2;
 }
 
 /**
- * Determine when the site repo was last updated per its HEAD commit via the GitHub API, then populate that month and year on the page.
+ * Determine when the site repo was last updated per its HEAD commit via the GitHub API, then
+ * populate that month and year on the page.
  */
 function checkWhenLastUpdated() {
   // FIXME: getting aggressively rate limited
   // TODO: pull from gh-pages branch
 
-  $("#updated-date").text("February 2019");
+  $('#updated-date').text('February 2019');
 
   // var updatedDate;
   // $.getJSON("https://api.github.com/repos/tedmiston/qcbrunch/commits/HEAD")
@@ -84,22 +85,22 @@ function checkWhenLastUpdated() {
  * Run a function on restaurants that are closed.
  */
 function funcClosed(func, duration, hideButtonDisabled, showButtonDisabled) {
-  $("#restaurants td:first-child").each(function(){
+  $('#restaurants td:first-child').each(function () {
     const params = { duration };
-    if (this.innerHTML.startsWith("<s>")) {
+    if (this.innerHTML.startsWith('<s>')) {
       const tr = $(this.parentElement);
       func === 'hide' ? tr.hide(params) : tr.show(params);
     }
   });
 
-  $("#hideClosedButton").prop('disabled', hideButtonDisabled);
-  $("#showClosedButton").prop('disabled', showButtonDisabled);
+  $('#hideClosedButton').prop('disabled', hideButtonDisabled);
+  $('#showClosedButton').prop('disabled', showButtonDisabled);
 }
 
 /**
  * Hide restaurants that are closed.
  */
-function hideClosed(duration=0) {
+function hideClosed(duration = 0) {
   funcClosed('hide', duration, true, false);
   analytics.track('Archived Hidden', {
     duration: duration,
@@ -109,7 +110,7 @@ function hideClosed(duration=0) {
 /**
  * Show restaurants that are closed.
  */
-function showClosed(duration=0) {
+function showClosed(duration = 0) {
   funcClosed('show', duration, false, true);
   analytics.track('Archived Shown', {
     duration: duration,
@@ -124,25 +125,25 @@ function addNewBadges() {
   const DAYS_AGO = 60;
   const badgeNew = '🆕';
   const badgeSoon = '🔜';
-  const defaultAddedDate = '2016-06-19';  // initial commit
-  const defaultOpenedDate = '2016-06-19';  // initial commit
+  const defaultAddedDate = '2016-06-19'; // initial commit
+  const defaultOpenedDate = '2016-06-19'; // initial commit
 
   // Anything added in the past DAYS_AGO days is considered new
   const earliestNewDate = new Date();
   earliestNewDate.setHours(0, 0, 0, 0);
   earliestNewDate.setDate(earliestNewDate.getDate() - DAYS_AGO);
 
-  const places = $("#restaurants td:first-child");
-  places.each(function(){
+  const places = $('#restaurants td:first-child');
+  places.each(function () {
     const tr = $(this.parentElement);
     const dateAdded = Date.parse(tr.data('dateAdded') || defaultAddedDate);
     const dateOpened = Date.parse(tr.data('dateOpened') || defaultOpenedDate);
 
     // Display new badge for p
     if (dateOpened > dateAdded) {
-      this.innerHTML += ' ' + badgeSoon;
+      this.innerHTML += ` ${badgeSoon}`;
     } else if (dateAdded > earliestNewDate) {
-      this.innerHTML += ' ' + badgeNew;
+      this.innerHTML += ` ${badgeNew}`;
     }
   });
 
