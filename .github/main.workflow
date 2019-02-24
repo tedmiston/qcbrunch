@@ -69,6 +69,6 @@ action "Followers Count" {
 action "actions/bin/sh@master" {
   uses = "actions/bin/sh@master"
   needs = ["Followers Count"]
-  args = "\"cat yelp_followers_count.txt\""
+  args = "cat yelp_followers_count.txt"
   runs = "sh -c"
 }
