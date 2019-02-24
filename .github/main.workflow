@@ -66,13 +66,9 @@ action "Followers Count" {
   needs = ["Action"]
 }
 
-action "Debug" {
-  uses = "actions/bin/debug@master"
-  needs = ["Followers Count"]
-}
-
 action "actions/bin/sh@master" {
   uses = "actions/bin/sh@master"
-  needs = ["Debug"]
-  args = "pwd ls \"cat yelp_followers_count.txt\""
+  needs = ["Followers Count"]
+  args = "\"cat yelp_followers_count.txt\""
+  runs = "sh -c"
 }
