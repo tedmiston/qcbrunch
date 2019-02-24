@@ -12,4 +12,4 @@ run-js-validator:
 
 .PHONY: debug-js-validator
 debug-js-validator:
-	docker run --rm -it ${JS_VALIDATOR_IMAGE} sh
+	docker run --rm -it -v ${ROOT}:/usr/src/app --workdir=/usr/src/app ${JS_VALIDATOR_IMAGE} sh
