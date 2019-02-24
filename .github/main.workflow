@@ -55,10 +55,10 @@ workflow "Yelp Stats" {
 
 action "HTTPie Test" {
   uses = "swinton/httpie.action@master"
-  args = "http://example.com/"
+  args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9'"
 }
 
 action "cURL Test" {
   uses = "actions/bin/curl@master"
-  args = "http://example.com/"
+  args = "--silent https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9'"
 }
