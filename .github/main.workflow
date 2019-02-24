@@ -50,15 +50,25 @@ action "Alias" {
 
 workflow "Yelp Stats" {
   on = "repository_dispatch"
-  resolves = ["HTTPie Test", "cURL Test"]
+  resolves = [
+    "HTTPie Test",
+    "cURL Test",
+  ]
+}
+
+action "Action" {
+  uses = "actions/bin/filter@master"
+  args = "action YELP_FOLLOW_COUNT"
 }
 
 action "HTTPie Test" {
   uses = "swinton/httpie.action@master"
   args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9'"
+  needs = ["Action"]
 }
 
 action "cURL Test" {
   uses = "actions/bin/curl@master"
   args = "--silent https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9'"
+  needs = ["Action"]
 }
