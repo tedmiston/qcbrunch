@@ -23,7 +23,7 @@ action "Validate Markdown" {
   args = "--ignore=_posts/ --ignore=node_modules/ ."
 }
 
-action "Deploy" {
+action "Zeit Now Deploy" {
   uses = "actions/zeit-now@master"
   secrets = ["ZEIT_TOKEN"]
   needs = [
@@ -37,7 +37,7 @@ action "Deploy" {
 
 action "Master" {
   uses = "actions/bin/filter@master"
-  needs = ["Deploy"]
+  needs = ["Zeit Now Deploy"]
   args = "branch master"
 }
 
