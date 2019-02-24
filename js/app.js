@@ -1,3 +1,4 @@
+/* global analytics twemoji */
 
 // -- Twitter Emoji --
 
