@@ -9,8 +9,8 @@ build-yelp-email:
 
 .PHONY: run-yelp-email
 run-yelp-email:
-	docker run --rm --interactive --tty --env-file=${YELP_EMAIL_ROOT}/.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_EMAIL_IMAGE}
+	docker run --rm --interactive --tty --env-file=.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_EMAIL_IMAGE}
 
 .PHONY: debug-yelp-email
 debug-yelp-email:
-	docker run --rm --interactive --tty --env-file=${YELP_EMAIL_ROOT}/.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_EMAIL_IMAGE} sh
+	docker run --rm --interactive --tty --env-file=.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_EMAIL_IMAGE} sh
