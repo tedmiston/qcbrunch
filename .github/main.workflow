@@ -67,3 +67,24 @@ action "Email" {
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Yelp Followers Count"]
 }
+
+workflow "Google Maps Stats" {
+  on = "repository_dispatch"
+  resolves = ["Google Maps Email"]
+}
+
+action "Action Filter" {
+  uses = "actions/bin/filter@master"
+  args = "action google_maps_views"
+}
+
+action "Google Maps Views" {
+  uses = "tedmiston/qcbrunch/docker/google-maps-views@google-maps-stats"
+  needs = ["Action Filter"]
+}
+
+action "Google Maps Email" {
+  uses = "tedmiston/qcbrunch/docker/google-maps-email@google-maps-stats"
+  secrets = ["SENDGRID_API_KEY"]
+  needs = ["Google Maps Views"]
+}
