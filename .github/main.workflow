@@ -46,9 +46,28 @@ action "Alias" {
   needs = ["Master"]
 }
 
-workflow "Yelp Collection Stats" {
+workflow "Collection Stats" {
   on = "repository_dispatch"
-  resolves = ["Yelp Email"]
+  resolves = [
+    "Google Maps Email",
+    "Yelp Email",
+  ]
+}
+
+action "Google Maps Action" {
+  uses = "actions/bin/filter@master"
+  args = "action google_maps_views"
+}
+
+action "Google Maps Views" {
+  uses = "tedmiston/qcbrunch/docker/google-maps-views@google-maps-stats"
+  needs = ["Google Maps Action"]
+}
+
+action "Google Maps Email" {
+  uses = "tedmiston/qcbrunch/docker/google-maps-email@google-maps-stats"
+  secrets = ["SENDGRID_API_KEY"]
+  needs = ["Google Maps Views"]
 }
 
 action "Yelp Action" {
@@ -66,25 +85,4 @@ action "Yelp Email" {
   uses = "tedmiston/qcbrunch/docker/yelp-email@master"
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Yelp Followers Count"]
-}
-
-workflow "Google Maps Stats" {
-  on = "repository_dispatch"
-  resolves = ["Google Maps Email"]
-}
-
-action "Google Maps Action" {
-  uses = "actions/bin/filter@master"
-  args = "action google_maps_views"
-}
-
-action "Google Maps Views" {
-  uses = "tedmiston/qcbrunch/docker/google-maps-views@google-maps-stats"
-  needs = ["Google Maps Action"]
-}
-
-action "Google Maps Email" {
-  uses = "tedmiston/qcbrunch/docker/google-maps-email@google-maps-stats"
-  secrets = ["SENDGRID_API_KEY"]
-  needs = ["Google Maps Views"]
 }
