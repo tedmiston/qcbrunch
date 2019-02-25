@@ -60,12 +60,12 @@ action "Google Maps Action" {
 }
 
 action "Google Maps Views" {
-  uses = "tedmiston/qcbrunch/docker/google-maps-views@google-maps-stats"
+  uses = "tedmiston/qcbrunch/docker/google-maps-views@master"
   needs = ["Google Maps Action"]
 }
 
 action "Google Maps Email" {
-  uses = "tedmiston/qcbrunch/docker/google-maps-email@google-maps-stats"
+  uses = "tedmiston/qcbrunch/docker/google-maps-email@master"
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Google Maps Views"]
 }
