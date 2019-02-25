@@ -54,14 +54,9 @@ workflow "Collection Stats" {
   ]
 }
 
-action "Google Maps Action" {
-  uses = "actions/bin/filter@master"
-  args = "action google_maps_views"
-}
-
 action "Google Maps Views" {
   uses = "tedmiston/qcbrunch/docker/google-maps-views@master"
-  needs = ["Google Maps Action"]
+  needs = ["Filter Action"]
 }
 
 action "Google Maps Email" {
@@ -70,15 +65,15 @@ action "Google Maps Email" {
   needs = ["Google Maps Views"]
 }
 
-action "Yelp Action" {
+action "Filter Action" {
   uses = "actions/bin/filter@master"
-  args = "action yelp_follow_count"
+  args = "action collection_stats"
 }
 
 action "Yelp Followers Count" {
   uses = "swinton/httpie.action@master"
   args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9' > yelp_followers_count.txt && cat yelp_followers_count.txt"
-  needs = ["Yelp Action"]
+  needs = ["Filter Action"]
 }
 
 action "Yelp Email" {
