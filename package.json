@@ -10,7 +10,7 @@
     "eslint-plugin-import": "^2.16.0"
   },
   "scripts": {
-    "lint": "eslint js/",
+    "lint": "eslint --ignore-pattern=!.eslintrc.js .eslintrc.js js/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
