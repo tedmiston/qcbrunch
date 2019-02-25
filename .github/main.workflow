@@ -48,10 +48,10 @@ action "Alias" {
 
 workflow "Yelp Collection Stats" {
   on = "repository_dispatch"
-  resolves = ["Email"]
+  resolves = ["Yelp Email"]
 }
 
-action "Action Filter" {
+action "Yelp Action" {
   uses = "actions/bin/filter@master"
   args = "action yelp_follow_count"
 }
@@ -59,10 +59,10 @@ action "Action Filter" {
 action "Yelp Followers Count" {
   uses = "swinton/httpie.action@master"
   args = "https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9' > yelp_followers_count.txt && cat yelp_followers_count.txt"
-  needs = ["Action Filter"]
+  needs = ["Yelp Action"]
 }
 
-action "Email" {
+action "Yelp Email" {
   uses = "tedmiston/qcbrunch/docker/yelp-email@master"
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Yelp Followers Count"]
@@ -73,14 +73,14 @@ workflow "Google Maps Stats" {
   resolves = ["Google Maps Email"]
 }
 
-action "Action Filter" {
+action "Google Maps Action" {
   uses = "actions/bin/filter@master"
   args = "action google_maps_views"
 }
 
 action "Google Maps Views" {
   uses = "tedmiston/qcbrunch/docker/google-maps-views@google-maps-stats"
-  needs = ["Action Filter"]
+  needs = ["Google Maps Action"]
 }
 
 action "Google Maps Email" {
