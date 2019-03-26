@@ -38,5 +38,3 @@ More info: [*Hello, Queen City Brunch!*](http://blog.tedmiston.com/queen-city-br
   - SendGrid
   - Linters: ESLint, Validator.nu
   - Utilities: Bash, Make, HTTPie, cURL
-
-.
