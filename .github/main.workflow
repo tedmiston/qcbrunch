@@ -1,6 +1,6 @@
 workflow "Deploy" {
   on = "push"
-  resolves = ["Alias"]
+  resolves = ["Alias Prod"]
 }
 
 action "Validate HTML" {
@@ -39,7 +39,7 @@ action "Master" {
   needs = ["Zeit Now Deploy"]
 }
 
-action "Alias" {
+action "Alias Prod" {
   uses = "actions/zeit-now@master"
   args = "deploy --target production"
   secrets = ["ZEIT_TOKEN"]
