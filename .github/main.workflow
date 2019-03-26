@@ -33,6 +33,19 @@ action "Zeit Now Deploy" {
   ]
 }
 
+action "Staging" {
+  uses = "actions/bin/filter@master"
+  args = "branch dev"
+  needs = ["Zeit Now Deploy"]
+}
+
+action "Alias Staging" {
+  uses = "actions/zeit-now@master"
+  args = "deploy --target staging"
+  secrets = ["ZEIT_TOKEN"]
+  needs = ["Staging"]
+}
+
 action "Master" {
   uses = "actions/bin/filter@master"
   args = "branch master"
