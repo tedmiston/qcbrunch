@@ -41,7 +41,7 @@ action "Master" {
 
 action "Alias" {
   uses = "actions/zeit-now@master"
-  args = "alias"
+  args = "deploy --target production"
   secrets = ["ZEIT_TOKEN"]
   needs = ["Master"]
 }
