@@ -1,6 +1,9 @@
 workflow "Deploy" {
   on = "push"
-  resolves = ["Alias Prod"]
+  resolves = [
+    "Alias Prod",
+    "Alias Staging",
+  ]
 }
 
 action "Validate HTML" {
