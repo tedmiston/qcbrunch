@@ -25,7 +25,7 @@ action "Validate Markdown" {
 }
 
 action "Zeit Now Deploy" {
-  uses = "actions/zeit-now@master"
+  uses = "tedmiston/zeit-now@deploy-target"
   args = "deploy"
   secrets = ["ZEIT_TOKEN"]
   needs = [
@@ -43,7 +43,7 @@ action "Staging" {
 }
 
 action "Alias Staging" {
-  uses = "actions/zeit-now@master"
+  uses = "tedmiston/zeit-now@deploy-target"
   args = "deploy --target staging"
   secrets = ["ZEIT_TOKEN"]
   needs = ["Staging"]
@@ -56,7 +56,7 @@ action "Master" {
 }
 
 action "Alias Prod" {
-  uses = "actions/zeit-now@master"
+  uses = "tedmiston/zeit-now@deploy-target"
   args = "deploy --target production"
   secrets = ["ZEIT_TOKEN"]
   needs = ["Master"]
