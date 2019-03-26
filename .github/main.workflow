@@ -1,9 +1,6 @@
 workflow "Deploy" {
   on = "push"
-  resolves = [
-    "Alias Prod",
-    "Alias Staging",
-  ]
+  resolves = ["Zeit Now Deploy"]
 }
 
 action "Validate HTML" {
@@ -34,32 +31,6 @@ action "Zeit Now Deploy" {
     "Validate JS",
     "Validate Markdown",
   ]
-}
-
-action "Staging" {
-  uses = "actions/bin/filter@master"
-  args = "branch dev"
-  needs = ["Zeit Now Deploy"]
-}
-
-action "Alias Staging" {
-  uses = "tedmiston/zeit-now@deploy-target"
-  args = "deploy --target staging"
-  secrets = ["ZEIT_TOKEN"]
-  needs = ["Staging"]
-}
-
-action "Master" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-  needs = ["Zeit Now Deploy"]
-}
-
-action "Alias Prod" {
-  uses = "tedmiston/zeit-now@deploy-target"
-  args = "deploy --target production"
-  secrets = ["ZEIT_TOKEN"]
-  needs = ["Master"]
 }
 
 workflow "Collection Stats" {
