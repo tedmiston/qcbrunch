@@ -1,6 +1,6 @@
 workflow "Deploy" {
   on = "push"
-  resolves = ["Alias"]
+  resolves = ["Zeit Now Deploy"]
 }
 
 action "Validate HTML" {
@@ -22,7 +22,7 @@ action "Validate Markdown" {
 }
 
 action "Zeit Now Deploy" {
-  uses = "actions/zeit-now@master"
+  uses = "tedmiston/zeit-now@deploy-target"
   args = "deploy"
   secrets = ["ZEIT_TOKEN"]
   needs = [
@@ -31,19 +31,6 @@ action "Zeit Now Deploy" {
     "Validate JS",
     "Validate Markdown",
   ]
-}
-
-action "Master" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-  needs = ["Zeit Now Deploy"]
-}
-
-action "Alias" {
-  uses = "actions/zeit-now@master"
-  args = "alias"
-  secrets = ["ZEIT_TOKEN"]
-  needs = ["Master"]
 }
 
 workflow "Collection Stats" {
