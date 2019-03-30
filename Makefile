@@ -8,6 +8,10 @@ include docker/google-maps-views/Makefile
 include docker/js-validator/Makefile
 include docker/yelp-email/Makefile
 
+.PHONY: install
+install:
+	npm install
+
 .PHONY: lint
 lint:
 	npm run lint
