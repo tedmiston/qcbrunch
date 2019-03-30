@@ -19,3 +19,15 @@ lint:
 .PHONY: run
 run:
 	serve
+
+.PHONY: deploy
+deploy:
+	now
+
+.PHONY: deploy-staging
+deploy-staging:
+	now --target staging
+
+.PHONY: deploy-prod
+deploy-prod:
+	now --target production
