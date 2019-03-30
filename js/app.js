@@ -147,7 +147,8 @@ function addNewBadges() {
     const dateOpened = new Date(Date.parse(tr.data('dateOpened') || defaultOpenedDate));
 
     // new = recently opened or recently added
-    if (((dateOpened >= earliestNewDate) || (dateAdded >= earliestNewDate)) && dateOpened <= today) {
+    if (((dateOpened >= earliestNewDate) || (dateAdded >= earliestNewDate))
+        && dateOpened <= today) {
       this.innerHTML += ` ${badgeNew}`;
     }
 
