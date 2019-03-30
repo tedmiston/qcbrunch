@@ -126,7 +126,7 @@ function showClosed(duration = 0) {
  *
  */
 function addNewBadges() {
-  const DAYS_AGO = 60;
+  const DAYS_AGO = 90;
   const badgeNew = '🆕';
   const badgeSoon = '🔜';
   const defaultAddedDate = '2016-06-19'; // initial commit
