@@ -132,6 +132,9 @@ function addNewBadges() {
   const defaultAddedDate = '2016-06-19'; // initial commit
   const defaultOpenedDate = '2016-06-19'; // initial commit
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   // Anything added in the past DAYS_AGO days is considered new
   const earliestNewDate = new Date();
   earliestNewDate.setHours(0, 0, 0, 0);
@@ -140,14 +143,17 @@ function addNewBadges() {
   const places = $('#restaurants td:first-child');
   places.each(function addBadges() {
     const tr = $(this.parentElement);
-    const dateAdded = Date.parse(tr.data('dateAdded') || defaultAddedDate);
-    const dateOpened = Date.parse(tr.data('dateOpened') || defaultOpenedDate);
+    const dateAdded = new Date(Date.parse(tr.data('dateAdded') || defaultAddedDate));
+    const dateOpened = new Date(Date.parse(tr.data('dateOpened') || defaultOpenedDate));
 
-    // Display new badge for p
-    if (dateOpened > dateAdded) {
-      this.innerHTML += ` ${badgeSoon}`;
-    } else if (dateAdded > earliestNewDate) {
+    // new = recently opened or recently added
+    if (((dateOpened >= earliestNewDate) || (dateAdded >= earliestNewDate)) && dateOpened <= today) {
       this.innerHTML += ` ${badgeNew}`;
+    }
+
+    // soon = opening in the future
+    if (dateOpened > today) {
+      this.innerHTML += ` ${badgeSoon}`;
     }
   });
 
