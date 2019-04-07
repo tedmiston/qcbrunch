@@ -18,7 +18,7 @@ lint:
 
 .PHONY: run
 run:
-	serve
+	serve -l 5001
 
 .PHONY: deploy
 deploy:
