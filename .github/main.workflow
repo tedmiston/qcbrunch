@@ -4,9 +4,7 @@ workflow "Deploy" {
 }
 
 action "Validate Docker" {
-  uses = "docker://hadolint/hadolint:latest-debian@sha256:28eeed4bd8e2457d9278fc3f7b7e2793e6230e32f21d766f3b73d65374631b73"
-  runs = "bash"
-  args = "ls -al"
+  uses = "tedmiston/qcbrunch/docker/dockerfile-validator@hadolint"
 }
 
 action "Validate HTML" {
