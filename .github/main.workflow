@@ -25,9 +25,6 @@ action "Validate HTML" {
 action "Validate CSS" {
   uses = "docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3"
   args = "/vnu-runtime-image/bin/vnu --skip-non-css --verbose css/"
-  needs = [
-    "Validate Docker",
-  ]
 }
 
 action "Validate JS" {
@@ -40,9 +37,6 @@ action "Validate JS" {
 action "Validate Markdown" {
   uses = "igorshubovych/markdownlint-cli@master"
   args = "--ignore=_posts/ --ignore=node_modules/ ."
-  needs = [
-    "Validate Docker",
-  ]
 }
 
 action "Zeit Now Deploy" {
