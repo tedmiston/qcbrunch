@@ -1,0 +1,9 @@
+# TODO: remove these ignores once the build step soft fails
+ignored:
+  - DL3007
+  - DL3008
+  - DL3009
+  - DL3015
+  - DL3017
+  - DL3018
+  - DL3019
