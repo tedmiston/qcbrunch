@@ -44,6 +44,7 @@ action "Zeit Now Deploy" {
   args = "--target production"
   secrets = ["ZEIT_TOKEN"]
   needs = [
+    "Validate Docker",
     "Validate HTML",
     "Validate CSS",
     "Validate JS",
