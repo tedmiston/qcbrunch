@@ -35,7 +35,7 @@ action "Validate JS" {
 }
 
 action "Validate Markdown" {
-  uses = "igorshubovych/markdownlint-cli@master"
+  uses = "igorshubovych/markdownlint-cli@c62b00d9a586560560b1151b38875deef047a093"
   args = "--ignore=_posts/ --ignore=node_modules/ ."
 }
 
