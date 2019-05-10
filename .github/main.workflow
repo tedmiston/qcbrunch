@@ -40,7 +40,7 @@ action "Validate Markdown" {
 }
 
 action "Zeit Now Deploy" {
-  uses = "tedmiston/zeit-now@deploy-target"
+  uses = "tedmiston/zeit-now@c7bb7267fff6ee5fc70ded892dba51b11c3e751a"
   args = "--target production"
   secrets = ["ZEIT_TOKEN"]
   needs = [
