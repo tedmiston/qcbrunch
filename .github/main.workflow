@@ -72,7 +72,7 @@ action "Google Maps Email" {
 }
 
 action "Filter Action" {
-  uses = "actions/bin/filter@master"
+  uses = "actions/bin/filter@3c0b4f0e63ea54ea5df2914b4fabf383368cd0da"
   args = "action collection_stats"
 }
 
