@@ -8,7 +8,7 @@ action "Validate HTML" {
 }
 
 action "Validate CSS" {
-  uses = "docker://validator/validator:latest"
+  uses = "docker://validator/validator:latest@sha256:845a84e9abec538b1822e888e42668d48f564edd5105f6cd0a3c2a90062ab9aa"
   args = "java -jar /vnu.jar --skip-non-css --verbose css/"
 }
 
