@@ -5,6 +5,7 @@ workflow "Deploy" {
 
 action "Validate Docker" {
   uses = "tedmiston/qcbrunch/docker/dockerfile-validator@hadolint"
+  args = "/bin/hadolint docker/html-validator/Dockerfile"
 }
 
 action "Validate HTML" {
