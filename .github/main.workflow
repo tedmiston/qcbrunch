@@ -12,7 +12,6 @@ action "Validate Docker" {
     "docker/html-validator/Dockerfile",
     "docker/js-validator/Dockerfile",
     "docker/yelp-email/Dockerfile",
-    "; exit 78",
   ]
 }
 
