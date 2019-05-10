@@ -5,7 +5,7 @@ workflow "Deploy" {
 
 action "Validate Docker" {
   uses = "docker://hadolint/hadolint:latest@sha256:6e67b08b2f9b3cf57616cfc92adb8864b74b02f079d70eabc944b29f05aff5f9"
-  args = "docker/google-maps-email/Dockerfile"
+  args = "< docker/google-maps-email/Dockerfile"
 }
 
 action "Validate HTML" {
