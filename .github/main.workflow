@@ -3,22 +3,39 @@ workflow "Deploy" {
   resolves = ["Zeit Now Deploy"]
 }
 
+action "Validate Docker" {
+  uses = "docker://hadolint/hadolint:latest@sha256:6e67b08b2f9b3cf57616cfc92adb8864b74b02f079d70eabc944b29f05aff5f9"
+  args = "docker/google-maps-email/Dockerfile"
+}
+
 action "Validate HTML" {
   uses = "tedmiston/qcbrunch/docker/html-validator@master"
+  needs = [
+    "Validate Docker"
+  ]
 }
 
 action "Validate CSS" {
   uses = "docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3"
   args = "/vnu-runtime-image/bin/vnu --skip-non-css --verbose css/"
+  needs = [
+    "Validate Docker"
+  ]
 }
 
 action "Validate JS" {
   uses = "tedmiston/qcbrunch/docker/js-validator@master"
+  needs = [
+    "Validate Docker"
+  ]
 }
 
 action "Validate Markdown" {
   uses = "igorshubovych/markdownlint-cli@master"
   args = "--ignore=_posts/ --ignore=node_modules/ ."
+  needs = [
+    "Validate Docker"
+  ]
 }
 
 action "Zeit Now Deploy" {
