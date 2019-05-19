@@ -53,7 +53,7 @@ action "Zeit Now Deploy" {
 }
 
 workflow "Collection Stats" {
-  on = "repository_dispatch"
+  on = "schedule(50 * * * *)"
   resolves = [
     "Google Maps Email",
     "Yelp Email",
