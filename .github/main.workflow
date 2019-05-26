@@ -5,10 +5,6 @@ workflow "Deploy" {
   ]
 }
 
-action "Build" {
-  uses = "tedmiston/qcbrunch/docker/qcbrunch-cli@cli"
-}
-
 action "Validate Docker" {
   uses = "docker://hadolint/hadolint:latest-debian@sha256:28eeed4bd8e2457d9278fc3f7b7e2793e6230e32f21d766f3b73d65374631b73"
   args = [
@@ -20,15 +16,19 @@ action "Validate Docker" {
     "docker/qcbrunch-cli/Dockerfile",
     "docker/yelp-email/Dockerfile",
   ]
+}
+
+action "Build" {
+  uses = "tedmiston/qcbrunch/docker/qcbrunch-cli@cli"
   needs = [
-    "Build",
+    "Validate Docker",
   ]
 }
 
 action "Validate HTML" {
   uses = "tedmiston/qcbrunch/docker/html-validator@master"
   needs = [
-    "Validate Docker",
+    "Build",
   ]
 }
 
@@ -43,7 +43,7 @@ action "Validate CSS" {
 action "Validate JS" {
   uses = "tedmiston/qcbrunch/docker/js-validator@master"
   needs = [
-    "Validate Docker",
+    "Build",
   ]
 }
 
