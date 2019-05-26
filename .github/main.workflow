@@ -8,7 +8,7 @@ workflow "Deploy" {
 
 action "test" {
   uses = "docker://alpine"
-  args = "pwd && exit 1"
+  args = "ls -al && exit 1"
 }
 
 action "Validate Docker" {
