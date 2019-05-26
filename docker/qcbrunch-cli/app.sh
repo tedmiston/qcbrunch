@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-pip install -e qcbrunch-cli
+pip install --editable qcbrunch-cli
 
 qcbrunch clean
 qcbrunch render
