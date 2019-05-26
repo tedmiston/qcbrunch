@@ -8,7 +8,6 @@ workflow "Deploy" {
 
 action "test" {
   uses = "tedmiston/qcbrunch/qcbrunch-cli@cli"
-  runs = "bash"
 }
 
 action "Validate Docker" {
