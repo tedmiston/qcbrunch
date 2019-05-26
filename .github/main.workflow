@@ -25,6 +25,9 @@ action "Build" {
   ]
   runs = "bash -c"
   args = "./docker/qcbrunch-cli/app.sh"
+  env = {
+    QCBRUNCH_ROOT = "$GITHUB_WORKSPACE"
+  }
 }
 
 action "Validate HTML" {
