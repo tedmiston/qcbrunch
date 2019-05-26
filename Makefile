@@ -11,3 +11,7 @@ include docker/yelp-email/Makefile
 .PHONY: install
 install:
 	npm install
+
+.PHONY: run
+run:
+	cd qcbrunch-cli && pipenv run qcbrunch dev run
