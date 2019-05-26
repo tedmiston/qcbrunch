@@ -1,5 +1,6 @@
 # FROM python:3.7.3-stretch
-FROM ubuntu:18.04
+# FROM ubuntu:18.04
+FROM alpine
 
 # WORKDIR /github/workspace/
 
