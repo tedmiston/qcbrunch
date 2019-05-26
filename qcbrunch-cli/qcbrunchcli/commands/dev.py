@@ -10,5 +10,4 @@ def dev():
 
 @dev.command()
 def run():
-    # subprocess.run('make run', cwd=BUILD_DIR, shell=True)
     subprocess.run('serve -l 5001', cwd=BUILD_DIR, shell=True)
