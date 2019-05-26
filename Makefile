@@ -11,23 +11,3 @@ include docker/yelp-email/Makefile
 .PHONY: install
 install:
 	npm install
-
-.PHONY: lint
-lint:
-	npm run lint
-
-.PHONY: run
-run:
-	serve -l 5001
-
-.PHONY: deploy
-deploy:
-	now
-
-.PHONY: deploy-staging
-deploy-staging:
-	now --target staging
-
-.PHONY: deploy-prod
-deploy-prod:
-	now --target production
