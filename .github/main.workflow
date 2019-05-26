@@ -24,7 +24,7 @@ action "Build" {
     "Validate Docker",
   ]
   runs = "bash -c"
-  args = "ls -al"
+  args = "./docker/qcbrunch-cli/app.sh"
 }
 
 action "Validate HTML" {
