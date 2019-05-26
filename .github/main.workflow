@@ -5,6 +5,10 @@ workflow "Deploy" {
   ]
 }
 
+action "Build" {
+  uses = "tedmiston/qcbrunch/docker/qcbrunch-cli@cli"
+}
+
 action "Validate Docker" {
   uses = "docker://hadolint/hadolint:latest-debian@sha256:28eeed4bd8e2457d9278fc3f7b7e2793e6230e32f21d766f3b73d65374631b73"
   args = [
@@ -16,6 +20,9 @@ action "Validate Docker" {
     "docker/qcbrunch-cli/Dockerfile",
     "docker/yelp-email/Dockerfile",
   ]
+  needs = [
+    "Build",
+  ]
 }
 
 action "Validate HTML" {
@@ -25,16 +32,12 @@ action "Validate HTML" {
   ]
 }
 
-action "Validate HTML test" {
-  uses = "tedmiston/qcbrunch/docker/qcbrunch-cli@cli"
-  needs = [
-    "Validate Docker",
-  ]
-}
-
 action "Validate CSS" {
   uses = "docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3"
   args = "/vnu-runtime-image/bin/vnu --skip-non-css --verbose css/"
+  needs = [
+    "Build",
+  ]
 }
 
 action "Validate JS" {
@@ -54,9 +57,9 @@ action "Zeit Now Deploy" {
   args = "--target production"
   secrets = ["ZEIT_TOKEN"]
   needs = [
+    "Build",
     "Validate Docker",
     "Validate HTML",
-    "Validate HTML test",
     "Validate CSS",
     "Validate JS",
     "Validate Markdown",
