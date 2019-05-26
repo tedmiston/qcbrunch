@@ -7,8 +7,7 @@ workflow "Deploy" {
 }
 
 action "test" {
-  uses = "docker://alpine"
-  args = "ls -al"
+  uses = "tedmiston/qcbrunch/qcbrunch-cli@cli"
 }
 
 action "Validate Docker" {
