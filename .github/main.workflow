@@ -25,7 +25,7 @@ action "Validate HTML" {
 }
 
 action "Validate HTML test" {
-  uses = "tedmiston/qcbrunch/docker/html-validator@master"
+  uses = "docker://python:3.7-slim"
   needs = [
     "Validate Docker",
   ]
