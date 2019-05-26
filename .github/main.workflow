@@ -23,6 +23,8 @@ action "Build" {
   needs = [
     "Validate Docker",
   ]
+  runs = "bash -c"
+  args = "ls -al"
 }
 
 action "Validate HTML" {
