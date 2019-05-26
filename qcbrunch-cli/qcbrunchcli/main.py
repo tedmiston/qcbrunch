@@ -1,12 +1,13 @@
 import click
 
 from . import conf
-from .commands import clean, dev, google_maps, render, yelp
+from .commands import build, clean, dev, google_maps, render, yelp
 
 @click.group()
 def cli():
     pass
 
+cli.add_command(build)
 cli.add_command(clean)
 cli.add_command(dev)
 cli.add_command(google_maps)
