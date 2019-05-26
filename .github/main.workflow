@@ -13,6 +13,7 @@ action "Validate Docker" {
     "docker/google-maps-views/Dockerfile",
     "docker/html-validator/Dockerfile",
     "docker/js-validator/Dockerfile",
+    "docker/qcbrunch-cli/Dockerfile",
     "docker/yelp-email/Dockerfile",
   ]
 }
@@ -25,11 +26,10 @@ action "Validate HTML" {
 }
 
 action "Validate HTML test" {
-  uses = "docker://python:3.7-slim"
+  uses = "tedmiston/qcbrunch/docker/qcbrunch-cli@cli"
   needs = [
     "Validate Docker",
   ]
-  args = "pip install -e qcbrunch-cli"
 }
 
 action "Validate CSS" {
