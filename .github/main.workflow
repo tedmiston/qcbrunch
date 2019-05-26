@@ -29,7 +29,7 @@ action "Validate HTML test" {
   needs = [
     "Validate Docker",
   ]
-  args = "sh -c ls -al"
+  args = "pip install -e qcbrunch-cli"
 }
 
 action "Validate CSS" {
