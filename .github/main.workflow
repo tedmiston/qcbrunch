@@ -2,12 +2,7 @@ workflow "Deploy" {
   on = "push"
   resolves = [
     "Zeit Now Deploy",
-    "test",
   ]
-}
-
-action "test" {
-  uses = "tedmiston/qcbrunch/qcbrunch-cli@cli"
 }
 
 action "Validate Docker" {
@@ -20,7 +15,6 @@ action "Validate Docker" {
     "docker/js-validator/Dockerfile",
     "docker/yelp-email/Dockerfile",
   ]
-  needs = ["test"]
 }
 
 action "Validate HTML" {
@@ -33,7 +27,6 @@ action "Validate HTML" {
 action "Validate CSS" {
   uses = "docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3"
   args = "/vnu-runtime-image/bin/vnu --skip-non-css --verbose css/"
-  needs = ["test"]
 }
 
 action "Validate JS" {
@@ -46,7 +39,6 @@ action "Validate JS" {
 action "Validate Markdown" {
   uses = "igorshubovych/markdownlint-cli@c62b00d9a586560560b1151b38875deef047a093"
   args = "--ignore=_posts/ --ignore=node_modules/ ."
-  needs = ["test"]
 }
 
 action "Zeit Now Deploy" {
