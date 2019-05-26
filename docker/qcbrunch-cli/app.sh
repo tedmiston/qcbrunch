@@ -3,6 +3,8 @@ set -Eeuo pipefail
 
 pip install -e qcbrunch-cli
 
-ls -al
+qcbrunch clean
+qcbrunch render
+qcbrunch build
 
-qcbrunch --help
+ls -alR build
