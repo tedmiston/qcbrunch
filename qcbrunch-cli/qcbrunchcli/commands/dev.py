@@ -9,10 +9,6 @@ def dev():
     pass
 
 @dev.command()
-def clean():
-    subprocess.run(f'rm -rf {BUILD_DIR}', cwd=SOURCE_DIR, shell=True)
-
-@dev.command()
 def build():
     directories = 'css images js'
     files = '.nowignore browserconfig.xml now.json robots.txt serve.json sitemap.txt stats.html'
