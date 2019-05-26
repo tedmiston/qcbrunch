@@ -24,6 +24,15 @@ action "Validate HTML" {
   ]
 }
 
+action "Validate HTML test" {
+  uses = "tedmiston/qcbrunch/docker/html-validator@master"
+  needs = [
+    "Validate Docker",
+  ]
+  runs = "sh"
+  args = "pwd"
+}
+
 action "Validate CSS" {
   uses = "docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3"
   args = "/vnu-runtime-image/bin/vnu --skip-non-css --verbose css/"
@@ -48,6 +57,7 @@ action "Zeit Now Deploy" {
   needs = [
     "Validate Docker",
     "Validate HTML",
+    "Validate HTML test",
     "Validate CSS",
     "Validate JS",
     "Validate Markdown",
