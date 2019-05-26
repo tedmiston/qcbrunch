@@ -9,5 +9,5 @@ def dev():
     pass
 
 @dev.command()
-def run():
+def serve():
     subprocess.run('serve -l 5001', cwd=BUILD_DIR, shell=True)
