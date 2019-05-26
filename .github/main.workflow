@@ -19,7 +19,7 @@ action "Validate Docker" {
 }
 
 action "Build" {
-  uses = "tedmiston/qcbrunch/docker/qcbrunch-cli@cli"
+  uses = "tedmiston/qcbrunch/docker/qcbrunch-cli@master"
   needs = [
     "Validate Docker",
   ]
