@@ -2,17 +2,11 @@ import subprocess
 
 import click
 
-from ..conf import BUILD_DIR, SOURCE_DIR
+from ..conf import BUILD_DIR
 
 @click.group()
 def dev():
     pass
-
-@dev.command()
-def build():
-    directories = 'css images js'
-    files = '.nowignore browserconfig.xml now.json robots.txt serve.json sitemap.txt stats.html'
-    subprocess.run(f'cp -R {directories} {files} build/', cwd=SOURCE_DIR, shell=True)
 
 @dev.command()
 def run():
