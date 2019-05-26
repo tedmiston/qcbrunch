@@ -5,6 +5,8 @@ FROM python:3.7.3-stretch
 RUN pwd
 RUN ls -al
 
+RUN ls -al home
+
 RUN cd qcbrunch-cli/ && pip install -e .
 
 ENV QCBRUNCH_ROOT /github/workspace
