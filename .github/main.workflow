@@ -13,7 +13,6 @@ action "Validate Docker" {
     "docker/google-maps-views/Dockerfile",
     "docker/html-validator/Dockerfile",
     "docker/js-validator/Dockerfile",
-    "docker/qcbrunch-cli/Dockerfile",
     "docker/yelp-email/Dockerfile",
   ]
 }
