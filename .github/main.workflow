@@ -29,8 +29,7 @@ action "Validate HTML test" {
   needs = [
     "Validate Docker",
   ]
-  runs = "sh"
-  args = "pwd"
+  args = "sh -c pwd"
 }
 
 action "Validate CSS" {
