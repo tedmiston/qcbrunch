@@ -20,7 +20,7 @@ else
         {
           "to": [
             {
-              "email": "tedmiston@gmail.com"
+              "email": "'"${EMAIL_RECIPIENT}"'"
             }
           ],
           "substitutions": {
@@ -32,7 +32,7 @@ else
       ],
       "from": {
         "name": "QCBrunch Alerts",
-        "email": "no-reply@qcbrunch.com"
+        "email": "'"${EMAIL_SENDER}"'"
       },
       "subject": "QCBrunch Notification - Yelp Collection Stats Changed -TIMESTAMP-",
       "content": [

@@ -95,6 +95,10 @@ action "Yelp Followers Count" {
 
 action "Yelp Email" {
   uses = "tedmiston/qcbrunch/docker/yelp-email@master"
+  env = {
+    EMAIL_SENDER = "no-reply@qcbrunch.com"
+    EMAIL_RECIPIENT = "tedmiston@gmail.com"
+  }
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Yelp Followers Count"]
 }
