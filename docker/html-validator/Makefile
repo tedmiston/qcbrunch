@@ -13,4 +13,4 @@ run-html-validator:
 
 .PHONY: debug-html-validator
 debug-html-validator:
-	docker run --rm --interactive --tty --volume=${ROOT}:/foo --workdir=/foo ${HTML_VALIDATOR_IMAGE} sh
+	docker run --rm --interactive --tty --volume=${ROOT}:/foo --workdir=/foo ${HTML_VALIDATOR_IMAGE} bash
