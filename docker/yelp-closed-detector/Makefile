@@ -29,3 +29,11 @@ yelp-closed-detector-lint:
 .PHONY: yelp-closed-detector-format
 yelp-closed-detector-format:
 	docker run --rm --interactive --tty --env-file=.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_CLOSED_DETECTOR_IMAGE}-dev black docker/yelp-closed-detector/*.py
+
+.PHONY: yelp-closed-detector-trigger
+yelp-closed-detector-trigger:
+	http --auth="tedmiston:${GITHUB_TOKEN}" POST \
+	https://api.github.com/repos/tedmiston/qcbrunch/dispatches \
+	Accept:application/vnd.github.everest-preview+json \
+	X-API-Token:tedmiston:${GITHUB_TOKEN} \
+	event_type=yelp_closed_detector
