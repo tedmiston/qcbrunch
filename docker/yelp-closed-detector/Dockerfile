@@ -2,7 +2,9 @@
 FROM debian:stable-slim@sha256:6657ae6b0959f549b6fffd5328ba550bb8a8e6685d23e9f8b491fec3de9e8dd3 AS base
 
 RUN apt-get update && \
-    apt-get --yes install python3
+    apt-get --yes install \
+        python3 \
+        python3-pip
 
 FROM base as prod
 RUN pwd
