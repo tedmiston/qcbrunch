@@ -3,7 +3,8 @@ FROM python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8
 FROM base as prod
 RUN pwd
 RUN ls -al
-RUN ls -al /
+RUN ls -al $HOME
+RUN ls -al $GITHUB_WORKSPACE
 # COPY docker/yelp-closed-detector/requirements_frozen.txt docker/yelp-closed-detector/requirements_frozen.txt
 RUN pip install -r docker/yelp-closed-detector/requirements_frozen.txt
 
