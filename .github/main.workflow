@@ -102,3 +102,14 @@ action "Yelp Email" {
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Yelp Followers Count"]
 }
+
+workflow "Debug" {
+  on = "repository_dispatch"
+  resolves = [
+    "Yelp Closed Detector",
+  ]
+}
+
+action "Yelp Closed Detector" {
+  uses = "tedmiston/qcbrunch/docker/yelp-closed-detector@master"  
+}
