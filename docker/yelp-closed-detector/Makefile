@@ -14,3 +14,11 @@ yelp-closed-detector-run:
 .PHONY: yelp-closed-detector-debug
 yelp-closed-detector-debug:
 	docker run --rm --interactive --tty --env-file=.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_CLOSED_DETECTOR_IMAGE} bash
+
+.PHONY: yelp-closed-detector-lint
+yelp-closed-detector-lint:
+	docker run --rm --interactive --tty --env-file=.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_CLOSED_DETECTOR_IMAGE} black --diff docker/yelp-closed-detector/*.py
+
+.PHONY: yelp-closed-detector-format
+yelp-closed-detector-format:
+	docker run --rm --interactive --tty --env-file=.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_CLOSED_DETECTOR_IMAGE} black docker/yelp-closed-detector/*.py
