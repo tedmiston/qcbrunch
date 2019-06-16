@@ -28,14 +28,14 @@ closed_count = len(closed_urls)
 open_count = len(is_closed) - closed_count
 total_count = len(is_closed)
 closed_urls_str = "\n- ".join(closed_urls)
-summary = f"""
-Closed Count: {closed_count}
-Open Count:   {open_count}
-Total Count:  {total_count}
+summary = """
+Closed Count: {}
+Open Count:   {}
+Total Count:  {}
 
 Closed URLs:
-- {closed_urls_str}
-""".strip()
+- {}
+""".format(closed_count, open_count, total_count, closed_urls_str).strip()
 
 print("* summary:")
 print(summary)
