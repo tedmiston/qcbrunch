@@ -20,11 +20,11 @@ RUN ls -al
 RUN ls -al $HOME
 RUN ls -al $GITHUB_WORKSPACE
 # COPY docker/yelp-closed-detector/requirements_frozen.txt docker/yelp-closed-detector/requirements_frozen.txt
-RUN pip install -r docker/yelp-closed-detector/requirements_frozen.txt
+RUN pip3 install -r docker/yelp-closed-detector/requirements_frozen.txt
 
 FROM base AS dev
 # COPY docker/yelp-closed-detector/requirements.txt docker/yelp-closed-detector/requirements.txt
 # COPY docker/yelp-closed-detector/requirements_dev.txt docker/yelp-closed-detector/requirements_dev.txt
-RUN pip install -r docker/yelp-closed-detector/requirements_dev.txt
+RUN pip3 install -r docker/yelp-closed-detector/requirements_dev.txt
 
 CMD ["./docker/yelp-closed-detector/app.py"]
