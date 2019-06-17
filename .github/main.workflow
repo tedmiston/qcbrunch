@@ -111,5 +111,5 @@ workflow "Debug" {
 }
 
 action "Yelp Closed Detector" {
-  uses = "tedmiston/qcbrunch/docker/yelp-closed-detector@master"  
+  uses = "tedmiston/qcbrunch/docker/yelp-closed-detector@master"
 }
