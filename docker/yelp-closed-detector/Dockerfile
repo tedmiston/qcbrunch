@@ -4,7 +4,7 @@ RUN pip install requests-html==0.10.0
 
 FROM base as prod
 
+CMD ["./docker/yelp-closed-detector/app.py"]
+
 FROM base AS dev
 RUN pip install black==19.3b0
-
-CMD ["./docker/yelp-closed-detector/app.py"]
