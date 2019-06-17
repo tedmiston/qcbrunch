@@ -113,4 +113,9 @@ workflow "Debug" {
 
 action "Yelp Closed Detector" {
   uses = "tedmiston/qcbrunch/docker/yelp-closed-detector@master"
+  env = {
+    EMAIL_SENDER = "no-reply@qcbrunch.com"
+    EMAIL_RECIPIENT = "tedmiston@gmail.com"
+  }
+  secrets = ["SENDGRID_API_KEY"]
 }
