@@ -38,26 +38,28 @@ Total Count:  {}
 
 Closed URLs:
 - {}
-""".format(closed_count, open_count, total_count, closed_urls_str).strip()
+""".format(
+    closed_count, open_count, total_count, closed_urls_str
+).strip()
 
 print("* summary:")
 print(summary)
 
 # send email
 if closed_count > 0:
-    print('* sending email')
+    print("* sending email")
 
     message = Mail(
-        from_email=os.environ['EMAIL_SENDER'],
-        to_emails=os.environ['EMAIL_RECIPIENT'],
-        subject='QCBrunch Notification - Yelp Closed Detector Changed',
+        from_email=os.environ["EMAIL_SENDER"],
+        to_emails=os.environ["EMAIL_RECIPIENT"],
+        subject="QCBrunch Notification - Yelp Closed Detector Changed",
         plain_text_content=summary,
     )
 
-    sendgrid = SendGridAPIClient(os.environ['SENDGRID_API_KEY'])
+    sendgrid = SendGridAPIClient(os.environ["SENDGRID_API_KEY"])
     response = sendgrid.send(message)
     print(response.status_code)
     print(response.body)
     print(response.headers)
 
-    print('* email sent')
+    print("* email sent")
