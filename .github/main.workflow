@@ -13,6 +13,7 @@ action "Validate Docker" {
     "docker/google-maps-views/Dockerfile",
     "docker/html-validator/Dockerfile",
     "docker/js-validator/Dockerfile",
+    "docker/yelp-closed-detector/Dockerfile",
     "docker/yelp-email/Dockerfile",
   ]
 }
