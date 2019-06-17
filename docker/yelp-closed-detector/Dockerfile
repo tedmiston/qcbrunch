@@ -14,17 +14,20 @@ RUN apt-get update && \
 # RUN apk add --update --no-cache g++ gcc libxml2-dev libxslt-dev py-lxml
 # RUN pip install --upgrade pip
 
+RUN pip3 install requests-html==0.10.0
+
 FROM base as prod
-RUN pwd
-RUN ls -al
-RUN ls -al $HOME
-RUN ls -al $GITHUB_WORKSPACE
+# RUN pwd
+# RUN ls -al
+# RUN ls -al $HOME
+# RUN ls -al $GITHUB_WORKSPACE
 # COPY docker/yelp-closed-detector/requirements_frozen.txt docker/yelp-closed-detector/requirements_frozen.txt
-RUN pip3 install -r docker/yelp-closed-detector/requirements_frozen.txt
+# RUN pip3 install -r docker/yelp-closed-detector/requirements_frozen.txt
 
 FROM base AS dev
 # COPY docker/yelp-closed-detector/requirements.txt docker/yelp-closed-detector/requirements.txt
 # COPY docker/yelp-closed-detector/requirements_dev.txt docker/yelp-closed-detector/requirements_dev.txt
-RUN pip3 install -r docker/yelp-closed-detector/requirements_dev.txt
+# RUN pip3 install -r docker/yelp-closed-detector/requirements_dev.txt
+RUN pip3 install black
 
 CMD ["./docker/yelp-closed-detector/app.py"]
