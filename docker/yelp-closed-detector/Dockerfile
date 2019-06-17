@@ -2,7 +2,8 @@
 # FROM debian:stable-slim@sha256:6657ae6b0959f549b6fffd5328ba550bb8a8e6685d23e9f8b491fec3de9e8dd3 AS base
 # FROM python:3.6 AS base
 # FROM jfloff/alpine-python:3.7 AS base
-FROM debian:latest AS base
+# FROM debian:latest AS base
+FROM python:3 AS base
 
 # RUN echo bust cache
 RUN apt-get update && \
