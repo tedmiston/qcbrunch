@@ -30,6 +30,7 @@ yelp-closed-detector-lint:
 yelp-closed-detector-format:
 	docker run --rm --interactive --tty --env-file=.env --volume=${ROOT}:/foo --workdir=/foo ${YELP_CLOSED_DETECTOR_IMAGE}-dev black docker/yelp-closed-detector/*.py
 
+# this only works when the workflow occurs on repository_dispatch
 .PHONY: yelp-closed-detector-trigger
 yelp-closed-detector-trigger:
 	http --auth="tedmiston:${GITHUB_TOKEN}" POST \
