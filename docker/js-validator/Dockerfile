@@ -9,7 +9,7 @@ RUN apk update && \
 
 RUN pwd
 RUN ls -al
-RUN ls -al $HOME
-RUN ls -al $GITHUB_WORKSPACE
+RUN ls -al "$HOME"
+RUN ls -al "$GITHUB_WORKSPACE"
 
 CMD ["sh", "-c", "npm ci && npm run lint"]
