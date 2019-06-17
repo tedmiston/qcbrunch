@@ -75,6 +75,7 @@ workflow "Collection Stats" {
   on = "schedule(0 4 * * *)"
   resolves = [
     "Google Maps Email",
+    "Yelp Closed Detector",
     "Yelp Email",
   ]
 }
@@ -87,6 +88,15 @@ action "Google Maps Email" {
   uses = "tedmiston/qcbrunch/docker/google-maps-email@master"
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Google Maps Views"]
+}
+
+action "Yelp Closed Detector" {
+  uses = "tedmiston/qcbrunch/docker/yelp-closed-detector@master"
+  env = {
+    EMAIL_SENDER = "no-reply@qcbrunch.com"
+    EMAIL_RECIPIENT = "tedmiston@gmail.com"
+  }
+  secrets = ["SENDGRID_API_KEY"]
 }
 
 action "Yelp Followers Count" {
@@ -102,20 +112,4 @@ action "Yelp Email" {
   }
   secrets = ["SENDGRID_API_KEY"]
   needs = ["Yelp Followers Count"]
-}
-
-workflow "Debug" {
-  on = "repository_dispatch"
-  resolves = [
-    "Yelp Closed Detector Old",
-  ]
-}
-
-action "Yelp Closed Detector Old" {
-  uses = "tedmiston/qcbrunch/docker/yelp-closed-detector@master"
-  env = {
-    EMAIL_SENDER = "no-reply@qcbrunch.com"
-    EMAIL_RECIPIENT = "tedmiston@gmail.com"
-  }
-  secrets = ["SENDGRID_API_KEY"]
 }
