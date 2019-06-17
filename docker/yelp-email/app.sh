@@ -38,7 +38,7 @@ else
       "content": [
         {
           "type": "text/plain",
-          "value": "The Yelp Collection stats have changed.\n\nREPO_COUNT=-REPO_COUNT-\n\nYELP_COUNT=-YELP_COUNT-\n\nhttps://github.com/tedmiston/qcbrunch/actions"
+          "value": "The Yelp Collection stats have changed.\n\nREPO_COUNT=-REPO_COUNT-\n\nYELP_COUNT=-YELP_COUNT-\n\nhttps://github.com/tedmiston/qcbrunch/actions\n\nhttps://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha"
         }
       ]
     }'
