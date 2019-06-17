@@ -7,9 +7,4 @@ RUN apk update && \
         bash-completion \
         bash-doc
 
-RUN pwd
-RUN ls -al
-RUN ls -al "$HOME"
-RUN ls -al "$GITHUB_WORKSPACE"
-
 CMD ["sh", "-c", "npm ci && npm run lint"]
