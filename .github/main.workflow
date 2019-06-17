@@ -107,11 +107,11 @@ action "Yelp Email" {
 workflow "Debug" {
   on = "repository_dispatch"
   resolves = [
-    "Yelp Closed Detector",
+    "Yelp Closed Detector Old",
   ]
 }
 
-action "Yelp Closed Detector" {
+action "Yelp Closed Detector Old" {
   uses = "tedmiston/qcbrunch/docker/yelp-closed-detector@master"
   env = {
     EMAIL_SENDER = "no-reply@qcbrunch.com"
