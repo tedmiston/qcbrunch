@@ -9,17 +9,22 @@ FROM jfloff/alpine-python:3.7 AS base
 #         python3 \
 #         python3-pip
 
+RUN apk update
+RUN apk add libxml2-dev
+RUN apk add libxslt-dev
+RUN pip install --upgrade pip
+
 FROM base as prod
 RUN pwd
 RUN ls -al
 RUN ls -al $HOME
 RUN ls -al $GITHUB_WORKSPACE
 # COPY docker/yelp-closed-detector/requirements_frozen.txt docker/yelp-closed-detector/requirements_frozen.txt
-RUN pip3 install -r docker/yelp-closed-detector/requirements_frozen.txt
+# RUN pip install -r docker/yelp-closed-detector/requirements_frozen.txt
 
 FROM base AS dev
 # COPY docker/yelp-closed-detector/requirements.txt docker/yelp-closed-detector/requirements.txt
 # COPY docker/yelp-closed-detector/requirements_dev.txt docker/yelp-closed-detector/requirements_dev.txt
-RUN pip3 install -r docker/yelp-closed-detector/requirements_dev.txt
+# RUN pip install -r docker/yelp-closed-detector/requirements_dev.txt
 
 CMD ["./docker/yelp-closed-detector/app.py"]
