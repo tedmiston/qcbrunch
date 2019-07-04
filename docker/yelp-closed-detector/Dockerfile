@@ -9,4 +9,4 @@ FROM base AS prod
 CMD ["./docker/yelp-closed-detector/app.py"]
 
 FROM prod AS dev
-RUN pip install black==19.3b0
+RUN pip install black
