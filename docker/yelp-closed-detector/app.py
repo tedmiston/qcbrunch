@@ -7,17 +7,15 @@ from requests_html import HTMLSession
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
-yelp_urls = [
-    "https://www.yelp.com/biz/blackbird-eatery-cincinnati",  # closed
-    "https://www.yelp.com/biz/the-rook-otr-cincinnati-2",  # closed
-    "https://www.yelp.com/biz/tuckers-restaurant-cincinnati-2",  # open
-    "https://www.yelp.com/biz/urbana-cafe-cincinnati-3",  # open
-]
+from yelp_collection_parser import get_all_yelp_place_urls
+
+yelp_urls = get_all_yelp_place_urls()
 
 # get open / closed statuses from yelp
 session = HTMLSession()
 is_closed = {}
 for url in yelp_urls:
+    print(f'* fetching {url}')
     response = session.get(url)
     if not response.ok:
         print("bad response")
