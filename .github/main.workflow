@@ -8,8 +8,7 @@ workflow "Deploy" {
 action "Validate Docker" {
   uses = "tedmiston/qcbrunch/docker/hadolint@master"
   args = [
-    "docker/yelp-closed-detector/Dockerfile",
-    "docker/yelp-email/Dockerfile",
+    "docker/*/Dockerfile",
   ]
 }
 
