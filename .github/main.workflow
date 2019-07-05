@@ -7,9 +7,6 @@ workflow "Deploy" {
 
 action "Validate Docker" {
   uses = "tedmiston/qcbrunch/docker/hadolint@master"
-  args = [
-    "docker/*/Dockerfile",
-  ]
 }
 
 action "Build" {
