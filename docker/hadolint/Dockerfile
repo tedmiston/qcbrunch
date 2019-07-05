@@ -2,5 +2,4 @@ FROM debian:stable-slim@sha256:6657ae6b0959f549b6fffd5328ba550bb8a8e6685d23e9f8b
 
 COPY --from=hadolint/hadolint /bin/hadolint /bin/hadolint
 
-ENTRYPOINT ["/bin/hadolint"]
-CMD ["--help"]
+ENTRYPOINT find docker/ -name Dockerfile | xargs hadolint
