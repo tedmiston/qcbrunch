@@ -9,7 +9,7 @@ def get_page_urls(initial_offset, total_count, page_size):
     return [url_template.format(x) for x in range(initial_offset, total_count, page_size)]
 
 def get_places_from_page(url):
-    """Extrat places from pages 2 and beyond."""
+    """Extract places from pages 2 and beyond."""
     print(f'* fetching page {url}')
     html = HTML(html=HTMLSession().get(url).json()['list_markup'])
     return [place_serializer(biz) for biz in html.find('a.biz-name')]
