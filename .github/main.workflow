@@ -63,7 +63,7 @@ action "Zeit Now Deploy" {
 }
 
 workflow "Collection Stats" {
-  on = "schedule(0 4 * * *)"
+  on = "schedule(0 4 * * 6)"
   resolves = [
     "Google Maps Email",
     "Yelp Closed Detector",
