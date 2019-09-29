@@ -2,7 +2,7 @@ import subprocess
 
 import click
 
-from ..conf import BUILD_DIR, SOURCE_DIR
+from ..conf import BUILD_DIR, COPY_URL, SOURCE_DIR
 
 @click.group()
 def dev():
@@ -10,7 +10,11 @@ def dev():
 
 @dev.command()
 def serve():
-    subprocess.run('serve -l 5001', cwd=BUILD_DIR, shell=True)
+    if COPY_URL:
+        command = 'serve -l 5001'
+    else:
+        command = 'serve --no-clipboard -l 5001'
+    subprocess.run(command, cwd=BUILD_DIR, shell=True)
 
 @dev.command()
 def run():
