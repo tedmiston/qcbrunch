@@ -8,3 +8,5 @@ PROJECT_ROOT = os.path.expanduser(os.path.expandvars(os.environ['QCBRUNCH_ROOT']
 SOURCE_DIR = PROJECT_ROOT
 
 BUILD_DIR = os.path.join(PROJECT_ROOT, 'build')
+
+COPY_URL = bool(os.getenv('QCBRUNCH_COPY_URL', 1))
