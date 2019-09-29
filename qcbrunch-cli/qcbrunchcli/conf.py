@@ -9,4 +9,4 @@ SOURCE_DIR = PROJECT_ROOT
 
 BUILD_DIR = os.path.join(PROJECT_ROOT, 'build')
 
-COPY_URL = bool(os.getenv('QCBRUNCH_COPY_URL', 1))
+COPY_URL = int(os.getenv('QCBRUNCH_COPY_URL', 1)) == True
