@@ -1,21 +1,22 @@
 image:
   file: .gitpod.Dockerfile
 
-# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
-# tasks:
-# # - init: echo 'init script' # runs during prebuild
-# #   command: echo 'start script'
-# - command: source qcbrunch-cli/envs/gitpod.sh
-# - command: cd qcbrunch-cli && pipenv shell
-
 tasks:
-  # - command: make run
-  # #TODO: pipenv install for qcbrunch-cli?
-  - before: bash
-    # init: npm install -g npm && npm install -g serve
-    init: echo placeholder $SHELL
-    # command: cd qcbrunch-cli && pipenv run qcbrunch dev run
-    command: make run
+  - init: >-
+      cd "${GITPOD_REPO_ROOT}/qcbrunch-cli" &&
+      pipenv install --skip-lock
+    command: >-
+      cd "${GITPOD_REPO_ROOT}/qcbrunch-cli" &&
+      pipenv shell -- 'qcbrunch clean && qcbrunch render && qcbrunch build'
+    openIn: bottom
+    openMode: tab-after
+  - command: >-
+      cd "${GITPOD_REPO_ROOT}/qcbrunch-cli" &&
+      sleep 3 &&
+      pipenv shell -- 'qcbrunch dev serve'
+      # wait 3s for build to complete
+    openIn: bottom
+    openMode: tab-after
 
 ports:
   - port: 5001
