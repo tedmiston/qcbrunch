@@ -7,14 +7,13 @@ tasks:
       pipenv install --skip-lock
     command: >-
       cd "${GITPOD_REPO_ROOT}/qcbrunch-cli" &&
-      pipenv shell -- 'qcbrunch clean && qcbrunch render && qcbrunch build'
+      pipenv shell -- 'qcbrunch clean && qcbrunch render && qcbrunch build && gp sync-done virtual-env-setup'
     openIn: bottom
     openMode: tab-after
   - command: >-
       cd "${GITPOD_REPO_ROOT}/qcbrunch-cli" &&
-      sleep 3 &&
+      gp sync-await virtual-env-setup &&
       pipenv shell -- 'qcbrunch dev serve'
-      # wait 3s for build to complete
     openIn: bottom
     openMode: tab-after
 
