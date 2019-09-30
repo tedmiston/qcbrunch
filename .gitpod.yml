@@ -16,6 +16,7 @@ tasks:
       pipenv shell -- 'qcbrunch dev serve'
     openIn: bottom
     openMode: tab-after
+  - command: gp open index.html && exit
 
 ports:
   - port: 5001
