@@ -18,6 +18,16 @@ tasks:
     openMode: tab-after
   - command: gp open index.html && exit
 
+  # qcbrunch-gen
+  - init: >
+      cd qcbrunch-gen &&
+      pipenv install --skip-lock
+    command: >
+      cd qcbrunch-gen &&
+      pipenv shell -- 'clear'
+    openIn: main
+    openMode: tab-after
+
 ports:
   - port: 5001
     onOpen: open-preview
