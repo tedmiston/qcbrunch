@@ -64,6 +64,9 @@ table { border: 1px solid black; margin-bottom: 1em; }
 #restaurants td:nth-child(5),
 #restaurants td:nth-child(6) { text-align: center; }
 
+/* hide emoji underlines on linux */
+#restaurants td:nth-child(5) a:link { text-decoration-line: none; }
+
 #table-key { font-weight: bold; margin-bottom: 1.5em; text-align: center; }
 #table-key span+span { margin-left: 15px; }
 .table-key-tooltip { font-size: 80%; font-weight: normal; }
