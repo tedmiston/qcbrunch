@@ -13,7 +13,7 @@ tasks:
   - command: >-
       cd "${GITPOD_REPO_ROOT}/qcbrunch-cli" &&
       gp sync-await virtual-env-setup &&
-      pipenv shell -- 'qcbrunch dev serve'
+      pipenv shell -- 'qcbrunch dev run'
     openIn: bottom
     openMode: tab-after
   - command: gp open index.html && exit
