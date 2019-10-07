@@ -36,6 +36,4 @@ jobs:
       #     args: --ignore=_posts/ --ignore=node_modules/ .
 
       - name: Zeit Now Deploy
-        run: sudo npm install -g now && now deploy --prod --no-clipboard
-        env:
-          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+        run: sudo npm install -g now && now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard
