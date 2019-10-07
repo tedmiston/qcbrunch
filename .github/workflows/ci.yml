@@ -36,7 +36,7 @@ jobs:
           args: --ignore=_posts/ --ignore=node_modules/ .
 
       - name: Zeit Now Deploy
-        runs: npm install -g now
+        run: npm install -g now
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
         with:
