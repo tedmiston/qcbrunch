@@ -36,8 +36,8 @@ jobs:
           args: --ignore=_posts/ --ignore=node_modules/ .
 
       - name: Zeit Now Deploy
-        uses: tedmiston/zeit-now@c7bb7267fff6ee5fc70ded892dba51b11c3e751a
+        runs: npm install -g now
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
         with:
-          args: --target production build
+          args: --prod
