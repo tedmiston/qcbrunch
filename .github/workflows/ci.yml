@@ -5,12 +5,13 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: Git checkout
+        uses: actions/checkout@master
 
       - name: Validate Docker
         uses: tedmiston/qcbrunch/docker/hadolint@master
 
-      - name: Build
+      - name: Build Docker
         uses: docker://python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8b2ee9d1c50ff
         env:
           QCBRUNCH_ROOT: $GITHUB_WORKSPACE
