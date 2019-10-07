@@ -11,9 +11,9 @@ def dev():
 @dev.command()
 def serve():
     if COPY_URL:
-        command = 'serve -l 5001'
+        command = 'now dev --listen 5001'
     else:
-        command = 'serve --no-clipboard -l 5001'
+        command = 'now dev --no-clipboard --listen 5001'
     subprocess.run(command, cwd=BUILD_DIR, shell=True)
 
 @dev.command()
