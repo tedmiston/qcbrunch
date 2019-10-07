@@ -35,5 +35,13 @@ jobs:
       #   with:
       #     args: --ignore=_posts/ --ignore=node_modules/ .
 
-      - name: Zeit Now Deploy
-        run: sudo npm install -g now && now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
+
+      - name: Install Now
+        run: sudo npm install -g now
+
+      - name: Now Deploy
+        run: now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard
