@@ -6,20 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Validate Markdown
-        uses: igorshubovych/markdownlint-cli@c62b00d9a586560560b1151b38875deef047a093
-        with:
-          args: --ignore=_posts/ --ignore=node_modules/ .
-      - name: Validate JS
-        uses: tedmiston/qcbrunch/docker/js-validator@master
-      - name: Validate CSS
-        uses: docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3
-        with:
-          args: /vnu-runtime-image/bin/vnu --skip-non-css --verbose build/css/
-      - name: Validate HTML
-        uses: tedmiston/qcbrunch/docker/html-validator@master
+
       - name: Validate Docker
         uses: tedmiston/qcbrunch/docker/hadolint@master
+
       - name: Build
         uses: docker://python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8b2ee9d1c50ff
         env:
@@ -27,6 +17,23 @@ jobs:
         with:
           entrypoint: bash
           args: -c ./docker/qcbrunch-cli/app.sh
+
+      - name: Validate HTML
+        uses: tedmiston/qcbrunch/docker/html-validator@master
+
+      - name: Validate CSS
+        uses: docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3
+        with:
+          args: /vnu-runtime-image/bin/vnu --skip-non-css --verbose build/css/
+
+      - name: Validate JS
+        uses: tedmiston/qcbrunch/docker/js-validator@master
+
+      - name: Validate Markdown
+        uses: igorshubovych/markdownlint-cli@c62b00d9a586560560b1151b38875deef047a093
+        with:
+          args: --ignore=_posts/ --ignore=node_modules/ .
+
       - name: Zeit Now Deploy
         uses: tedmiston/zeit-now@c7bb7267fff6ee5fc70ded892dba51b11c3e751a
         env:
