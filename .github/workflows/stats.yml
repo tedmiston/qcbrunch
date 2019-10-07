@@ -4,30 +4,45 @@ name: Collection Stats
 #     - cron: 0 4 * * 6
 on: push
 jobs:
-  stats:
-    name: Yelp Followers Count
+  google-maps-stats:
+    name: Google Maps Stats
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+
+      - name: Google Maps Views
+        uses: tedmiston/qcbrunch/docker/google-maps-views@master
+
+      - name: Google Maps Email
+        uses: tedmiston/qcbrunch/docker/google-maps-email@master
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+  yelp-stats:
+    name: Yelp Stats
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
       - name: Yelp Followers Count
         uses: swinton/httpie.action@8ab0a0e926d091e0444fcacd5eb679d2e2d4ab3d
         with:
           args: https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | grep Followers | tr -dc '0-9' > yelp_followers_count.txt && cat yelp_followers_count.txt
-      - name: Google Maps Views
-        uses: tedmiston/qcbrunch/docker/google-maps-views@master
+
       - name: Yelp Email
         uses: tedmiston/qcbrunch/docker/yelp-email@master
         env:
           EMAIL_RECIPIENT: tedmiston@gmail.com
           EMAIL_SENDER: no-reply@qcbrunch.com
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+   yelp-closed:
+     name: Yelp Closed Notifier
+      - uses: actions/checkout@master
+
       - name: Yelp Closed Detector
         uses: tedmiston/qcbrunch/docker/yelp-closed-detector@master
         env:
           EMAIL_RECIPIENT: tedmiston@gmail.com
           EMAIL_SENDER: no-reply@qcbrunch.com
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-      - name: Google Maps Email
-        uses: tedmiston/qcbrunch/docker/google-maps-email@master
-        env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
