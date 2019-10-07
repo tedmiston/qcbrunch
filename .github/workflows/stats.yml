@@ -30,9 +30,9 @@ jobs:
         uses: swinton/httpie.action@8ab0a0e926d091e0444fcacd5eb679d2e2d4ab3d
         with:
           args: >
-            https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha | \
-            grep Followers | \
-            tr -dc '0-9' > yelp_followers_count.txt && \
+            https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha |
+            grep Followers |
+            tr -dc '0-9' > yelp_followers_count.txt &&
             cat yelp_followers_count.txt
 
       - name: Yelp email
