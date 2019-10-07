@@ -1,6 +1,7 @@
 *.egg-info
 *.sublime-project
 *.sublime-workspace
+*.swp
 .cache/
 .DS_Store
 .env
