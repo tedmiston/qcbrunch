@@ -45,13 +45,13 @@ jobs:
         run: sudo npm install -g now
 
       - name: Deploy Dev
-        if: github.ref != 'master'
+        if: github.ref != 'refs/heads/master'
         run: >
           cd build &&
           now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.dev.json
 
       - name: Deploy Prod
-        if: github.ref == 'master'
+        if: github.ref == 'refs/heads/master'
         run: >
           cd build &&
           now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.json
