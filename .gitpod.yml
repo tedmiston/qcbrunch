@@ -23,7 +23,7 @@ tasks:
       cd "${GITPOD_REPO_ROOT}/qcbrunch-gen" &&
       pipenv install --skip-lock
     command: >
-      cd "${GITPOD_REPO/ROOT}/qcbrunch-gen" &&
+      cd "${GITPOD_REPO_ROOT}/qcbrunch-gen" &&
       pipenv shell -- 'clear'
     openIn: main
     openMode: tab-after
