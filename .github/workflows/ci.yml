@@ -2,7 +2,7 @@ name: CI/CD
 on: push
 jobs:
   build:
-    name: CI
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
@@ -43,25 +43,13 @@ jobs:
       - name: Install Now
         run: sudo npm install -g now
 
-  deploy-staging:
-    name: Deploy Staging
-    runs-on: ubuntu-latest
-    needs:
-      - build
-    steps:
-      - name: Now Deploy Staging
+      - name: Deploy Staging
         if: github.ref != 'master'
         run: >
           cd build &&
           now deploy --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard
 
-  deploy-prod:
-    name: Deploy Prod
-    runs-on: ubuntu-latest
-    needs:
-      - build
-    steps:
-      - name: Now Deploy Prod
+      - name: Deploy Prod
         if: github.ref == 'master'
         run: >
           cd build &&
