@@ -11,9 +11,11 @@ def dev():
 @dev.command()
 def serve():
     if COPY_URL:
-        command = 'now dev --listen 5001'
+        command = 'now dev --listen 3000'
     else:
-        command = 'now dev --no-clipboard --listen 5001'
+        # TODO: re-add `--no-clipboard` here once now bug is fixed where it doesn't break without auth
+        # command = 'now --no-clipboard dev --listen 3000'
+        command = 'now dev --listen 3000'
     subprocess.run(command, cwd=BUILD_DIR, shell=True)
 
 @dev.command()
