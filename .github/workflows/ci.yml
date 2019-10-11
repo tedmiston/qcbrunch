@@ -31,10 +31,10 @@ jobs:
         uses: tedmiston/qcbrunch/docker/js-validator@master
 
       # TODO: troubleshoot random docker build failure
-      - name: Validate Markdown
-        uses: igorshubovych/markdownlint-cli@0e08318331cee51031c567ef8b3a14b38a375984
-        with:
-          args: --ignore=_posts/ --ignore=node_modules/ .
+      # - name: Validate Markdown
+      #   uses: igorshubovych/markdownlint-cli@0e08318331cee51031c567ef8b3a14b38a375984
+      #   with:
+      #     args: --ignore=_posts/ --ignore=node_modules/ .
 
       - name: Setup Node
         uses: actions/setup-node@master
