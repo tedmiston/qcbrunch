@@ -50,10 +50,10 @@ jobs:
       - build
     steps:
       - name: Now Deploy Staging
+        if: github.ref != 'master'
         run: >
           cd build &&
           now deploy --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard
-        if: ${{ github.ref }} != 'master'
 
   deploy-prod:
     name: Deploy Prod
@@ -62,7 +62,7 @@ jobs:
       - build
     steps:
       - name: Now Deploy Prod
+        if: github.ref == 'master'
         run: >
           cd build &&
           now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard
-        if: ${{ github.ref }} == 'master'
