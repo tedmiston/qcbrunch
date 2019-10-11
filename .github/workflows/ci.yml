@@ -47,10 +47,10 @@ jobs:
         if: github.ref != 'master'
         run: >
           cd build &&
-          now deploy --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=../now.dev.json
+          now deploy --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.dev.json
 
       - name: Deploy Prod
         if: github.ref == 'master'
         run: >
           cd build &&
-          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard
+          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.json
