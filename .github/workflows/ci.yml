@@ -43,11 +43,11 @@ jobs:
       - name: Install Now
         run: sudo npm install -g now
 
-      - name: Deploy Staging
+      - name: Deploy Dev
         if: github.ref != 'master'
         run: >
           cd build &&
-          now deploy --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard
+          now deploy --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=../now.dev.json
 
       - name: Deploy Prod
         if: github.ref == 'master'
