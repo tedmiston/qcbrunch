@@ -45,6 +45,9 @@ jobs:
             tr -dc '0-9' > yelp_followers_count.txt &&
             cat yelp_followers_count.txt
 
+      - name: Fail test 2
+        run: exit 1
+
       - name: Yelp email
         uses: tedmiston/qcbrunch/docker/yelp-email@master
         env:
@@ -54,6 +57,9 @@ jobs:
 
       - name: Ping Healthchecks
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}
+
+      - name: Fail Healthchecks
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}/fail
 
 # TODO: handle rate limiting / throttling so job succeeds
 #   yelp-closed:
