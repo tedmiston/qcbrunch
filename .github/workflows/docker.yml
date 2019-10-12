@@ -12,3 +12,13 @@ jobs:
         run: >
           cd docker/hadolint &&
           docker build -t tedmiston/qcbrunch:${{ github.sha }}-hadolint .
+
+      - name: Build HTML validator image
+        run: >
+          cd docker/html-validator &&
+          docker build -t tedmiston/qcbrunch:${{ github.sha }}-html-validator .
+
+      - name: Build JS validator image
+        run: >
+          cd docker/js-validator &&
+          docker build -t tedmiston/qcbrunch:${{ github.sha }}-js-validator .
