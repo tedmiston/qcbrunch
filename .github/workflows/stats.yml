@@ -19,10 +19,10 @@ jobs:
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
-      - name: Ping Healthchecks
+      - name: Healthy
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}
 
-      - name: Fail Healthchecks
+      - name: Unhealthy
         if: failure()
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}/fail
 
@@ -49,14 +49,14 @@ jobs:
           EMAIL_SENDER: no-reply@qcbrunch.com
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
-      - name: Ping Healthchecks
+      - name: Healthy
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}
 
-      - name: Fail Healthchecks
+      - name: Unhealthy
         if: failure()
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}/fail
 
-# TODO: handle rate limiting / throttling so job succeeds
+  # TODO: handle rate limiting / throttling so job succeeds
   yelp-closed:
     name: Yelp Closed
     runs-on: ubuntu-latest
@@ -71,9 +71,9 @@ jobs:
           EMAIL_SENDER: no-reply@qcbrunch.com
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
-      - name: Ping Healthchecks
+      - name: Healthy
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_CLOSED }}
 
-      - name: Fail Healthchecks
+      - name: Unhealthy
         if: failure()
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_CLOSED }}/fail
