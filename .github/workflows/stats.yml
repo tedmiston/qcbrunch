@@ -1,7 +1,8 @@
 name: Collection Stats
-on:
-  schedule:
-    - cron: 0 4 * * 6
+# on:
+#   schedule:
+#     - cron: 0 4 * * 6
+on: push
 jobs:
   google-maps-stats:
     name: Google Maps Stats
@@ -17,6 +18,9 @@ jobs:
         uses: tedmiston/qcbrunch/docker/google-maps-email@master
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+      - name: Ping Healthchecks
+        run: curl --retry=3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}
 
   yelp-stats:
     name: Yelp Stats
