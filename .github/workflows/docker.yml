@@ -5,24 +5,33 @@ on:
       - .github/workflows/docker.yml
       - 'docker/**'
 jobs:
-  build:
-    name: Build Docker images
+  build-hadolint:
+    name: Build Hadolint Docker image
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
         uses: actions/checkout@v1
-
-      - name: Build Hadolint image
+      - name: Build image
         run: >
           cd docker/hadolint &&
           docker build -t tedmiston/qcbrunch:${{ github.sha }}-hadolint .
-
-      - name: Build HTML validator image
+  build-html-validator:
+    name: Build HTML validator Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v1
+      - name: Build image
         run: >
           cd docker/html-validator &&
           docker build -t tedmiston/qcbrunch:${{ github.sha }}-html-validator .
-
-      - name: Build JS validator image
+  build-js-validator:
+    name: Build JS validator Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v1
+      - name: Build image
         run: >
           cd docker/js-validator &&
           docker build -t tedmiston/qcbrunch:${{ github.sha }}-js-validator .
