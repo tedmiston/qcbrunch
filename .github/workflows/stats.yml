@@ -20,7 +20,7 @@ jobs:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Ping Healthchecks
-        run: curl --retry=3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}
 
   yelp-stats:
     name: Yelp Stats
