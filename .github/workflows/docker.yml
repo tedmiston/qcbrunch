@@ -2,6 +2,7 @@ name: Docker
 on:
   push:
     paths:
+      - .github/workflows/docker.yml
       - 'docker/**'
 jobs:
   build:
