@@ -59,6 +59,7 @@ jobs:
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}
 
       - name: Fail Healthchecks
+        if: failure()
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}/fail
 
 # TODO: handle rate limiting / throttling so job succeeds
