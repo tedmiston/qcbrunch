@@ -1,7 +1,8 @@
 name: Collection Stats
-on:
-  schedule:
-    - cron: 0 4 * * 6
+# on:
+#   schedule:
+#     - cron: 0 4 * * 6
+on: push
 jobs:
   google-maps-stats:
     name: Google Maps Stats
@@ -17,6 +18,13 @@ jobs:
         uses: tedmiston/qcbrunch/docker/google-maps-email@master
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+      - name: Healthy
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}
+
+      - name: Unhealthy
+        if: failure()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}/fail
 
   yelp-stats:
     name: Yelp Stats
@@ -41,17 +49,31 @@ jobs:
           EMAIL_SENDER: no-reply@qcbrunch.com
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
-# TODO: handle rate limiting / throttling so job succeeds
-#   yelp-closed:
-#     name: Yelp Closed
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Git checkout
-#         uses: actions/checkout@master
-#
-#       - name: Yelp closed detector
-#         uses: tedmiston/qcbrunch/docker/yelp-closed-detector@master
-#         env:
-#           EMAIL_RECIPIENT: tedmiston@gmail.com
-#           EMAIL_SENDER: no-reply@qcbrunch.com
-#           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+      - name: Healthy
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}
+
+      - name: Unhealthy
+        if: failure()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}/fail
+
+  # TODO: handle rate limiting / throttling so job succeeds
+  yelp-closed:
+    name: Yelp Closed
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@master
+
+      - name: Yelp closed detector
+        uses: tedmiston/qcbrunch/docker/yelp-closed-detector@master
+        env:
+          EMAIL_RECIPIENT: tedmiston@gmail.com
+          EMAIL_SENDER: no-reply@qcbrunch.com
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+      - name: Healthy
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_CLOSED }}
+
+      - name: Unhealthy
+        if: failure()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_CLOSED }}/fail
