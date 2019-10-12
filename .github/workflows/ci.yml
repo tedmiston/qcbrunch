@@ -1,8 +1,5 @@
 name: CI/CD
-on:
-  push:
-    branches-ignore:
-      - healthchecks
+on: push
 jobs:
   build:
     name: Deploy
