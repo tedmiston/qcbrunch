@@ -6,7 +6,7 @@ on:
       - 'docker/**'
 jobs:
   build-hadolint:
-    name: Build Hadolint Docker image
+    name: Build Hadolint
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
@@ -16,7 +16,7 @@ jobs:
           cd docker/hadolint &&
           docker build -t tedmiston/qcbrunch:${{ github.sha }}-hadolint .
   build-html-validator:
-    name: Build HTML validator Docker image
+    name: Build HTML validator
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
@@ -26,7 +26,7 @@ jobs:
           cd docker/html-validator &&
           docker build -t tedmiston/qcbrunch:${{ github.sha }}-html-validator .
   build-js-validator:
-    name: Build JS validator Docker image
+    name: Build JS validator
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
