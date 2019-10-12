@@ -14,7 +14,9 @@ jobs:
       - name: Build image
         run: >
           cd docker/hadolint &&
-          docker build -t tedmiston/qcbrunch:${{ github.sha }}-hadolint .
+          docker login docker.pkg.github.com --username=tedmiston &&
+          docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} . &&
+          docker push docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }}
   build-html-validator:
     name: Build HTML validator
     runs-on: ubuntu-latest
