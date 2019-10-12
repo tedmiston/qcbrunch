@@ -42,9 +42,6 @@ jobs:
             tr -dc '0-9' > yelp_followers_count.txt &&
             cat yelp_followers_count.txt
 
-      - name: Fail test 2
-        run: exit 1
-
       - name: Yelp email
         uses: tedmiston/qcbrunch/docker/yelp-email@master
         env:
