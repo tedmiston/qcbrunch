@@ -57,16 +57,23 @@ jobs:
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}/fail
 
 # TODO: handle rate limiting / throttling so job succeeds
-#   yelp-closed:
-#     name: Yelp Closed
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Git checkout
-#         uses: actions/checkout@master
-#
-#       - name: Yelp closed detector
-#         uses: tedmiston/qcbrunch/docker/yelp-closed-detector@master
-#         env:
-#           EMAIL_RECIPIENT: tedmiston@gmail.com
-#           EMAIL_SENDER: no-reply@qcbrunch.com
-#           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+  yelp-closed:
+    name: Yelp Closed
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@master
+
+      - name: Yelp closed detector
+        uses: tedmiston/qcbrunch/docker/yelp-closed-detector@master
+        env:
+          EMAIL_RECIPIENT: tedmiston@gmail.com
+          EMAIL_SENDER: no-reply@qcbrunch.com
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+      - name: Ping Healthchecks
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_CLOSED }}
+
+      - name: Fail Healthchecks
+        if: failure()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_CLOSED }}/fail
