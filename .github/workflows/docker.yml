@@ -1,0 +1,14 @@
+name: Docker
+on: push
+jobs:
+  build:
+    name: Build Docker images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v1
+
+      - name: Build Hadolint image
+        run: >
+          cd docker/hadolint &&
+          docker build -t tedmiston/qcbrunch:${{ github.sha }}-hadolint .
