@@ -11,7 +11,8 @@ jobs:
       - name: GitHub Package Registry login
         run: >
           echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
-          docker pull docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616
+          docker pull docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
+          docker pull docker.pkg.github.com/tedmiston/qcbrunch/html-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
 
       - name: Validate Dockerfiles
         uses: ./.github/actions/hadolint
@@ -25,7 +26,7 @@ jobs:
           args: -c ./docker/qcbrunch-cli/app.sh
 
       - name: Validate HTML
-        uses: tedmiston/qcbrunch/docker/html-validator@master
+        uses: ./.github/actions/html-validator
 
       - name: Validate CSS
         uses: docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3
