@@ -17,7 +17,7 @@ jobs:
           echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} . &&
           docker push docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} &&
-          docker logout
+          docker logout docker.pkg.github.com
   build-html-validator:
     name: Build HTML validator
     runs-on: ubuntu-latest
