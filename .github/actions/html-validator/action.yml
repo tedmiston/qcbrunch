@@ -1,0 +1,6 @@
+# See comment in `hadolint/action.yml`.
+
+name: HTML validator
+runs:
+  using: docker
+  image: docker.pkg.github.com/tedmiston/qcbrunch/html-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
