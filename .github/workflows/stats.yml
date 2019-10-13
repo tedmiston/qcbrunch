@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Yelp closed detector
-        uses: tedmiston/qcbrunch/docker/yelp-closed-detector@master
+        uses: tedmiston/qcbrunch/docker/yelp-closed-detector@yelp-closed-debug
         env:
           EMAIL_RECIPIENT: tedmiston@gmail.com
           EMAIL_SENDER: no-reply@qcbrunch.com
