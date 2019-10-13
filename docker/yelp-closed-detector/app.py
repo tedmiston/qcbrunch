@@ -15,7 +15,7 @@ yelp_urls = get_all_yelp_place_urls()
 session = HTMLSession()
 is_closed = {}
 for url in yelp_urls:
-    print(f'* fetching {url}')
+    print(f'* fetching {url}', flush=True)
     response = session.get(url)
     if not response.ok:
         print("bad response")
