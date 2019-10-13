@@ -31,7 +31,12 @@ jobs:
       - name: Build image
         run: >
           cd docker/html-validator &&
-          docker build -t tedmiston/qcbrunch:${{ github.sha }}-html-validator .
+          docker build -t docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} .
+      - name: Publish image
+        run: >
+          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
+          docker push docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} &&
+          docker logout docker.pkg.github.com
   build-js-validator:
     name: Build JS validator
     runs-on: ubuntu-latest
@@ -41,4 +46,9 @@ jobs:
       - name: Build image
         run: >
           cd docker/js-validator &&
-          docker build -t tedmiston/qcbrunch:${{ github.sha }}-js-validator .
+          docker build -t docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} .
+      - name: Publish image
+        run: >
+          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
+          docker push docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} &&
+          docker logout docker.pkg.github.com
