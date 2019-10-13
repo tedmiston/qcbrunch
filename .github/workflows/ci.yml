@@ -59,3 +59,7 @@ jobs:
         run: >
           cd build &&
           now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.json
+
+      - name: GitHub Package Registry logout
+        if: always()
+        run: docker logout docker.pkg.github.com
