@@ -1,54 +1,54 @@
-# name: Docker
-# on:
-#   push:
-#     paths:
-#       - .github/workflows/docker.yml
-#       - docker/**
-# env:
-#   DOCKER_BUILDKIT: 1
-# jobs:
-#   build-hadolint:
-#     name: Build Hadolint
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Git checkout
-#         uses: actions/checkout@v1
-#       - name: Build image
-#         run: >
-#           cd docker/hadolint &&
-#           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
-#       - name: Publish image
-#         run: >
-#           echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
-#           docker push docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} &&
-#           docker logout docker.pkg.github.com
-#   build-html-validator:
-#     name: Build HTML validator
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Git checkout
-#         uses: actions/checkout@v1
-#       - name: Build image
-#         run: >
-#           cd docker/html-validator &&
-#           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} .
-#       - name: Publish image
-#         run: >
-#           echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
-#           docker push docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} &&
-#           docker logout docker.pkg.github.com
-#   build-js-validator:
-#     name: Build JS validator
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Git checkout
-#         uses: actions/checkout@v1
-#       - name: Build image
-#         run: >
-#           cd docker/js-validator &&
-#           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} .
-#       - name: Publish image
-#         run: >
-#           echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
-#           docker push docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} &&
-#           docker logout docker.pkg.github.com
+name: Docker
+on:
+  push:
+    paths:
+      - .github/workflows/docker.yml
+      - docker/**
+env:
+  DOCKER_BUILDKIT: 1
+jobs:
+  build-hadolint:
+    name: Build Hadolint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v1
+      - name: Build image
+        run: >
+          cd docker/hadolint &&
+          docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
+      - name: Publish image
+        run: >
+          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
+          docker push docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} &&
+          docker logout docker.pkg.github.com
+  build-html-validator:
+    name: Build HTML validator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v1
+      - name: Build image
+        run: >
+          cd docker/html-validator &&
+          docker build -t docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} .
+      - name: Publish image
+        run: >
+          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
+          docker push docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} &&
+          docker logout docker.pkg.github.com
+  build-js-validator:
+    name: Build JS validator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v1
+      - name: Build image
+        run: >
+          cd docker/js-validator &&
+          docker build -t docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} .
+      - name: Publish image
+        run: >
+          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
+          docker push docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} &&
+          docker logout docker.pkg.github.com
