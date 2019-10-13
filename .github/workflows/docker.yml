@@ -4,6 +4,8 @@ on:
     paths:
       - .github/workflows/docker.yml
       - 'docker/**'
+env:
+  DOCKER_BUILDKIT: 1
 jobs:
   build-hadolint:
     name: Build Hadolint
@@ -14,7 +16,7 @@ jobs:
       - name: Build image
         run: >
           cd docker/hadolint &&
-          DOCKER_BUILDKIT=1 docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
+          docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
       - name: Publish image
         run: >
           echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
