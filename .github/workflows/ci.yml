@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: GitHub Package Registry login
-        run: echo ${{ secret.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com
+        run: echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com
 
       - name: Validate Dockerfiles
         uses: docker://docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616
