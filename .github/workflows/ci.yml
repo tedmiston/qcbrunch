@@ -12,7 +12,8 @@ jobs:
         run: >
           echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
           docker pull docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
-          docker pull docker.pkg.github.com/tedmiston/qcbrunch/html-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
+          docker pull docker.pkg.github.com/tedmiston/qcbrunch/html-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
+          docker pull docker.pkg.github.com/tedmiston/qcbrunch/js-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
 
       - name: Validate Dockerfiles
         uses: ./.github/actions/hadolint
