@@ -13,7 +13,7 @@ def get_page_urls(initial_offset, total_count, page_size):
 def get_places_from_page(url):
     """Extract places from pages 2 and beyond."""
     print(f'* fetching page {url}')
-    html = HTML(html=session.get(url).json()['list_markup'])
+    html = HTML(html=session.get(url).json()['list_markup'], url='https://www.yelp.com/')
     return [place_serializer(biz) for biz in html.find('a.biz-name')]
 
 def get_initial_yelp_collection_places():
