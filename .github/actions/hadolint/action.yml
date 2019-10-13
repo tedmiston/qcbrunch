@@ -1,3 +1,15 @@
+# This local action causes the `docker pull` on GitHub Actions to be able to be
+# deferred (lazily loaded during runtime) as opposed to all pulls happening
+# before any steps in a GitHub Actions workflow get the chance to run as it
+# normally works.  This is a workaround until GitHub Actions supports a native
+# integration with GitHub Package Registry for Docker images.  [1][2][3][4][5]
+#
+# [1]: https://github.blog/2019-09-11-proxying-packages-with-github-package-registry-and-other-updates/
+# [2]: https://github.community/t5/GitHub-Actions/Github-Actions-new-Pulling-from-private-docker-repositories/m-p/32024
+# [3]: https://github.community/t5/GitHub-Actions/Is-it-possible-to-login-to-dockerhub-to-initialize-containers-in/m-p/31880
+# [4]: https://github.community/t5/GitHub-Actions/Use-docker-images-from-GitHub-Package-Registry/m-p/30407
+# [5]: https://github.community/t5/GitHub-Actions/Best-way-to-clone-a-private-repo-during-script-run-of-private/m-p/20221
+
 name: Hadolint
 runs:
   using: docker
