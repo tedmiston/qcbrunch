@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Validate Dockerfiles
-        uses: tedmiston/qcbrunch/docker/hadolint@master
+        uses: docker://docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616
 
       - name: Build site
         uses: docker://python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8b2ee9d1c50ff
