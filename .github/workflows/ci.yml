@@ -1,70 +1,70 @@
-name: CI/CD
-on: push
-jobs:
-  build:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Git checkout
-        uses: actions/checkout@master
+# name: CI/CD
+# on: push
+# jobs:
+#   build:
+#     name: Deploy
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Git checkout
+#         uses: actions/checkout@master
 
-      - name: GitHub Package Registry login
-        run: >
-          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com
+#       - name: GitHub Package Registry login
+#         run: >
+#           echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com
 
-      - name: GitHub Package Registry pull
-        run: >
-          docker pull docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
-          docker pull docker.pkg.github.com/tedmiston/qcbrunch/html-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
-          docker pull docker.pkg.github.com/tedmiston/qcbrunch/js-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
+#       - name: GitHub Package Registry pull
+#         run: >
+#           docker pull docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
+#           docker pull docker.pkg.github.com/tedmiston/qcbrunch/html-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
+#           docker pull docker.pkg.github.com/tedmiston/qcbrunch/js-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
 
-      - name: Validate Dockerfiles
-        uses: ./.github/actions/hadolint
+#       - name: Validate Dockerfiles
+#         uses: ./.github/actions/hadolint
 
-      - name: Build site
-        uses: docker://python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8b2ee9d1c50ff
-        env:
-          QCBRUNCH_ROOT: $GITHUB_WORKSPACE
-        with:
-          entrypoint: bash
-          args: -c ./docker/qcbrunch-cli/app.sh
+#       - name: Build site
+#         uses: docker://python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8b2ee9d1c50ff
+#         env:
+#           QCBRUNCH_ROOT: $GITHUB_WORKSPACE
+#         with:
+#           entrypoint: bash
+#           args: -c ./docker/qcbrunch-cli/app.sh
 
-      - name: Validate HTML
-        uses: ./.github/actions/html-validator
+#       - name: Validate HTML
+#         uses: ./.github/actions/html-validator
 
-      - name: Validate CSS
-        uses: docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3
-        with:
-          args: /vnu-runtime-image/bin/vnu --skip-non-css --verbose build/css/
+#       - name: Validate CSS
+#         uses: docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3
+#         with:
+#           args: /vnu-runtime-image/bin/vnu --skip-non-css --verbose build/css/
 
-      - name: Validate JS
-        uses: ./.github/actions/js-validator
+#       - name: Validate JS
+#         uses: ./.github/actions/js-validator
 
-      - name: Setup Node
-        uses: actions/setup-node@master
-        with:
-          node-version: '12.x'
+#       - name: Setup Node
+#         uses: actions/setup-node@master
+#         with:
+#           node-version: '12.x'
 
-      - name: Validate Markdown
-        run: >
-          sudo npm install -g markdownlint-cli &&
-          markdownlint --ignore=_posts/ --ignore=node_modules/ .
+#       - name: Validate Markdown
+#         run: >
+#           sudo npm install -g markdownlint-cli &&
+#           markdownlint --ignore=_posts/ --ignore=node_modules/ .
 
-      - name: Install Now
-        run: sudo npm install -g now
+#       - name: Install Now
+#         run: sudo npm install -g now
 
-      - name: Deploy Dev
-        if: github.ref != 'refs/heads/master'
-        run: >
-          cd build &&
-          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.dev.json
+#       - name: Deploy Dev
+#         if: github.ref != 'refs/heads/master'
+#         run: >
+#           cd build &&
+#           now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.dev.json
 
-      - name: Deploy Prod
-        if: github.ref == 'refs/heads/master'
-        run: >
-          cd build &&
-          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.json
+#       - name: Deploy Prod
+#         if: github.ref == 'refs/heads/master'
+#         run: >
+#           cd build &&
+#           now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.json
 
-      - name: GitHub Package Registry logout
-        if: always()
-        run: docker logout docker.pkg.github.com
+#       - name: GitHub Package Registry logout
+#         if: always()
+#         run: docker logout docker.pkg.github.com
