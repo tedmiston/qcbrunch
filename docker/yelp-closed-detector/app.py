@@ -19,9 +19,7 @@ for url in yelp_urls:
     response = session.get(url)
     if not response.ok:
         print("bad response")
-        # print(response.__dict__)
-        # sys.exit(1)
-        continue
+        sys.exit(1)
     title = response.html.find("title", first=True).text
     is_closed[url] = "CLOSED" in title
 
