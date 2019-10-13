@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - .github/workflows/docker.yml
-      - 'docker/**'
+      - docker/**
 env:
   DOCKER_BUILDKIT: 1
 jobs:
