@@ -19,7 +19,7 @@ for url in yelp_urls:
     response = session.get(url)
     if not response.ok:
         print("bad response")
-        print(response.__dict__)
+        # print(response.__dict__)
         # sys.exit(1)
         continue
     title = response.html.find("title", first=True).text
