@@ -1,4 +1,4 @@
-FROM python:3@sha256:284a4057aac706aaafe50c5c0090d6d311f5d8d72014f0cd69f880a54e9df6fe AS base
+FROM python:3.7.4@dbae83460610c9bbe344e9f21fb353395a641349c2b10fdb2e2472bed9625b77 AS base
 
 RUN pip install --upgrade pip
 
