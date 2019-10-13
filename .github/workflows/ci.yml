@@ -34,7 +34,7 @@ jobs:
           args: /vnu-runtime-image/bin/vnu --skip-non-css --verbose build/css/
 
       - name: Validate JS
-        uses: tedmiston/qcbrunch/docker/js-validator@master
+        uses: ./.github/actions/js-validator
 
       - name: Setup Node
         uses: actions/setup-node@master
