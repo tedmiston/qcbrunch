@@ -11,7 +11,7 @@ if [ "$REPO_COUNT" == "$YELP_COUNT" ]
 then
     echo counts are equal
     echo not sending email
-    exit 78
+    exit
 else
     echo counts are not equal
     TIMESTAMP=$(date)
