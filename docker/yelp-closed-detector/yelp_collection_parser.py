@@ -25,4 +25,6 @@ def get_all_yelp_place_urls():
     # TODO: pull total count dynamically
     for url in get_page_urls(initial_offset=30, total_count=129, page_size=30):
         all_places.extend(get_places_from_page(url))
+    for x in all_places:
+        print(x.url)
     return [x['url'] for x in all_places]
