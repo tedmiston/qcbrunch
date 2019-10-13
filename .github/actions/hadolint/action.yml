@@ -1,0 +1,4 @@
+name: Hadolint
+runs:
+  using: docker
+  image: docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616
