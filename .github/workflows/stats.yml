@@ -1,7 +1,8 @@
 name: Collection Stats
-on:
-  schedule:
-    - cron: 0 4 * * 6
+# on:
+#   schedule:
+#     - cron: 0 4 * * 6
+on: push
 jobs:
   google-maps-stats:
     name: Google Maps Stats
