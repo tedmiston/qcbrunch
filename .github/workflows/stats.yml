@@ -1,10 +1,60 @@
 name: Collection Stats
-# on:
-#   schedule:
-#     - cron: 0 4 * * 6
-on: push
+on:
+  schedule:
+    - cron: 0 4 * * 6
 jobs:
-  # TODO: handle rate limiting / throttling so job succeeds
+  google-maps-stats:
+    name: Google Maps Stats
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@master
+
+      - name: Google Maps views
+        uses: tedmiston/qcbrunch/docker/google-maps-views@master
+
+      - name: Google Maps email
+        uses: tedmiston/qcbrunch/docker/google-maps-email@master
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+      - name: Healthy
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}
+
+      - name: Unhealthy
+        if: failure()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}/fail
+
+  yelp-stats:
+    name: Yelp Stats
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@master
+
+      - name: Yelp followers count
+        uses: swinton/httpie.action@8ab0a0e926d091e0444fcacd5eb679d2e2d4ab3d
+        with:
+          args: >
+            https://www.yelp.com/collection/Ntw8wQeFY35dpevGB-Et_A?sort_by=alpha |
+            grep Followers |
+            tr -dc '0-9' > yelp_followers_count.txt &&
+            cat yelp_followers_count.txt
+
+      - name: Yelp email
+        uses: tedmiston/qcbrunch/docker/yelp-email@master
+        env:
+          EMAIL_RECIPIENT: tedmiston@gmail.com
+          EMAIL_SENDER: no-reply@qcbrunch.com
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+      - name: Healthy
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}
+
+      - name: Unhealthy
+        if: failure()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}/fail
+
   yelp-closed:
     name: Yelp Closed
     runs-on: ubuntu-latest
@@ -13,7 +63,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Yelp closed detector
-        uses: tedmiston/qcbrunch/docker/yelp-closed-detector@yelp-closed-debug
+        uses: tedmiston/qcbrunch/docker/yelp-closed-detector@master
         env:
           EMAIL_RECIPIENT: tedmiston@gmail.com
           EMAIL_SENDER: no-reply@qcbrunch.com
