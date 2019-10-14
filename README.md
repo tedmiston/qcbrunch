@@ -1,5 +1,7 @@
 # QCBrunch
 
+![](https://healthchecks.io/badge/706efcef-67c9-4bef-ab37-acbd4f39a6f2/zgwlZdPp.svg)
+
 The Breakfast & Brunch Guide for Cincinnati, Ohio
 
 <https://www.qcbrunch.com>
