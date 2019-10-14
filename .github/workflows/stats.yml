@@ -55,7 +55,6 @@ jobs:
         if: failure()
         run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}/fail
 
-  # TODO: handle rate limiting / throttling so job succeeds
   yelp-closed:
     name: Yelp Closed
     runs-on: ubuntu-latest
