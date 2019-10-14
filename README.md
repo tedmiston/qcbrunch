@@ -1,5 +1,8 @@
 # QCBrunch
 
+![](https://github.com/tedmiston/qcbrunch/workflows/CI/CD/badge.svg)
+![](https://github.com/tedmiston/qcbrunch/workflows/Docker/badge.svg)
+![](https://github.com/tedmiston/qcbrunch/workflows/Collection%20Stats/badge.svg)
 ![](https://healthchecks.io/badge/706efcef-67c9-4bef-ab37-acbd4f39a6f2/zgwlZdPp.svg)
 
 The Breakfast & Brunch Guide for Cincinnati, Ohio
