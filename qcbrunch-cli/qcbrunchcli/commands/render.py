@@ -7,14 +7,17 @@ from pprint import pprint
 import click
 
 from ..conf import BUILD_DIR, SOURCE_DIR
+from ..events import load_events
 from ..utils import load_data
 
 @click.command()
 @click.option('--show-diff', default=True, type=bool)
 def render(show_diff):
     data = load_data()
+    events_html = load_events()
 
     substitutions = {
+        'events': events_html,
         'yelp__subscribers': data['yelp']['subscribers'],
         'yelp__subscribers_display': data['yelp']['subscribers_display'],
         'google_maps__views': data['google-maps']['views'],
