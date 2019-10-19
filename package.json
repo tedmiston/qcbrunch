@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "The Breakfast & Brunch Guide for Cincinnati, Ohio.",
   "main": "js/app.js",
-  "dependencies": {},
+  "dependencies": {
+    "airtable": "^0.7.1"
+  },
   "devDependencies": {
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
