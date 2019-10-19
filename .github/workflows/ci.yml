@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Install events dependencies
+      - name: Install dependencies
         run: >
           cd events &&
           npm install
@@ -24,6 +24,12 @@ jobs:
           node app.js
         env:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+
+      - name: Store events artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: events
+          path: events/output.html
 
   build:
     name: Deploy
@@ -46,6 +52,12 @@ jobs:
 
       - name: Validate Dockerfiles
         uses: ./.github/actions/hadolint
+
+      - name: Load events artifact
+        uses: actions/download-artifact@master
+        with:
+          name: events
+          path: events/output.html
 
       - name: Build site
         uses: docker://python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8b2ee9d1c50ff
