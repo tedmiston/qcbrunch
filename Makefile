@@ -22,7 +22,7 @@ format-jsonnet:
 
 .PHONY: publish-image
 publish-image:
-	PREFIX=docker.pkg.github.com/tedmiston/qcbrunch \
+	PREFIX=docker.pkg.github.com/tedmiston/qcbrunch ; \
 	echo $(REGISTRY_TOKEN) | docker login --username=tedmiston --password-stdin docker.pkg.github.com && \
-	docker push $${PREFIX}/$(IMAGE) && \
+	docker push ${PREFIX}/$(IMAGE) && \
 	docker logout docker.pkg.github.com
