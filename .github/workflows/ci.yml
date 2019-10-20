@@ -24,6 +24,11 @@ jobs:
       - name: Validate Dockerfiles
         uses: ./.github/actions/hadolint
 
+      - name: Validate Jsonnet
+        uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
+        with:
+          args: --test .now.jsonnet .now.libsonnet
+
       - name: Generate Now config
         uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
         with:
