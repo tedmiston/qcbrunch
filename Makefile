@@ -22,4 +22,4 @@ format-jsonnet:
 
 .PHONY: publish-image
 publish-image:
-	echo ${REGISTRY_TOKEN} | docker login --username=tedmiston --password-stdin docker.pkg.github.com && docker push ${IMAGE} && docker logout docker.pkg.github.com
+	echo $(REGISTRY_TOKEN) | docker login --username=tedmiston --password-stdin docker.pkg.github.com && docker push $(IMAGE) && docker logout docker.pkg.github.com
