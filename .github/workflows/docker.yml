@@ -18,10 +18,11 @@ jobs:
           cd docker/hadolint &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
       - name: Publish image
-        run: >
-          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
-          docker push docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} &&
-          docker logout docker.pkg.github.com
+        uses: ./.github/actions/publish-image
+        with:
+          image: docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }}
+          token: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
+
   build-html-validator:
     name: Build HTML validator
     runs-on: ubuntu-latest
