@@ -62,7 +62,7 @@ jobs:
         if: github.ref != 'refs/heads/master'
         run: >
           cd build &&
-          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=./now/now.dev.json
+          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=.now/now.dev.json
 
       - name: Deploy Prod
         if: github.ref == 'refs/heads/master'
