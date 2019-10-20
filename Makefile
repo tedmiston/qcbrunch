@@ -2,6 +2,10 @@ SHELL := /usr/bin/env bash
 
 ROOT := $$(pwd)
 
+REGISTRY_URL := docker.pkg.github.com
+REGISTRY_USERNAME := tedmiston
+REGISTRY_PREFIX := $(REGISTRY_URL)/$(REGISTRY_USERNAME)/qcbrunch
+
 include docker/*/Makefile
 
 .PHONY: install
@@ -19,3 +23,9 @@ tree:
 .PHONY: format-jsonnet
 format-jsonnet:
 	echo .now.jsonnet .now.libsonnet | xargs --max-args=1 --verbose jsonnetfmt --in-place
+
+.PHONY: publish-image
+publish-image:
+	echo $(REGISTRY_TOKEN) | docker login --username=$(REGISTRY_USERNAME) --password-stdin $(REGISTRY_URL) && \
+	docker push $(REGISTRY_PREFIX)/$(IMAGE) && \
+	docker logout $(REGISTRY_URL)

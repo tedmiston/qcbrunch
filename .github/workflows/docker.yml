@@ -4,6 +4,7 @@ on:
     paths:
       - .github/workflows/docker.yml
       - docker/**
+      - Makefile
 env:
   DOCKER_BUILDKIT: 1
 jobs:
@@ -18,10 +19,10 @@ jobs:
           cd docker/hadolint &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
       - name: Publish image
-        run: >
-          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
-          docker push docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} &&
-          docker logout docker.pkg.github.com
+        run: make publish-image
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
+          IMAGE: hadolint:${{ github.sha }}
   build-html-validator:
     name: Build HTML validator
     runs-on: ubuntu-latest
@@ -33,10 +34,10 @@ jobs:
           cd docker/html-validator &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} .
       - name: Publish image
-        run: >
-          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
-          docker push docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} &&
-          docker logout docker.pkg.github.com
+        run: make publish-image
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
+          IMAGE: html-validator:${{ github.sha }}
   build-js-validator:
     name: Build JS validator
     runs-on: ubuntu-latest
@@ -48,7 +49,7 @@ jobs:
           cd docker/js-validator &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} .
       - name: Publish image
-        run: >
-          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com &&
-          docker push docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} &&
-          docker logout docker.pkg.github.com
+        run: make publish-image
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
+          IMAGE: js-validator:${{ github.sha }}
