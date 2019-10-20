@@ -7,6 +7,7 @@ on:
       - Makefile
 env:
   DOCKER_BUILDKIT: 1
+  REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
 jobs:
   build-hadolint:
     name: Build Hadolint
@@ -21,7 +22,6 @@ jobs:
       - name: Publish image
         run: make publish-image
         env:
-          REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
           IMAGE: hadolint:${{ github.sha }}
   build-html-validator:
     name: Build HTML validator
@@ -36,7 +36,6 @@ jobs:
       - name: Publish image
         run: make publish-image
         env:
-          REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
           IMAGE: html-validator:${{ github.sha }}
   build-js-validator:
     name: Build JS validator
@@ -51,5 +50,4 @@ jobs:
       - name: Publish image
         run: make publish-image
         env:
-          REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
           IMAGE: js-validator:${{ github.sha }}
