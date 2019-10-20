@@ -19,3 +19,7 @@ tree:
 .PHONY: format-jsonnet
 format-jsonnet:
 	echo .now.jsonnet .now.libsonnet | xargs --max-args=1 --verbose jsonnetfmt --in-place
+
+.PHONY: publish-image
+publish-image:
+	echo ${REGISTRY_TOKEN} | docker login --username=tedmiston --password-stdin docker.pkg.github.com && docker push ${IMAGE} && docker logout docker.pkg.github.com
