@@ -2,7 +2,8 @@ SHELL := /usr/bin/env bash
 
 ROOT := $$(pwd)
 
-REGISTRY_PREFIX := docker.pkg.github.com/tedmiston/qcbrunch
+REGISTRY_URL := docker.pkg.github.com
+REGISTRY_PREFIX := $(REGISTRY_URL)/tedmiston/qcbrunch
 
 include docker/*/Makefile
 
@@ -24,6 +25,6 @@ format-jsonnet:
 
 .PHONY: publish-image
 publish-image:
-	echo $(REGISTRY_TOKEN) | docker login --username=tedmiston --password-stdin docker.pkg.github.com && \
+	echo $(REGISTRY_TOKEN) | docker login --username=tedmiston --password-stdin $(REGISTRY_URL) && \
 	docker push $(REGISTRY_PREFIX)/$(IMAGE) && \
-	docker logout docker.pkg.github.com
+	docker logout $(REGISTRY_URL)
