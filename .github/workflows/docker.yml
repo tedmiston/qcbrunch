@@ -1,6 +1,8 @@
 name: Docker
 on:
   push:
+    branches-ignore:
+      - tedmiston/publish-image-make
     paths:
       - .github/workflows/docker.yml
       - docker/**
