@@ -1,9 +1,41 @@
 name: CI/CD
 on: push
 jobs:
+  events:
+    name: Events
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@master
+
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: >
+          cd events &&
+          npm install
+
+      - name: Fetch events
+        run: >
+          cd events &&
+          node app.js
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+
+      - name: Store events artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: events
+          path: events/output.html
+
   build:
     name: Deploy
     runs-on: ubuntu-latest
+    needs:
+      - events
     # TODO: test this with images built + pushed to github package registry
     # env:
     #   DOCKER_CONTENT_TRUST: 1
@@ -35,8 +67,13 @@ jobs:
         with:
           args: --multi .now/ .now.jsonnet
 
+      - name: Load events artifact
+        uses: actions/download-artifact@master
+        with:
+          name: events
+
       - name: Build site
-        uses: docker://python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8b2ee9d1c50ff
+        uses: docker://python:3.8.0-slim@sha256:c8f8cf71e80d0ca6d71858ac38dda8027637b04ade825b6f418b4e2da832c63a
         env:
           QCBRUNCH_ROOT: $GITHUB_WORKSPACE
         with:
