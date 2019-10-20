@@ -21,6 +21,11 @@ jobs:
       - name: Validate Dockerfiles
         uses: ./.github/actions/hadolint
 
+      - name: Generate Now configs
+        uses: docker://bitnami/jsonnet:latest
+        with:
+          args: --multi .now/ .now.jsonnet
+
       - name: Build site
         uses: docker://python:3.7-slim@sha256:589527a734f2a9e48b23cc4687848cb9503d0f8569fad68c3ad8b2ee9d1c50ff
         env:
@@ -49,11 +54,6 @@ jobs:
         run: >
           sudo npm install -g markdownlint-cli &&
           markdownlint --ignore=_posts/ --ignore=node_modules/ .
-
-      - name: Generate Now configs
-        uses: docker://bitnami/jsonnet:latest
-        with:
-          args: --multi .now/ .now.jsonnet
 
       - name: Install Now
         run: sudo npm install -g now
