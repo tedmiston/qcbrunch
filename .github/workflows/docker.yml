@@ -2,6 +2,7 @@ name: Docker
 on:
   push:
     paths:
+      - .github/actions/**
       - .github/workflows/docker.yml
       - docker/**
 env:
