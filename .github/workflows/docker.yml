@@ -20,9 +20,7 @@ jobs:
           cd docker/hadolint &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
       - name: Publish image
-        run: make publish-image
-        env:
-          IMAGE: hadolint:${{ github.sha }}
+        run: make IMAGE="hadolint:${{ github.sha }}" publish-image
   build-html-validator:
     name: Build HTML validator
     runs-on: ubuntu-latest
@@ -34,9 +32,7 @@ jobs:
           cd docker/html-validator &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} .
       - name: Publish image
-        run: make publish-image
-        env:
-          IMAGE: html-validator:${{ github.sha }}
+        run: make IMAGE="html-validator:${{ github.sha }}" publish-image
   build-js-validator:
     name: Build JS validator
     runs-on: ubuntu-latest
@@ -48,6 +44,4 @@ jobs:
           cd docker/js-validator &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} .
       - name: Publish image
-        run: make publish-image
-        env:
-          IMAGE: js-validator:${{ github.sha }}
+        run: make IMAGE="js-validator:${{ github.sha }}" publish-image
