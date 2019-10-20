@@ -22,7 +22,7 @@ jobs:
         run: make publish-image
         env:
           REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
-          IMAGE: docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }}
+          IMAGE: hadolint:${{ github.sha }}
   build-html-validator:
     name: Build HTML validator
     runs-on: ubuntu-latest
@@ -37,7 +37,7 @@ jobs:
         run: make publish-image
         env:
           REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
-          IMAGE: docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }}
+          IMAGE: html-validator:${{ github.sha }}
   build-js-validator:
     name: Build JS validator
     runs-on: ubuntu-latest
@@ -52,4 +52,4 @@ jobs:
         run: make publish-image
         env:
           REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
-          IMAGE: docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }}
+          IMAGE: js-validator:${{ github.sha }}
