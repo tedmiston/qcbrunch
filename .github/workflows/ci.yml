@@ -36,6 +36,9 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - events
+    # TODO: test this with images built + pushed to github package registry
+    # env:
+    #   DOCKER_CONTENT_TRUST: 1
     steps:
       - name: Git checkout
         uses: actions/checkout@master
@@ -52,6 +55,17 @@ jobs:
 
       - name: Validate Dockerfiles
         uses: ./.github/actions/hadolint
+
+      - name: Validate Jsonnet
+        uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
+        with:
+          entrypoint: jsonnetfmt
+          args: --test .now.jsonnet .now.libsonnet
+
+      - name: Generate Now config
+        uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
+        with:
+          args: --multi .now/ .now.jsonnet
 
       - name: Load events artifact
         uses: actions/download-artifact@master
@@ -94,13 +108,13 @@ jobs:
         if: github.ref != 'refs/heads/master'
         run: >
           cd build &&
-          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.dev.json
+          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=.now/now.dev.json
 
       - name: Deploy Prod
         if: github.ref == 'refs/heads/master'
         run: >
           cd build &&
-          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=now.json
+          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=.now/now.prod.json
 
       - name: GitHub Package Registry logout
         if: always()
