@@ -15,3 +15,7 @@ run:
 .PHONY: tree
 tree:
 	tree -I node_modules
+
+.PHONY: format-jsonnet
+format-jsonnet:
+	echo .now.jsonnet .now.libsonnet | xargs --max-args=1 --verbose jsonnetfmt --in-place
