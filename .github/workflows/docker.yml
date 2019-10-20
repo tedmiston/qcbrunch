@@ -18,7 +18,7 @@ jobs:
           cd docker/hadolint &&
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
       - name: Publish image
-        run: IMAGE=docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} make publish-image
+        run: make IMAGE=docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} publish-image
   build-html-validator:
     name: Build HTML validator
     runs-on: ubuntu-latest
