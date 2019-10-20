@@ -2,7 +2,7 @@ name: Publish Image
 description: Publish a Docker image to GitHub Package Registry
 runs:
   using: docker
-  image: .github/actions/publish-image/Dockerfile
+  image: Dockerfile
 inputs:
   image:
     description: Docker image name + tag
