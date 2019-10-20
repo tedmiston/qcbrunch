@@ -1,0 +1,16 @@
+name: Publish Image
+description: Publish a Docker image to GitHub Package Registry
+runs:
+  using: docker
+  image: .github/actions/publish-image/Dockerfile
+inputs:
+  image:
+    description: Docker image name + tag
+    required: true
+  username:
+    description: GitHub username for GitHub Package Registry
+    required: false
+    default: tedmiston
+  token:
+    description: GitHub token for GitHub Package Registry
+    required: true
