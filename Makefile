@@ -29,3 +29,13 @@ publish-image:
 	echo $(REGISTRY_TOKEN) | docker login --username=$(REGISTRY_USERNAME) --password-stdin $(REGISTRY_URL) && \
 	docker push $(REGISTRY_PREFIX)/$(IMAGE) && \
 	docker logout $(REGISTRY_URL)
+
+.PHONY: deploy-dev
+deploy-dev:
+	cd build && \
+	now deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.now/now.dev.json
+
+.PHONY: deploy-prod
+deploy-prod:
+	cd build && \
+	now deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.now/now.prod.json

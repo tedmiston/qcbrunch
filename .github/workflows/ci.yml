@@ -106,15 +106,15 @@ jobs:
 
       - name: Deploy Dev
         if: github.ref != 'refs/heads/master'
-        run: >
-          cd build &&
-          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=.now/now.dev.json
+        run: make deploy-dev
+        env:
+          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
 
       - name: Deploy Prod
         if: github.ref == 'refs/heads/master'
-        run: >
-          cd build &&
-          now deploy --prod --token=${{ secrets.ZEIT_TOKEN }} --no-clipboard --local-config=.now/now.prod.json
+        run: make deploy-prod
+        env:
+          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
 
       - name: GitHub Package Registry logout
         if: always()
