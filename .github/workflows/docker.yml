@@ -21,6 +21,7 @@ jobs:
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
       - name: Publish image
         run: make IMAGE="hadolint:${{ github.sha }}" publish-image
+
   build-html-validator:
     name: Build HTML validator
     runs-on: ubuntu-latest
@@ -33,6 +34,7 @@ jobs:
           docker build -t docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} .
       - name: Publish image
         run: make IMAGE="html-validator:${{ github.sha }}" publish-image
+
   build-js-validator:
     name: Build JS validator
     runs-on: ubuntu-latest
