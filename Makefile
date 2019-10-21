@@ -34,3 +34,8 @@ publish-image:
 deploy-dev:
 	cd build && \
 	now deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.now/now.dev.json
+
+.PHONY: deploy-prod
+deploy-prod:
+	cd build && \
+	now deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.now/now.prod.json
