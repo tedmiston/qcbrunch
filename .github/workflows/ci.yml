@@ -1,8 +1,5 @@
 name: CI/CD
-on:
-  push:
-    branches-ignore:
-      - nightly
+on: push
 jobs:
   events:
     name: Events
