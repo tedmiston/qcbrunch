@@ -1,7 +1,8 @@
 name: Nightly
-on:
-  schedule:
-    - cron: '24 23 * * *'
+# on:
+#   schedule:
+#     - cron: '24 23 * * *'
+on: push
 jobs:
   events:
     name: Events
