@@ -1,0 +1,116 @@
+name: Nightly
+# TODO: schedule
+on: push
+jobs:
+  events:
+    name: Events
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@master
+
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: >
+          cd events &&
+          npm install
+
+      - name: Fetch events
+        run: >
+          cd events &&
+          node app.js
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+
+      - name: Store events artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: events
+          path: events/output.html
+
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs:
+      - events
+    # TODO: test this with images built + pushed to github package registry
+    # env:
+    #   DOCKER_CONTENT_TRUST: 1
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@master
+
+      - name: GitHub Package Registry login
+        run: >
+          echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com
+
+      - name: GitHub Package Registry pull
+        run: >
+          docker pull docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
+          docker pull docker.pkg.github.com/tedmiston/qcbrunch/html-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
+          docker pull docker.pkg.github.com/tedmiston/qcbrunch/js-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
+
+      - name: Validate Dockerfiles
+        uses: ./.github/actions/hadolint
+
+      - name: Validate Jsonnet
+        uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
+        with:
+          entrypoint: jsonnetfmt
+          args: --test .now.jsonnet .now.libsonnet
+
+      - name: Generate Now config
+        uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
+        with:
+          args: --multi .now/ .now.jsonnet
+
+      - name: Load events artifact
+        uses: actions/download-artifact@master
+        with:
+          name: events
+
+      - name: Build site
+        uses: docker://python:3.8.0-slim@sha256:c8f8cf71e80d0ca6d71858ac38dda8027637b04ade825b6f418b4e2da832c63a
+        env:
+          QCBRUNCH_ROOT: $GITHUB_WORKSPACE
+        with:
+          entrypoint: bash
+          args: -c ./docker/qcbrunch-cli/app.sh
+
+      - name: Validate HTML
+        uses: ./.github/actions/html-validator
+
+      - name: Validate CSS
+        uses: docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3
+        with:
+          args: /vnu-runtime-image/bin/vnu --skip-non-css --verbose build/css/
+
+      - name: Validate JS
+        uses: ./.github/actions/js-validator
+
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
+
+      - name: Validate Markdown
+        run: >
+          sudo npm install -g markdownlint-cli &&
+          markdownlint --ignore=_posts/ --ignore=node_modules/ .
+
+      - name: Install Now
+        run: sudo npm install -g now
+
+      - name: Deploy Prod
+        # if: github.ref == 'refs/heads/master'
+        run: make deploy-prod
+        env:
+          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+
+      - name: GitHub Package Registry logout
+        if: always()
+        run: docker logout docker.pkg.github.com
