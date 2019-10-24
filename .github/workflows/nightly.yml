@@ -11,9 +11,6 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@master
 
-      - name: Fail
-        run: exit 1
-
       - name: Setup Node
         uses: actions/setup-node@master
         with:
