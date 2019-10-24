@@ -113,6 +113,12 @@ jobs:
       - name: Install Now
         run: sudo npm install -g now
 
+      - name: Deploy Dev
+        # if: github.ref != 'refs/heads/master'
+        run: make deploy-dev
+        env:
+          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+
       - name: Deploy Prod
         # if: github.ref == 'refs/heads/master'
         run: make deploy-prod
