@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-job_status=("${1}" | tr '[:upper:]' '[:lower:]')
+job_status=$("${1}" | tr '[:upper:]' '[:lower:]')
 url="${2}"
 
 if [ "${job_status}" == 'success' ];
