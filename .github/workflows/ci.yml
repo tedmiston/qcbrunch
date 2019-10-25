@@ -1,5 +1,9 @@
 name: CI/CD
-on: push
+on:
+  push:
+  schedule:
+    # - cron: '0 0 * * *'
+    - cron: '22 2 * * *'
 jobs:
   events:
     name: Events
@@ -30,6 +34,14 @@ jobs:
         with:
           name: events
           path: events/output.html
+
+      - name: Healthy
+        if: github.event_name == 'schedule' && success()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__NIGHTLY_EVENTS }}
+
+      - name: Unhealthy
+        if: github.event_name == 'schedule' && failure()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__NIGHTLY_EVENTS }}/fail
 
   build:
     name: Deploy
@@ -105,13 +117,13 @@ jobs:
         run: sudo npm install -g now
 
       - name: Deploy Dev
-        if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
         run: make deploy-dev
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
 
       - name: Deploy Prod
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'schedule'
         run: make deploy-prod
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
