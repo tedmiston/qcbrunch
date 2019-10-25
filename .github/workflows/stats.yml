@@ -19,7 +19,7 @@ jobs:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Health check
-        uses: .github/actions/healthchecks
+        uses: ./.github/actions/healthchecks
         with:
           url: ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}
 
@@ -47,7 +47,7 @@ jobs:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Health check
-        uses: .github/actions/healthchecks
+        uses: ./.github/actions/healthchecks
         with:
           url: ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}
 
@@ -66,6 +66,6 @@ jobs:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Health check
-        uses: .github/actions/healthchecks
+        uses: ./.github/actions/healthchecks
         with:
           url: ${{ secrets.HEALTH_CHECK_URL__YELP_CLOSED }}
