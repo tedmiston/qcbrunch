@@ -1,5 +1,8 @@
 name: Healthchecks
 inputs:
+  status:
+    description: Job status
+    required: true
   url:
     description: Healthcheck URL
     required: true
@@ -7,5 +10,5 @@ runs:
   using: docker
   image: Dockerfile
   args:
-    - ${{ job.status }}
+    - ${{ inputs.status }}
     - ${{ inputs.url }}
