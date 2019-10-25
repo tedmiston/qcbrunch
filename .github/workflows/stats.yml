@@ -21,6 +21,7 @@ jobs:
       - name: Health check
         uses: ./.github/actions/healthchecks
         with:
+          status: ${{ job.status }}
           url: ${{ secrets.HEALTH_CHECK_URL__GOOGLE_MAPS_STATS }}
 
   yelp-stats:
@@ -49,6 +50,7 @@ jobs:
       - name: Health check
         uses: ./.github/actions/healthchecks
         with:
+          status: ${{ job.status }}
           url: ${{ secrets.HEALTH_CHECK_URL__YELP_STATS }}
 
   yelp-closed:
@@ -68,4 +70,5 @@ jobs:
       - name: Health check
         uses: ./.github/actions/healthchecks
         with:
+          status: ${{ job.status }}
           url: ${{ secrets.HEALTH_CHECK_URL__YELP_CLOSED }}
