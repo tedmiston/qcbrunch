@@ -1,7 +1,8 @@
 name: Nightly
 on:
   schedule:
-    - cron: '0 0 * * *'
+    # - cron: '0 0 * * *'
+    - cron: '10 2 * * *'
 jobs:
   events:
     name: Events
@@ -114,13 +115,13 @@ jobs:
         run: sudo npm install -g now
 
       - name: Deploy Dev
-        # if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
         run: make deploy-dev
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
 
       - name: Deploy Prod
-        # if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'schedule'
         run: make deploy-prod
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
