@@ -2,8 +2,7 @@ name: CI/CD
 on:
   push:
   schedule:
-    # - cron: '0 0 * * *'
-    - cron: '22 2 * * *'
+    - cron: '0 0 * * *'
 jobs:
   events:
     name: Events
@@ -131,3 +130,11 @@ jobs:
       - name: GitHub Package Registry logout
         if: always()
         run: docker logout docker.pkg.github.com
+
+      - name: Healthy
+        if: github.event_name == 'schedule' && success()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__NIGHTLY_BUILD }}
+
+      - name: Unhealthy
+        if: github.event_name == 'schedule' && failure()
+        run: curl --retry 3 ${{ secrets.HEALTH_CHECK_URL__NIGHTLY_BUILD }}/fail
