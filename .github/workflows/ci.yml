@@ -65,7 +65,7 @@ jobs:
           docker pull docker.pkg.github.com/tedmiston/qcbrunch/js-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
 
       - name: Validate Dockerfiles
-        uses: ./.github/actions/hadolint
+        uses: .github/actions/hadolint
 
       - name: Validate Jsonnet
         uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
@@ -92,7 +92,7 @@ jobs:
           args: -c ./docker/qcbrunch-cli/app.sh
 
       - name: Validate HTML
-        uses: ./.github/actions/html-validator
+        uses: .github/actions/html-validator
 
       - name: Validate CSS
         uses: docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3
@@ -100,7 +100,7 @@ jobs:
           args: /vnu-runtime-image/bin/vnu --skip-non-css --verbose build/css/
 
       - name: Validate JS
-        uses: ./.github/actions/js-validator
+        uses: .github/actions/js-validator
 
       - name: Setup Node
         uses: actions/setup-node@master
