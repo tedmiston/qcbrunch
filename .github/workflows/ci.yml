@@ -35,7 +35,7 @@ jobs:
           path: events/output.html
 
       - name: Health check
-        uses: .github/actions/healthchecks
+        uses: ./.github/actions/healthchecks
         with:
           url: ${{ secrets.HEALTH_CHECK_URL__NIGHTLY_EVENTS }}
 
