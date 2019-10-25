@@ -2,8 +2,7 @@ name: CI/CD
 on:
   push:
   schedule:
-    # - cron: 0 0 * * *
-    - cron: 5 9 * * *
+    - cron: 0 0 * * *
 jobs:
   events:
     name: Events
