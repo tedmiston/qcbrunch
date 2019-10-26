@@ -6,11 +6,11 @@ inputs:
   url:
     description: Healthcheck URL
     required: true
-  successRoute:
+  success_route:
     description: todo
     required: false
     default: ''
-  failureRoute:
+  failure_route:
     description: todo
     required: false
     default: /fail
