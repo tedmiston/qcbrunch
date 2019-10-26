@@ -37,6 +37,7 @@ jobs:
       - run: echo fail ; exit 1
 
       - name: Health check
+        if: github.event_name == 'schedule' && always()
         uses: ./.github/actions/healthchecks
         with:
           status: ${{ job.status }}
