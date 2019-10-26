@@ -19,7 +19,6 @@ then
 elif [ "${job_status}" == 'cancelled' ];
 then
   echo 'job cancelled'
-  exit 1
 else
   echo 'invalid job status'
   exit 1
