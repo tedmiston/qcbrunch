@@ -19,6 +19,7 @@ jobs:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Health check
+        if: always()
         uses: ./.github/actions/healthchecks
         with:
           status: ${{ job.status }}
@@ -48,6 +49,7 @@ jobs:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Health check
+        if: always()
         uses: ./.github/actions/healthchecks
         with:
           status: ${{ job.status }}
@@ -68,6 +70,7 @@ jobs:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Health check
+        if: always()
         uses: ./.github/actions/healthchecks
         with:
           status: ${{ job.status }}
