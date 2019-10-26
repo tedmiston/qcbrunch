@@ -34,6 +34,8 @@ jobs:
           name: events
           path: events/output.html
 
+      - run: echo fail ; exit 1
+
       - name: Health check
         uses: ./.github/actions/healthchecks
         with:
