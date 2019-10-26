@@ -130,7 +130,7 @@ jobs:
         run: docker logout docker.pkg.github.com
 
       - name: Health check
-        uses: ./github/actions/healthchecks
+        uses: ./.github/actions/healthchecks
         with:
           status: ${{ job.status }}
           url: ${{ secrets.HEALTH_CHECK_URL__NIGHTLY_BUILD }}
