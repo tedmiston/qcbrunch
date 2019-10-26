@@ -7,11 +7,8 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-echo env | grep INPUT_
-
-job_status=$(echo "${1}" | tr '[:upper:]' '[:lower:]')
-url="${2}"
-
+job_status=$(echo "${INPUT_STATUS}" | tr '[:upper:]' '[:lower:]')url="${2}"
+url="${INPUT_URL}"
 if [ "${job_status}" == 'success' ];
 then
   curl --silent --show-error --output /dev/null --retry 3 "${url}"
