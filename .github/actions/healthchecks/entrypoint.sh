@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-job_status=$(echo "${INPUT_STATUS}" | tr '[:upper:]' '[:lower:]')url="${2}"
+job_status=$(echo "${INPUT_STATUS}" | tr '[:upper:]' '[:lower:]')
 url="${INPUT_URL}"
 echo job_status=$job_status
 echo url=$url
