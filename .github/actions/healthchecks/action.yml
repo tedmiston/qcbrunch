@@ -6,14 +6,14 @@ inputs:
   url:
     description: Healthcheck URL
     required: true
-  success-url:
+  success-route:
     description: todo
     required: false
-    default: ${{ inputs.url }}
-  failure-url:
+    default: ''
+  failure-route:
     description: todo
     required: false
-    default: ${{ inputs.url }}/fail
+    default: /fail
 runs:
   using: docker
   image: Dockerfile
