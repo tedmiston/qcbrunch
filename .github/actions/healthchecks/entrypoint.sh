@@ -12,10 +12,10 @@ url="${2}"
 
 if [ "${job_status}" == 'success' ];
 then
-  url="${url}"
+  curl --silent --show-error --output /dev/null --retry 3 "${url}"
 elif [ "${job_status}" == 'failure' ];
 then
-  url="${url}"/fail
+  curl --silent --show-error --output /dev/null --retry 3 "${url}/fail"
 elif [ "${job_status}" == 'cancelled' ];
 then
   echo 'job cancelled'
@@ -24,5 +24,4 @@ else
   exit 1
 fi
 
-curl --silent --show-error --output /dev/null --retry 3 "${url}"
 echo "logged ${job_status}"
