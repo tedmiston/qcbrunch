@@ -7,6 +7,8 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
+echo env | grep INPUT_
+
 job_status=$(echo "${1}" | tr '[:upper:]' '[:lower:]')
 url="${2}"
 
