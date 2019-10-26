@@ -26,4 +26,4 @@ else
 fi
 
 curl --silent --show-error --output /dev/null --retry 3 "${url}"
-echo 'success'
+echo "logged ${job_status}"
