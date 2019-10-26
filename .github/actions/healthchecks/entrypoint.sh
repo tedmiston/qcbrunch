@@ -9,6 +9,8 @@ fi
 
 job_status=$(echo "${INPUT_STATUS}" | tr '[:upper:]' '[:lower:]')url="${2}"
 url="${INPUT_URL}"
+echo job_status=$job_status
+echo url=$url
 if [ "${job_status}" == 'success' ];
 then
   curl --silent --show-error --output /dev/null --retry 3 "${url}"
