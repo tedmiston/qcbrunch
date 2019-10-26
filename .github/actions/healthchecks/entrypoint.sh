@@ -25,4 +25,4 @@ else
   exit 1
 fi
 
-echo curl --retry 3 "${url}"
+curl --retry 3 "${url}"
