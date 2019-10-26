@@ -1,0 +1,19 @@
+name: Healthchecks
+inputs:
+  status:
+    description: Job status
+    required: true
+  url:
+    description: Healthcheck URL
+    required: true
+  success_route:
+    description: todo
+    required: false
+    default: ''
+  failure_route:
+    description: todo
+    required: false
+    default: /fail
+runs:
+  using: docker
+  image: Dockerfile
