@@ -10,7 +10,6 @@
       routes: [
         { src: '/stats', dest: '/stats.html' },
       ],
-      regions: ['all'],
       public: false,
       github: {
         enabled: false,
