@@ -19,9 +19,9 @@ def render(show_diff):
     substitutions = {
         'events': events_html,
         'yelp__subscribers': data['yelp']['subscribers'],
-        'yelp__subscribers_display': data['yelp']['subscribers_display'],
+        'yelp__subscribers_display': data['yelp']['subscribers-display'],
         'google_maps__views': data['google-maps']['views'],
-        'google_maps__views_display': data['google-maps']['views_display'],
+        'google_maps__views_display': data['google-maps']['views-display'],
     }
     pprint(substitutions, width=1)
 
