@@ -8,7 +8,7 @@ import click
 
 from ..conf import BUILD_DIR, SOURCE_DIR
 from ..events import load_events
-from ..utils import load_data
+from ..utils import get_git_date, load_data
 
 @click.command()
 @click.option('--show-diff', default=True, type=bool)
@@ -22,6 +22,7 @@ def render(show_diff):
         'yelp__subscribers_display': data['yelp']['subscribers-display'],
         'google_maps__views': data['google-maps']['views'],
         'google_maps__views_display': data['google-maps']['views-display'],
+        'updated_date': get_git_date(),
     }
     pprint(substitutions, width=1)
 
