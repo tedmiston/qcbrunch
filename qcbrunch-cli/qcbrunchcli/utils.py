@@ -14,6 +14,12 @@ def save_data(data):
         yaml.dump(data, fp)
 
 def get_git_date():
-    command = 'git log -1 --date=format:"%B %Y" --format="%ad"'
-    proc = subprocess.run(command, shell=True, capture_output=True)
-    return proc.stdout.strip().decode()
+    result = subprocess.run(
+        'git log -1 --date=format:"%B %Y" --format="%ad"',
+        cwd=SOURCE_DIR,
+        shell=True,
+        capture_output=True,
+    )
+    date = result.stdout.strip().decode()
+    assert date != ''
+    return date
