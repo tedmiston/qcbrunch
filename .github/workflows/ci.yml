@@ -131,7 +131,7 @@ jobs:
         run: docker logout docker.pkg.github.com
 
       - name: Health check
-        if: github.event_name == 'schedule' && always()
+        if: always()
         uses: ./.github/actions/healthchecks
         with:
           status: ${{ job.status }}
