@@ -29,7 +29,7 @@ jobs:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
 
       - name: Store events artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v1
         with:
           name: events
           path: events/output.html
@@ -78,7 +78,7 @@ jobs:
           args: --multi .now/ .now.jsonnet
 
       - name: Load events artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@v1
         with:
           name: events
 
