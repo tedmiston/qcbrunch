@@ -1,4 +1,4 @@
-FROM python:3.8.0@sha256:514a95a32b86cafafefcecc28673bb647d44c5aadf06203d39c43b9c3f61ed52 AS base
+FROM python:3.8.2@sha256:67243d9d9dc8c93087c53a1cbde644b461bf412891283d06ec77425db11319d1 AS base
 
 RUN pip install --upgrade pip
 
