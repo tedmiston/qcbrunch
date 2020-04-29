@@ -7,9 +7,9 @@
     "airtable": "^0.7.1"
   },
   "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.20.2"
   },
   "scripts": {
     "lint": "eslint --ignore-pattern=!.eslintrc.js .eslintrc.js build/js/",
