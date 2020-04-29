@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v1
         with:
           node-version: 12.x
 
@@ -51,7 +51,7 @@ jobs:
     #   DOCKER_CONTENT_TRUST: 1
     steps:
       - name: Git checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: GitHub Package Registry login
         run: >
@@ -104,7 +104,7 @@ jobs:
         uses: ./.github/actions/js-validator
 
       - name: Setup Node
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v1
         with:
           node-version: '12.x'
 
