@@ -4,7 +4,8 @@
   "description": "The Breakfast & Brunch Guide for Cincinnati, Ohio.",
   "main": "js/app.js",
   "dependencies": {
-    "airtable": "^0.7.1"
+    "airtable": "^0.7.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -13,7 +14,9 @@
   },
   "scripts": {
     "lint": "eslint --ignore-pattern=!.eslintrc.js .eslintrc.js build/js/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -24,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/tedmiston/qcbrunch/issues"
   },
-  "homepage": "https://www.qcbrunch.com/"
+  "homepage": "https://www.qcbrunch.com/",
+  "snyk": true
 }
