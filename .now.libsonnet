@@ -11,8 +11,6 @@
         { src: '/stats', dest: '/stats.html' },
       ],
       public: false,
-      github: {
-        enabled: false,
-      },
+      github: { enabled: false },
     },
 }
