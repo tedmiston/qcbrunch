@@ -12,6 +12,7 @@
     "eslint-plugin-import": "^2.20.2"
   },
   "scripts": {
+    "build": " ",
     "lint": "eslint --ignore-pattern=!.eslintrc.js .eslintrc.js build/js/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
