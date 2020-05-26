@@ -24,6 +24,9 @@ h2 img.emoji { height: 1em; width: 1em; }
 
 table { border: 1px solid black; margin-bottom: 1em; }
 
+#coffee-shops { margin: 1.5em auto 0.25em;  }
+
+#events-header { margin: 1.5em auto 0.25em;  }
 #events { max-width: 100%; width: 100%; }
 #col-events-date { width: 15%; }
 #col-events-title { width: 55%; }
