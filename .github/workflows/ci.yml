@@ -113,7 +113,9 @@ jobs:
           markdownlint --ignore=_posts/ --ignore=node_modules/ .
 
       - name: Install Now
-        run: sudo npm install -g now@^16.0.0
+        run: >
+          sudo rm /usr/local/bin/now &&
+          sudo npm install -g now@^16.0.0
 
       - name: Deploy Dev
         if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
