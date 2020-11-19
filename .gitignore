@@ -9,6 +9,8 @@
 .jekyll-metadata
 .sass-cache
 .venv
+.vercel/project.json
+.vercel/README.txt
 /localStorage.json
 __pycache__
 _site/
