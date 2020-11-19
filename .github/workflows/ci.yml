@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
-          node-version: 12.x
+          node-version: 14.x
       - name: Install dependencies
         run: cd events && npm install
       - name: Fetch events
@@ -85,7 +85,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
-          node-version: '12.x'
+          node-version: '14.x'
       - name: Validate Markdown
         run: >
           sudo npm install -g markdownlint-cli &&
