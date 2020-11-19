@@ -57,11 +57,11 @@ jobs:
         uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
         with:
           entrypoint: jsonnetfmt
-          args: --test .now.jsonnet .now.libsonnet
-      - name: Generate Now config
+          args: --test .vercel.jsonnet .vercel.libsonnet
+      - name: Generate vercel config
         uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
         with:
-          args: --multi .now/ .now.jsonnet
+          args: --multi .vercel/ .vercel.jsonnet
       - name: Load events artifact
         uses: actions/download-artifact@v2
         with:
@@ -90,10 +90,8 @@ jobs:
         run: >
           sudo npm install -g markdownlint-cli &&
           markdownlint --ignore=_posts/ --ignore=node_modules/ .
-      - name: Install Now
-        run: >
-          sudo rm /usr/local/bin/now &&
-          sudo npm install -g now@^16.0.0
+      - name: Install Vercel
+        run: sudo rm /usr/local/bin/vercel && sudo npm install -g vercel
       - name: Deploy Dev
         if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
         run: make deploy-dev

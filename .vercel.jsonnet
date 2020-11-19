@@ -1,11 +1,11 @@
-local now = import '.now.libsonnet';
+local vercel = import '.vercel.libsonnet';
 
 {
-  'now.dev.json': now.config(
+  'vercel.dev.json': vercel.config(
     name='qcbrunch-dev',
     alias=['dev.qcbrunch.com'],
   ),
-  'now.prod.json': now.config(
+  'vercel.prod.json': vercel.config(
     name='qcbrunch',
     alias=['qcbrunch.com', 'www.qcbrunch.com'],
   ),

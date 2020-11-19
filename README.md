@@ -28,7 +28,7 @@ More info: [*Hello, Queen City Brunch!*](http://blog.tedmiston.com/queen-city-br
     - Icons: Font Awesome, Twemoji
     - Analytics: Google Analytics, Inspectlet, Segment, W3Counter
   - Back End
-    - Zeit Now
+    - Vercel
     - Zeit Network (DNS)
     - Let's Encrypt
     - HTTP/2

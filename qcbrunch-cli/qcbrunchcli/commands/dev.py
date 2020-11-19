@@ -11,11 +11,11 @@ def dev():
 @dev.command()
 def serve():
     if COPY_URL:
-        command = 'now dev --listen 3000'
+        command = 'vercel dev --listen 3000'
     else:
-        # TODO: re-add `--no-clipboard` here once now bug is fixed where it doesn't break without auth
-        # command = 'now --no-clipboard dev --listen 3000'
-        command = 'now dev --listen 3000'
+        # TODO: re-add `--no-clipboard` here once vercel bug is fixed where it doesn't break without auth
+        # command = 'vercel --no-clipboard dev --listen 3000'
+        command = 'vercel dev --listen 3000'
     subprocess.run(command, cwd=BUILD_DIR, shell=True)
 
 @dev.command()

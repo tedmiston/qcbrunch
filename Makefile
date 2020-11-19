@@ -22,7 +22,7 @@ tree:
 
 .PHONY: format-jsonnet
 format-jsonnet:
-	echo .now.jsonnet .now.libsonnet | xargs --max-args=1 --verbose jsonnetfmt --in-place
+	echo .vercel.jsonnet .vercel.libsonnet | xargs --max-args=1 --verbose jsonnetfmt --in-place
 
 .PHONY: publish-image
 publish-image:
@@ -33,9 +33,9 @@ publish-image:
 .PHONY: deploy-dev
 deploy-dev:
 	cd build && \
-	now deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.now/now.dev.json
+	vercel deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.vercel/vercel.dev.json
 
 .PHONY: deploy-prod
 deploy-prod:
 	cd build && \
-	now deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.now/now.prod.json
+	vercel deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.vercel/vercel.prod.json

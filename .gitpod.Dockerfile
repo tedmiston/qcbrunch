@@ -10,4 +10,4 @@ RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
 
 RUN npm install -g npm
-RUN npm install -g now
+RUN npm install -g vercel

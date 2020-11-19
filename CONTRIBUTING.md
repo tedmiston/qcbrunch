@@ -1,6 +1,6 @@
 # Contributing
 
-QCBrunch is now deployed on Zeit Now.  It was previously hosted on GitHub Pages.
+QCBrunch is deployed on Vercel.
 
 ## Add a Place
 
@@ -8,24 +8,6 @@ To add a place, fill out as much info as possible using [TEMPLATE.html](https://
 
 ## Development
 
-To run the site locally:
+To run the site locally: `vercel dev`
 
-```shell
-./run.sh
-```
-
-To deploy:
-
-```shell
-now
-```
-
-To point prod to the latest deploy:
-
-```shell
-./deploy.sh
-```
-
-## Notes
-
-The package.json file is temporarily named package.json.ignore because its presence trips up Zeit Now into thinking this is a Node app instead of a static site.  It's not currently used but will be used in the future.
+To deploy: `vercel deploy` (or push to CI).
