@@ -12,7 +12,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2-beta
         with:
           node-version: 12.x
       - name: Install dependencies
@@ -83,7 +83,7 @@ jobs:
       - name: Validate JS
         uses: ./.github/actions/js-validator
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2-beta
         with:
           node-version: '12.x'
       - name: Validate Markdown
