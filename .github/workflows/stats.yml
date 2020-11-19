@@ -6,6 +6,7 @@ jobs:
   google-maps-stats:
     name: Google Maps Stats
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Git checkout
         uses: actions/checkout@master
@@ -28,6 +29,7 @@ jobs:
   yelp-stats:
     name: Yelp Stats
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Git checkout
         uses: actions/checkout@master
@@ -58,6 +60,7 @@ jobs:
   yelp-closed:
     name: Yelp Closed
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Git checkout
         uses: actions/checkout@master
