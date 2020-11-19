@@ -4,7 +4,7 @@
   "description": "The Breakfast & Brunch Guide for Cincinnati, Ohio.",
   "main": "js/app.js",
   "dependencies": {
-    "airtable": "^0.7.1"
+    "airtable": "^0.10.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
