@@ -32,10 +32,8 @@ publish-image:
 
 .PHONY: deploy-dev
 deploy-dev:
-	cd build && \
-	vercel deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.vercel/vercel.dev.json
+	cd build && vercel deploy --confirm --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.vercel/vercel.dev.json
 
 .PHONY: deploy-prod
 deploy-prod:
-	cd build && \
-	vercel deploy --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.vercel/vercel.prod.json
+	cd build && vercel deploy --confirm --prod --token=$(ZEIT_TOKEN) --no-clipboard --local-config=.vercel/vercel.prod.json
