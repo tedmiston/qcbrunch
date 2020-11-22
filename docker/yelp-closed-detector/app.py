@@ -20,8 +20,12 @@ for url in yelp_urls:
     if not response.ok:
         print("bad response")
         sys.exit(1)
-    title = response.html.find("title", first=True).text
-    is_closed[url] = "CLOSED" in title
+    title = response.html.find("title", first=True)
+    if title and title.text:
+        is_closed[url] = "CLOSED" in title.text
+    else:
+        is_closed[url] = False
+        print('warning: unknown if closed', url)
 
 # summarize results
 closed_urls = [k for (k, v) in is_closed.items() if v]
