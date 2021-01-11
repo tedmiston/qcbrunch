@@ -7,6 +7,9 @@ jobs:
   events:
     name: Events
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: events
     timeout-minutes: 20
     steps:
       - name: Git checkout
@@ -16,16 +19,16 @@ jobs:
         with:
           node-version: 15.x
       - name: Install dependencies
-        run: cd events && npm install
+        run: npm install
       - name: Fetch events
-        run: cd events && node app.js
+        run: node app.js
         env:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
       - name: Store events artifact
         uses: actions/upload-artifact@v2
         with:
           name: events
-          path: events/output.html
+          path: output.html
       - name: Health check
         if: github.event_name == 'schedule' && always()
         uses: ./.github/actions/healthchecks
