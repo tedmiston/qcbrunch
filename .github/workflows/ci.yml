@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: events
-          path: output.html
+          path: events/output.html
       - name: Health check
         if: github.event_name == 'schedule' && always()
         uses: ./.github/actions/healthchecks
