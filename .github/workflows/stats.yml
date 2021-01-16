@@ -36,7 +36,7 @@ jobs:
       - name: Yelp email
         uses: tedmiston/qcbrunch/docker/yelp-email@master
         env:
-          EMAIL_RECIPIENT: tedmiston@gmail.com
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
           EMAIL_SENDER: no-reply@qcbrunch.com
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       - name: Health check
@@ -55,7 +55,7 @@ jobs:
       - name: Yelp closed detector
         uses: tedmiston/qcbrunch/docker/yelp-closed-detector@master
         env:
-          EMAIL_RECIPIENT: tedmiston@gmail.com
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
           EMAIL_SENDER: no-reply@qcbrunch.com
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       - name: Health check
