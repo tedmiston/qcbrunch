@@ -17,7 +17,8 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v1
       - name: Build image
-        run: cd docker/hadolint && docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
+        run: docker build -t docker.pkg.github.com/tedmiston/qcbrunch/hadolint:${{ github.sha }} .
+        working-directory: docker/hadolint
       - name: Publish image
         run: make IMAGE="hadolint:${{ github.sha }}" publish-image
   build-html-validator:
@@ -28,7 +29,8 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v1
       - name: Build image
-        run: cd docker/html-validator && docker build -t docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} .
+        run: docker build -t docker.pkg.github.com/tedmiston/qcbrunch/html-validator:${{ github.sha }} .
+        working-directory: docker/html-validator
       - name: Publish image
         run: make IMAGE="html-validator:${{ github.sha }}" publish-image
   build-js-validator:
@@ -39,6 +41,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v1
       - name: Build image
-        run: cd docker/js-validator && docker build -t docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} .
+        run: docker build -t docker.pkg.github.com/tedmiston/qcbrunch/js-validator:${{ github.sha }} .
+        working-directory: docker/js-validator
       - name: Publish image
         run: make IMAGE="js-validator:${{ github.sha }}" publish-image
