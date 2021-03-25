@@ -7,7 +7,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'Click==7.0',
-        'PyYAML==5.1',
+        'PyYAML==5.4',
     ],
     entry_points='''
         [console_scripts]
