@@ -30,7 +30,7 @@ jobs:
           name: events
           path: events/output.html
       - name: Health check
-        # if: github.event_name == 'schedule' && always()
+        if: github.event_name == 'schedule' && always()
         uses: ./.github/actions/healthchecks
         with:
           status: ${{ job.status }}
