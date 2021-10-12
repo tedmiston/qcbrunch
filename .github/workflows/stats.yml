@@ -1,6 +1,6 @@
 name: Collection Stats
 on:
-  # push:
+  push:
   schedule:
     - cron: 0 4 * * 6
 jobs:
