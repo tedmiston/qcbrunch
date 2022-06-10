@@ -6,7 +6,7 @@ authors = ["Taylor D. Edmiston <tedmiston@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-cookiecutter = "^1.7.2"
+cookiecutter = "^2.1.1"
 
 [tool.poetry.dev-dependencies]
 
