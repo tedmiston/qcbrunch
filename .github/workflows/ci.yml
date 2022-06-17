@@ -1,9 +1,12 @@
 name: CI/CD
+
 on:
   push:
   schedule:
     - cron: 0 0 * * *
+
 jobs:
+
   events:
     name: Events
     runs-on: ubuntu-latest
@@ -14,27 +17,33 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
+
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
           node-version: 15.x
+
       - name: Install dependencies
         run: npm install
+
       - name: Fetch events
         run: node app.js
         env:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+
       - name: Store events artifact
         uses: actions/upload-artifact@v2
         with:
           name: events
           path: events/output.html
+
       - name: Health check
         if: always()
         uses: ./.github/actions/healthchecks
         with:
           status: ${{ job.status }}
           url: ${{ secrets.HEALTH_CHECK_URL__NIGHTLY_EVENTS }}
+
   build:
     name: Deploy
     runs-on: ubuntu-latest
@@ -47,29 +56,36 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
+
       - name: GitHub Package Registry login
         run: echo ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }} | docker login --username=tedmiston --password-stdin docker.pkg.github.com
+
       - name: GitHub Package Registry pull
         run: >
           docker pull docker.pkg.github.com/tedmiston/qcbrunch/hadolint:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
           docker pull docker.pkg.github.com/tedmiston/qcbrunch/html-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616 &&
           docker pull docker.pkg.github.com/tedmiston/qcbrunch/js-validator:2d6321a68ac110d14283b89be69e57a9f3b2e616
+
       - name: Validate Dockerfiles
         uses: ./.github/actions/hadolint
+
       - name: Validate Jsonnet
         uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
         with:
           entrypoint: jsonnetfmt
           args: --test .vercel.jsonnet .vercel.libsonnet
+
       - name: Generate vercel config
         uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
         with:
           args: --multi .vercel/ .vercel.jsonnet
+
       - name: Load events artifact
         uses: actions/download-artifact@v2
         with:
           name: events
           path: /home/runner/work/qcbrunch/qcbrunch/events
+
       - name: Build site
         uses: docker://python:3.8.2-slim@sha256:67243d9d9dc8c93087c53a1cbde644b461bf412891283d06ec77425db11319d1
         env:
@@ -77,38 +93,48 @@ jobs:
         with:
           entrypoint: bash
           args: -c ./docker/qcbrunch-cli/app.sh
+
       - name: Validate HTML
         uses: ./.github/actions/html-validator
+
       # todo: debug why image isn't pull stopped working
       # - name: Validate CSS
       #   uses: docker://validator/validator:latest@sha256:33dd5741e96e2369398046fbdce3111d08e3b15e7fc12235655667eacc5d67d3
       #   with:
       #     args: /vnu-runtime-image/bin/vnu --skip-non-css --verbose build/css/
+
       - name: Validate JS
         uses: ./.github/actions/js-validator
+
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
           node-version: '15.x'
+
       - name: Validate Markdown
         run: >
           sudo npm install -g markdownlint-cli &&
           markdownlint --ignore=_posts/ --ignore=node_modules/ .
+
       - name: Install Vercel
         run: sudo rm /usr/local/bin/vercel && sudo npm install -g vercel --unsafe-perm=true --allow-root
+
       - name: Deploy Dev
         if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
         run: make deploy-dev
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+
       - name: Deploy Prod
         if: github.ref == 'refs/heads/master' || github.event_name == 'schedule'
         run: make deploy-prod
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+
       - name: GitHub Package Registry logout
         if: always()
         run: docker logout docker.pkg.github.com
+
       - name: Health check
         if: always()
         uses: ./.github/actions/healthchecks
