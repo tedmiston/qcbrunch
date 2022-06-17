@@ -1,0 +1,13 @@
+name: Keep Alive
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  keep-alive:
+    name: Keep Alive
+    steps:
+      - name: Keep Alive
+        uses: gautamkrishnar/keepalive-workflow@master
+        with:
+          time_elapsed: 1
