@@ -1,14 +1,22 @@
 name: Keep Alive
 on:
   schedule:
-    - cron: "30 0 * * *"
+    - cron: "55 0 * * *"
 
 jobs:
+
   keep-alive:
     name: Keep Alive
     runs-on: ubuntu-latest
     steps:
+
+      - name: Git checkout
+        uses: actions/checkout@v2
+
       - name: Keep Alive
         uses: gautamkrishnar/keepalive-workflow@master
         with:
+          committer_username: Robot
+          committer_email: robot@taylore.dev
+          commit_message: Keep alive
           time_elapsed: 1
