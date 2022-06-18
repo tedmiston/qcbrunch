@@ -1,11 +1,12 @@
 name: Keep Alive
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "20 0 * * *"
 
 jobs:
   keep-alive:
     name: Keep Alive
+    runs-on: ubuntu-latest
     steps:
       - name: Keep Alive
         uses: gautamkrishnar/keepalive-workflow@master
