@@ -1,7 +1,7 @@
 name: Keep Alive
 on:
   schedule:
-    - cron: "15 1 * * *"
+    - cron: "0 0 * * *"
 
 jobs:
 
@@ -19,4 +19,4 @@ jobs:
           committer_username: Robot
           committer_email: robot@taylore.dev
           commit_message: Keep alive
-          time_elapsed: 1
+          time_elapsed: 30
