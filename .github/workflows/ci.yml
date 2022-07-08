@@ -116,8 +116,9 @@ jobs:
           sudo npm install -g markdownlint-cli &&
           markdownlint --ignore=_posts/ --ignore=node_modules/ .
 
+      # https://github.com/vercel/vercel/issues/8104
       - name: Install Vercel
-        run: sudo rm /usr/local/bin/vercel && sudo npm install -g vercel --unsafe-perm=true --allow-root
+        run: sudo rm /usr/local/bin/vercel && sudo npm install -g vercel@26.0.0 --unsafe-perm=true --allow-root
 
       - name: Deploy Dev
         if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
