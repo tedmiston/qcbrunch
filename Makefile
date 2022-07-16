@@ -34,8 +34,8 @@ publish-image:
 deploy-dev:
 	# cd build && sudo vercel deploy --confirm --prod --token=$(ZEIT_TOKEN) --local-config=.vercel/vercel.dev.json
 	cd build && \
-	sudo vercel link --confirm --token=$(ZEIT_TOKEN) --project=qcbrunch-dev && \
-	sudo vercel deploy --confirm --prod
+	sudo vercel link --token=$(ZEIT_TOKEN) --confirm --project=qcbrunch-dev && \
+	sudo vercel deploy --token=$(ZEIT_TOKEN) --confirm --prod
 
 .PHONY: deploy-prod
 deploy-prod:
