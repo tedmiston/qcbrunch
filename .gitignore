@@ -1,19 +1,17 @@
-*.egg-info
-*.sublime-project
-*.sublime-workspace
-*.swp
-.DS_Store
-.cache/
+# base
 .env
 .envrc
-.jekyll-metadata
-.sass-cache
-.venv
-.vercel/project.json
-.vercel/README.txt
-/localStorage.json
-__pycache__
-_site/
-build/
-dist/
+
+# macos
+.DS_Store
+
+# python
+*.egg-info
+*.swp
+__pycache__/
+
+# node
 node_modules/
+
+# vercel
+.vercel/
