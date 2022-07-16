@@ -20,10 +20,6 @@ run:
 tree:
 	tree -I node_modules
 
-.PHONY: format-jsonnet
-format-jsonnet:
-	echo .vercel.jsonnet .vercel.libsonnet | xargs --max-args=1 --verbose jsonnetfmt --in-place
-
 .PHONY: publish-image
 publish-image:
 	echo $(REGISTRY_TOKEN) | docker login --username=$(REGISTRY_USERNAME) --password-stdin $(REGISTRY_URL) && \
@@ -32,14 +28,12 @@ publish-image:
 
 .PHONY: deploy-dev
 deploy-dev:
-	# cd build && sudo vercel deploy --confirm --prod --token=$(ZEIT_TOKEN) --local-config=.vercel/vercel.dev.json
 	cd build && \
 	sudo vercel link --token=$(ZEIT_TOKEN) --confirm --project=qcbrunch-dev && \
 	sudo vercel deploy --token=$(ZEIT_TOKEN) --confirm --prod
 
 .PHONY: deploy-prod
 deploy-prod:
-	# cd build && sudo vercel deploy --confirm --prod --token=$(ZEIT_TOKEN) --local-config=.vercel/vercel.prod.json
 	cd build && \
 	sudo vercel link --token=$(ZEIT_TOKEN) --confirm --project=qcbrunch-prod && \
 	sudo vercel deploy --token=$(ZEIT_TOKEN) --confirm --prod
