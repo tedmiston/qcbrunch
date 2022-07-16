@@ -1,7 +1,0 @@
-{
-  "public": true,
-  "routes": [
-    { "src": "/stats", "dest": "/stats.html" },
-  ],
-  "trailingSlash": false
-}
