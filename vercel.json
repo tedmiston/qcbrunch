@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "redirects": [
+    { "source": "/stats", "destination": "stats.html" }
+  ]
+}
