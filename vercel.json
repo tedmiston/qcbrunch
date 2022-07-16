@@ -1,6 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/stats", "destination": "/stats.html" }
+  "routes": [
+    { "src": "/stats", "dest": "/stats.html" },
   ],
   "trailingSlash": false
 }
