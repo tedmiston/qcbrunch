@@ -6,7 +6,7 @@ local vercel = import '.vercel.libsonnet';
     alias=['dev.qcbrunch.com'],
   ),
   'vercel.prod.json': vercel.config(
-    name='qcbrunch',
+    name='qcbrunch-prod',
     alias=['qcbrunch.com', 'www.qcbrunch.com'],
   ),
 }
