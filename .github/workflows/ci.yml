@@ -69,16 +69,16 @@ jobs:
       - name: Validate Dockerfiles
         uses: ./.github/actions/hadolint
 
-      - name: Validate Jsonnet
-        uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
-        with:
-          entrypoint: jsonnetfmt
-          args: --test .vercel.jsonnet .vercel.libsonnet
+      # - name: Validate Jsonnet
+      #   uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
+      #   with:
+      #     entrypoint: jsonnetfmt
+      #     args: --test .vercel.jsonnet .vercel.libsonnet
 
-      - name: Generate vercel config
-        uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
-        with:
-          args: --multi .vercel/ .vercel.jsonnet
+      # - name: Generate vercel config
+      #   uses: docker://bitnami/jsonnet:0.14.0-debian-9-r17@sha256:f671d2e293cdf7ef272080b8e016bf483330ee8d7824057b3f4b5f3dceb445c9
+      #   with:
+      #     args: --multi .vercel/ .vercel.jsonnet
 
       - name: Load events artifact
         uses: actions/download-artifact@v2
