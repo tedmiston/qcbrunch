@@ -39,4 +39,7 @@ deploy-dev:
 
 .PHONY: deploy-prod
 deploy-prod:
-	cd build && sudo vercel deploy --confirm --prod --token=$(ZEIT_TOKEN) --local-config=.vercel/vercel.prod.json
+	# cd build && sudo vercel deploy --confirm --prod --token=$(ZEIT_TOKEN) --local-config=.vercel/vercel.prod.json
+	cd build && \
+	sudo vercel link --token=$(ZEIT_TOKEN) --confirm --project=qcbrunch-prod && \
+	sudo vercel deploy --token=$(ZEIT_TOKEN) --confirm --prod
