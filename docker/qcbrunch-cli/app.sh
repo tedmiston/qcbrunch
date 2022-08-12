@@ -7,7 +7,7 @@ export PATH="/github/home/.local/bin:${PATH}"
 apt-get update
 apt-get install git --yes
 
-python -m pip install --user --upgrade \
+pip install --user --upgrade \
   pip \
   build
 
