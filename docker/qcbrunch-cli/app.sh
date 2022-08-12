@@ -12,7 +12,7 @@ pip install --user --upgrade \
   build
 
 cd qcbrunch-cli
-python -m build
+python -m build --wheel
 pip install dist/qcbrunch-*.whl
 cd -
 
