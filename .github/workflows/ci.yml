@@ -75,6 +75,11 @@ jobs:
           name: events
           path: /home/runner/work/qcbrunch/qcbrunch/events
 
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
       - name: Build site
         uses: docker://python:3.8.13-slim
         env:
