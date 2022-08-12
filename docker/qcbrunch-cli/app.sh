@@ -6,8 +6,8 @@ export PATH="/github/home/.local/bin:${PATH}"
 
 apt-get update && apt-get install git --yes
 
-sudo pip3 install --upgrade pip
-sudo pip3 install --editable qcbrunch-cli
+python -m pip install --user --upgrade pip
+python -m pip install --user --editable qcbrunch-cli
 
 qcbrunch clean
 qcbrunch render
