@@ -1,6 +1,10 @@
 [project]
 name = "qcbrunch"
 version = "0.1.0"
+dependencies = [
+  "Click==7.0",
+  "PyYAML==5.4",
+]
 
 [project.scripts]
 qcbrunch = "qcbrunchcli.main:cli"
