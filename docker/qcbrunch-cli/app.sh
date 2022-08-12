@@ -13,6 +13,7 @@ python -m pip install --user build
 cd qcbrunch-cli
 python -m build
 ls -al
+pip install dist/qcbrunch-0.1.0-py3-none-any.whl
 cd -
 
 qcbrunch clean
