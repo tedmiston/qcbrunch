@@ -14,7 +14,8 @@ install:
 
 .PHONY: run
 run:
-	cd qcbrunch-cli && qcbrunch dev run
+	cd qcbrunch-cli && \
+	qcbrunch dev run
 
 .PHONY: tree
 tree:
@@ -29,11 +30,11 @@ publish-image:
 .PHONY: deploy-dev
 deploy-dev:
 	cd build && \
-	sudo vercel link --token=$(ZEIT_TOKEN) --confirm --project=qcbrunch-dev && \
-	sudo vercel deploy --token=$(ZEIT_TOKEN) --confirm --prod
+	sudo vercel link --token=$(ZEIT_TOKEN) --yes --project=qcbrunch-dev && \
+	sudo vercel deploy --token=$(ZEIT_TOKEN) --yes --prod
 
 .PHONY: deploy-prod
 deploy-prod:
 	cd build && \
-	sudo vercel link --token=$(ZEIT_TOKEN) --confirm --project=qcbrunch-prod && \
-	sudo vercel deploy --token=$(ZEIT_TOKEN) --confirm --prod
+	sudo vercel link --token=$(ZEIT_TOKEN) --yes --project=qcbrunch-prod && \
+	sudo vercel deploy --token=$(ZEIT_TOKEN) --yes --prod
