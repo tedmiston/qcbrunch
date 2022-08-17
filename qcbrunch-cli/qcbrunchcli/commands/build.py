@@ -6,6 +6,26 @@ from ..conf import SOURCE_DIR
 
 @click.command()
 def build():
-    directories = '.vercel css images js'
-    files = '.vercelignore browserconfig.xml robots.txt sitemap.txt stats.html vercel.json'
+    directories = ' '.join([
+        # vercel
+        '.vercel',
+
+        # site main
+        'css',
+        'images',
+        'js',
+    ])
+    files = ' '.join([
+        # vercel
+        '.vercelignore',
+        'vercel.json',
+
+        # site meta
+        'browserconfig.xml',
+        'robots.txt',
+        'sitemap.txt',
+
+        # site main
+        'stats.html',
+    ])
     subprocess.run(f'cp -R {directories} {files} build/', cwd=SOURCE_DIR, shell=True)
