@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+export QCBRUNCH_ROOT="${HOME}/Documents/qcbrunch"
