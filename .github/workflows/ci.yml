@@ -106,7 +106,7 @@ jobs:
         run: sudo rm /usr/local/bin/vercel && sudo npm install --global vercel --unsafe-perm=true --allow-root
 
       - name: Deploy Dev
-        if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
+        # if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
         run: make deploy-dev
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
