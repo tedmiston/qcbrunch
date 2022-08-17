@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
+
 set -Eeuo pipefail
 
 export PATH="/github/home/.local/bin:${PATH}"
 
-apt-get update && apt-get install git --yes
+apt-get update
+apt-get install git --yes
 
-python -m pip install --user --upgrade pip
-python -m pip install --user --editable qcbrunch-cli
+pip install --user --upgrade \
+  pip \
+  build
+
+cd qcbrunch-cli
+python -m build --wheel
+pip install dist/qcbrunch-*.whl
+cd -
 
 qcbrunch clean
 qcbrunch render
