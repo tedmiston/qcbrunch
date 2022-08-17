@@ -14,7 +14,7 @@ install:
 
 .PHONY: run
 run:
-	cd qcbrunch-cli && pipenv run qcbrunch dev run
+	cd qcbrunch-cli && qcbrunch dev run
 
 .PHONY: tree
 tree:
