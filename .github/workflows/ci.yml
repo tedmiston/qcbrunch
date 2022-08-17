@@ -73,7 +73,7 @@ jobs:
           path: /home/runner/work/qcbrunch/qcbrunch/events
 
       - name: Build site
-        uses: docker://python:3.8.2-slim@sha256:67243d9d9dc8c93087c53a1cbde644b461bf412891283d06ec77425db11319d1
+        uses: docker://python:3.8.13-slim@sha256:726098870bb14355cb12572764a3be191b42f8b15947d97affe3b8ec6a7a446e
         env:
           QCBRUNCH_ROOT: $GITHUB_WORKSPACE
         with:
