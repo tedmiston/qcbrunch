@@ -14,6 +14,8 @@ def save_data(data):
         yaml.dump(data, fp)
 
 def get_git_date():
+    # fixme
+    '''
     result = subprocess.run(
         'git log -1 --date=format:"%B %Y" --format="%ad"',
         cwd=SOURCE_DIR,
@@ -22,4 +24,6 @@ def get_git_date():
     )
     date = result.stdout.strip().decode()
     assert date != ''
+    '''
+    date = 'August 2022'
     return date
