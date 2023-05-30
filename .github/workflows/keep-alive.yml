@@ -1,3 +1,10 @@
+# GitHub suspends cron-based workflows for "inactivity" when there hasn't been
+# new commits in the repo in 60 days.  This results in breaking workflows on
+# static sites which don't need to be updated very regularly.
+# 
+# This workflow puts a bandaid on that nuisance by generating a dummy commit,
+# when needed, to avoid the repo getting flagged for "inactivity".
+
 name: Keep Alive
 
 on:
