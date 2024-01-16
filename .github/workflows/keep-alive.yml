@@ -22,7 +22,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Keep Alive
-        uses: gautamkrishnar/keepalive-workflow@master
+        # v1.2.0+ is currently breaking on write-protected branches
+        # [1]: https://github.com/gautamkrishnar/keepalive-workflow/issues/20
+        uses: gautamkrishnar/keepalive-workflow@v1.1.0
         with:
           committer_username: Robot
           committer_email: robot@taylore.dev
