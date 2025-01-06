@@ -103,7 +103,7 @@ jobs:
           markdownlint --ignore=_posts/ --ignore=node_modules/ .
 
       - name: Install Vercel
-        run: sudo rm /usr/local/bin/vercel && sudo npm install --location=global vercel --unsafe-perm=true --allow-root
+        run: sudo rm -f /usr/local/bin/vercel && sudo npm install --location=global vercel --unsafe-perm=true --allow-root
 
       - name: Deploy Dev
         # if: github.ref != 'refs/heads/master' || github.event_name == 'schedule'
